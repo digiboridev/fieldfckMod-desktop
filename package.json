@@ -1,5 +1,5 @@
 {
-  "name": "fieldfckMod-desktop",
+  "name": "fieldfckmod-desktop",
   "version": "1.0.0",
   "description": "Electron application",
   "main": "main.js",
@@ -9,10 +9,6 @@
   "repository": "https://github.com/digiborimusik/fieldfckMode-desktop",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
   ],
   "author": "GitHub",
   "license": "CC0-1.0",
