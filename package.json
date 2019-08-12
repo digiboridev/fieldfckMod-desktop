@@ -1,14 +1,14 @@
 {
   "name": "fieldfckmod-desktop",
   "version": "1.0.0",
-  "description": "Electron application",
+  "description": "electron application",
   "main": "main.js",
   "scripts": {
     "start": ".\\node_modules\\electron\\dist\\electron.exe ."
   },
   "repository": "https://github.com/digiborimusik/fieldfckMode-desktop",
   "keywords": [
-    "Electron",
+    "Electron"
   ],
   "author": "GitHub",
   "license": "CC0-1.0",
