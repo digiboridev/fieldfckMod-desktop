@@ -1,4 +1,5 @@
 var client = require('node-rest-client-promise').Client();
+var fs = require('fs');
 
 
 function l(a){
@@ -80,13 +81,18 @@ class Model{
                 let getargs = {
                     headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken }
                 }
-                return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b479aa31-4f95-4c85-bba9-3636b4e8e689')",getargs)
+                return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$orderby=StartDate%20desc&$top=6",getargs)
             })
             .then(a => {
-                l(JSON.parse(a.data).d);
+                let answer = JSON.parse(a.data).d
+                l(answer);
+                fs.writeFile('data.json', JSON.stringify(answer), function (err) {
+                    if (err) throw err;
+                    console.log('Saved!');
+                });
                 resolve ('Data downloaded');
             })
-            .catch(a => reject('Network error'));            
+            .catch(a => reject(a));            
 
 
         })
