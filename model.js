@@ -83,7 +83,7 @@ class Model{
                 return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b479aa31-4f95-4c85-bba9-3636b4e8e689')",getargs)
             })
             .then(a => {
-                l(JSON.parse(a.data));
+                l(JSON.parse(a.data).d);
                 resolve ('Data downloaded');
             })
             .catch(a => reject('Network error'));            

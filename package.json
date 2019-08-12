@@ -1,12 +1,12 @@
 {
-  "name": "electron-quick-start",
+  "name": "fieldfckMod-desktop",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Electron application",
   "main": "main.js",
   "scripts": {
     "start": ".\\node_modules\\electron\\dist\\electron.exe ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/digiborimusik/fieldfckMode-desktop",
   "keywords": [
     "Electron",
     "quick",
