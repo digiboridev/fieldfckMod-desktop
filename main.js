@@ -83,7 +83,13 @@ model.additem(
     })
 )
 
-console.log(model.getarr());
-model.loadActivityData('vkomelkov').then(a => {
-    l(model.getitem('vkomelkov').showdata());
-}).catch(a => l("error " + a));
+// console.log(model.getarr());
+// model.loadActivityData('vkomelkov').then(a => {
+//     l(model.getitem('vkomelkov').showdata());
+// }).catch(a => l("error " + a));
+function dothat(){
+  model.loadActivityData('vkomelkov').then(a => {l(a)}).catch(a => l("error " + a));
+}
+dothat();
+
+// setInterval(dothat,5000)

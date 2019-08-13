@@ -69,7 +69,6 @@ class Model{
                 }
                 // profile.data = a.data;
                 let cookie = a.response.headers['set-cookie'];
-                l(cookie);
                 return a;
                 
             })
@@ -81,12 +80,13 @@ class Model{
                 let getargs = {
                     headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken }
                 }
-                return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$orderby=StartDate%20desc&$top=6",getargs)
+                return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=6&$select=Title,StatusId,OwnerId,CreatedOn,StartDate,Id",getargs)
             })
             .then(a => {
-                let answer = JSON.parse(a.data).d
-                l(answer);
-                fs.writeFile('data.json', JSON.stringify(answer), function (err) {
+                let answer = JSON.parse(a.data).d.results
+                profile.data.avtivity = answer;
+                let readableData = JSON.stringify(answer).replace(/(,")/g, ',\n"');
+                fs.writeFile('data.json', readableData , function (err) {
                     if (err) throw err;
                     console.log('Saved!');
                 });
@@ -115,6 +115,16 @@ class Profile{
     }
 
 }
+
+console.log(new Date(1565708289905))
+console.log(new Date(1565684632696))
+jsonDate = "/Date(1565684632696)/"
+var date = eval(jsonDate.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"));
+console.log(new Date(1565724084181))
+console.log(new Date(1565724084181))
+
+console.log((new Date(1565684632696)) < (new Date(1565708289905)))
+
 
 
 // model.loadActivityData('vkomelkov').then(a => {
