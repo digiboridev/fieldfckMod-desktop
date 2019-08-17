@@ -88,8 +88,17 @@ model.additem(
 //     l(model.getitem('vkomelkov').showdata());
 // }).catch(a => l("error " + a));
 function dothat(){
-  model.loadActivityData('vkomelkov').then(a => {l(a)}).catch(a => l("error " + a));
+  model.loadActivityData('vkomelkov')
+  .then(a => {
+    l(a)
+    return model.processActivityData('vkomelkov')
+  })
+  .then((a) => {
+    console.log(a)
+  })
+  .catch(a => l("error " + a));
 }
 dothat();
 
 // setInterval(dothat,5000)
+

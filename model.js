@@ -80,12 +80,16 @@ class Model{
                 let getargs = {
                     headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken }
                 }
-                return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=6&$select=Title,StatusId,OwnerId,CreatedOn,StartDate,Id",getargs)
+                return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=6" + "&$select=Title,StatusId,OwnerId,CreatedOn,Id,ModifiedOn,TsiSymptoms,TsiFFMWorkCategoryId,TsiFFMWorkCategoryL2Id,TsiFFMResCategoryId,TsiFFMResCategoryL2Id,TsiSymptoms,TsiDescription",getargs)
             })
             .then(a => {
-                let answer = JSON.parse(a.data).d.results
-                profile.data.avtivity = answer;
-                let readableData = JSON.stringify(answer).replace(/(,")/g, ',\n"');
+                let answer = JSON.parse(a.data)
+                if(answer.d == undefined){
+                    reject(JSON.parse(a.data).error.message.value)
+                    throw '0'
+                }
+                profile.data.activity = answer.d.results;
+                let readableData = JSON.stringify(answer.d.results).replace(/(,")/g, ',\n"');
                 fs.writeFile('data.json', readableData , function (err) {
                     if (err) throw err;
                     console.log('Saved!');
@@ -96,6 +100,24 @@ class Model{
 
 
         })
+    }
+    processActivityData(key){
+        const profile = this.arr.find(item => item.key === key);
+        let activityarr = profile.data.activity;
+        for (let i = activityarr.length - 1 ; i >= 0; i--) {
+            console.log(activityarr[i].Id);
+            if(activityarr[i].StatusId == '9dea4d63-6beb-4211-abd9-db4c90eb6496'){
+
+            }
+            if(activityarr[i].StatusId == '7fa82408-d9f1-41d6-a56d-ce3746701a46'){
+                
+            }
+            if(activityarr[i].StatusId == '9dea4d63-6beb-4211-abd9-db4c90eb6496'){
+                
+            }
+        }
+        return 'neednt to update';
+        // profile.data.activity
     }
 }
 
