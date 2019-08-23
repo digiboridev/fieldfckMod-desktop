@@ -91,10 +91,12 @@ function dothat(){
   model.loadActivityData('vkomelkov')
   .then(a => {
     l(a)
+    l(model.getitem('vkomelkov').showdata())
     return model.processActivityData('vkomelkov')
   })
   .then((a) => {
     console.log(a)
+    // l(model.getitem('vkomelkov').showdata())
   })
   .catch(a => l("error " + a));
 }
