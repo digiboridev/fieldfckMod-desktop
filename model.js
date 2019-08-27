@@ -21,7 +21,62 @@ const globalSettings = {
         {long:44.123123,lat:36.321321},
         {long:45.123123,lat:31.321321},
         {long:46.123123,lat:37.321321}
-    ]
+    ],
+    tsiFfm:{
+        work:[
+            {
+                name_1:'Зона відповідальності оператора',
+                name_2:'Заміна плати/обладнання',
+                id_1:'3f19ea49-b276-469d-826f-9a0b7f3d96e7',
+                id_2:'5ced2699-030a-46e0-e053-710c000ad5f7'
+            },
+            {
+                name_1:'Зона відповідальності оператора',
+                name_2:'Виконано чистку обладнання',
+                id_1:'3f19ea49-b276-469d-826f-9a0b7f3d96e7',
+                id_2:'9852844c-1149-424c-9217-24c2ae228f47'
+            },
+            {
+                name_1:'Зона відповідальності оператора',
+                name_2:'Виконано в рамках АВР',
+                id_1:'3f19ea49-b276-469d-826f-9a0b7f3d96e7',
+                id_2:'5ced2699-0306-46e0-e053-710c000ad5f7'
+            },
+            {
+                name_1:'Зона відповідальності абонента',
+                name_2:'Надана технічна консультація',
+                id_1:'b4c2fbe0-6d41-46c8-a099-6c7aa37be832',
+                id_2:'5835d5b0-5983-4d2c-be03-e57caa6a6f49'
+            },
+            {
+                name_1:'Зона відповідальності абонента',
+                name_2:'Рекомендовано заміну',
+                id_1:'b4c2fbe0-6d41-46c8-a099-6c7aa37be832',
+                id_2:'5ced2699-0302-46e0-e053-710c000ad5f7'
+            },
+            {
+                name_1:'Зона відповідальності оператора',
+                name_2:'Включено',
+                id_1:'3f19ea49-b276-469d-826f-9a0b7f3d96e7',
+                id_2:'5ced2699-0309-46e0-e053-710c000ad5f7'
+            },
+            {
+                name_1:'Зона відповідальності оператора',
+                name_2:'Виконано кросування',
+                id_1:'3f19ea49-b276-469d-826f-9a0b7f3d96e7',
+                id_2:'1b18bcf9-7790-4e02-a5a3-b9c7274bd72b'
+            },
+            {
+                name_1:'Зона відповідальності абонента',
+                name_2:'Виконано діагностику. Очікування дій абонента',
+                id_1:'b4c2fbe0-6d41-46c8-a099-6c7aa37be832',
+                id_2:'ec2da8fe-8d6c-4786-831d-11b7a6b7ccb1'
+            },
+        ],
+        res:{
+
+        }
+    }
 }
 
 
@@ -174,9 +229,9 @@ class Model{
                     return {
                         activity:{
                             Id:activityarr[i].Id,
-                            StatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
+                            StatusId:'7fa82408-d9f1-41d6-a56d-ce3746701a46',
                             ModifiedOn: new Date(),
-                            TsiCommonStatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
+                            TsiCommonStatusId:'7fa82408-d9f1-41d6-a56d-ce3746701a46',
                             TsiRespondedOn: new Date()
                         },
                         tsiVisit:{
@@ -188,7 +243,7 @@ class Model{
                             ModifiedOn: new Date(),
                             ModifiedById: '385ab248-254d-495f-91dc-2120c3403b22',
                             ProcessListeners: 0,
-                            TsiActivityStatusId: '4bdbb88f-58e6-df11-971b-001d60e938c6',
+                            TsiActivityStatusId: '7fa82408-d9f1-41d6-a56d-ce3746701a46',
                             TsiActivityId:activityarr[i].Id,
                             TsiDateCreatedOn: new Date()   
                         }
