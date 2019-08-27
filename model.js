@@ -169,14 +169,14 @@ class Model{
             if(activityarr[i].StatusId == '9dea4d63-6beb-4211-abd9-db4c90eb6496'){
                 let actDate = (Number(activityarr[i].ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
                 let nowDate = Date.parse(new Date())
-                if (nowDate - actDate > globalSettings.intervals.aTob * 60 * 1000){
+                if (nowDate - actDate > globalSettings.intervals.bToc * 60 * 1000){
                     console.log("in > on")
                     return {
                         activity:{
                             Id:activityarr[i].Id,
-                            StatusId:'7fa82408-d9f1-41d6-a56d-ce3746701a46',
+                            StatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
                             ModifiedOn: new Date(),
-                            TsiCommonStatusId:'7fa82408-d9f1-41d6-a56d-ce3746701a46',
+                            TsiCommonStatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
                             TsiRespondedOn: new Date()
                         },
                         tsiVisit:{
@@ -188,13 +188,13 @@ class Model{
                             ModifiedOn: new Date(),
                             ModifiedById: '385ab248-254d-495f-91dc-2120c3403b22',
                             ProcessListeners: 0,
-                            TsiActivityStatusId: '7fa82408-d9f1-41d6-a56d-ce3746701a46',
+                            TsiActivityStatusId: '4bdbb88f-58e6-df11-971b-001d60e938c6',
                             TsiActivityId:activityarr[i].Id,
                             TsiDateCreatedOn: new Date()   
                         }
                     }
                 }
-                console.log('in to on time left: ' +  (Math.floor((globalSettings.intervals.aTob) - ((nowDate - actDate) / 1000 / 60))))
+                console.log('in to on time left: ' +  (Math.floor((globalSettings.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))))
                
             }
         }
