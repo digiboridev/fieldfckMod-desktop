@@ -179,9 +179,7 @@ class Model{
                          + "-2ab0-476d-8cf1-" 
                          + Math.random().toString(36).substring(2, 14),
                         CreatedOn: new Date(),
-                        CreatedById:'385ab248-254d-495f-91dc-2120c3403b22',
                         ModifiedOn: new Date(),
-                        ModifiedById: '385ab248-254d-495f-91dc-2120c3403b22',
                         ProcessListeners: 0,
                         TsiActivityStatusId: '394d4b84-58e6-df11-971b-001d60e938c6',
                         TsiActivityId:activityarr[i].Id,
@@ -209,9 +207,7 @@ class Model{
                              + "-2ab0-476d-8cf1-" 
                              + Math.random().toString(36).substring(2, 14),
                             CreatedOn: new Date(),
-                            CreatedById:'385ab248-254d-495f-91dc-2120c3403b22',
                             ModifiedOn: new Date(),
-                            ModifiedById: '385ab248-254d-495f-91dc-2120c3403b22',
                             ProcessListeners: 0,
                             TsiActivityStatusId: '9dea4d63-6beb-4211-abd9-db4c90eb6496',
                             TsiActivityId:activityarr[i].Id,
@@ -219,7 +215,8 @@ class Model{
                         }
                     }
                 }
-                console.log('Acc to in time left: ' +  ((profile.intervals.aTob * 60 * 1000) - (nowDate - actDate)))
+                console.log('Acc to in time left: ' +  ((profile.intervals.aTob * 60 * 1000) - (nowDate - actDate)));
+                return ('Acc to in time left: ' +  ((profile.intervals.aTob * 60 * 1000) - (nowDate - actDate)));
                
             }
             if(activityarr[i].StatusId == '9dea4d63-6beb-4211-abd9-db4c90eb6496'){
@@ -240,9 +237,7 @@ class Model{
                              + "-2ab0-476d-8cf1-" 
                              + Math.random().toString(36).substring(2, 14),
                             CreatedOn: new Date(),
-                            CreatedById:'385ab248-254d-495f-91dc-2120c3403b22',
                             ModifiedOn: new Date(),
-                            ModifiedById: '385ab248-254d-495f-91dc-2120c3403b22',
                             ProcessListeners: 0,
                             TsiActivityStatusId: '7fa82408-d9f1-41d6-a56d-ce3746701a46',
                             TsiActivityId:activityarr[i].Id,
@@ -250,7 +245,8 @@ class Model{
                         }
                     }
                 }
-                console.log('in to on time left: ' +  (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))))
+                console.log('in to on time left: ' +  (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))));
+                return ('in to on time left: ' +  (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))));
                
             }
             if(activityarr[i].StatusId == '7fa82408-d9f1-41d6-a56d-ce3746701a46'){
@@ -276,9 +272,7 @@ class Model{
                              + "-2ab0-476d-8cf1-" 
                              + Math.random().toString(36).substring(2, 14),
                             CreatedOn: new Date(),
-                            CreatedById:'385ab248-254d-495f-91dc-2120c3403b22',
                             ModifiedOn: new Date(),
-                            ModifiedById: '385ab248-254d-495f-91dc-2120c3403b22',
                             ProcessListeners: 0,
                             TsiActivityStatusId: '4bdbb88f-58e6-df11-971b-001d60e938c6',
                             TsiActivityId:activityarr[i].Id,
@@ -286,11 +280,12 @@ class Model{
                         }
                     }
                 }
-                console.log('on to close time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))))
+                console.log('on to close time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));
+                return ('on to close time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));
                
             }
         }
-        return 'neednt to update';
+        return 'Nothnt to process';
         // profile.data.activity
     }
 }
@@ -304,6 +299,7 @@ class Profile{
         this.password = data.password;
         this.intervals = (data.intervals !== undefined ? data.intervals : globalSettings.intervals);
         this.gpsPattern = (data.gpsPattern !== undefined ? data.gpsPattern : globalSettings.gpsPattern);
+        this.tsiFfm = (data.tsiFfm !== undefined ? data.tsiFfm : globalSettings.tsiFfm);
         this.data = {};
     }
     showdata(){
