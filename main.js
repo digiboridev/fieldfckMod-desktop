@@ -39,6 +39,7 @@ function createWindow () {
     mainWindow = null
   })
   console.log('window run');
+  setTimeout(dothat,5000);
 }
 
 // This method will be called when Electron has finished
@@ -100,7 +101,7 @@ function dothat(){
   })
   .catch(a => l("error " + a));
 }
-dothat();
+// dothat();
 
 // setInterval(dothat,5000)
 
