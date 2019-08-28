@@ -67,8 +67,9 @@ model.additem(
         login:'vkomelkov',
         password:"Qwer1111",
         intervals:{
-            aTob:20,
-            bToc:30
+            aTob:5,
+            bToc:5,
+            cTod:5
         },
         gpsPattern:[
             {long:42.123123,lat:34.321321},
