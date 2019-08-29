@@ -161,7 +161,16 @@ class Model{
                 globalSettings.url + "/ServiceModel/AuthService.svc/Login",
                 {
                     data: JSON.stringify({UserName:profile.login,UserPassword:profile.password}),
-                    headers: { "Content-Type": "application/json" }
+                    headers: { "Content-Type": "application/json" },
+                    requestConfig: {
+                        timeout: 30000, //request timeout in milliseconds
+                        noDelay: true, //Enable/disable the Nagle algorithm
+                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
+                        keepAliveDelay: 1000 //and optionally set the initial delay before the first keepalive probe is sent
+                    },
+                        responseConfig: {
+                        timeout: 1000 //response timeout
+                    }
                 }
             )
             .then(a => {
@@ -181,7 +190,16 @@ class Model{
                 l(cookie);
                 l(csrftoken);
                 let getargs = {
-                    headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken }
+                    headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken },
+                    requestConfig: {
+                        timeout: 30000, //request timeout in milliseconds
+                        noDelay: true, //Enable/disable the Nagle algorithm
+                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
+                        keepAliveDelay: 1000 //and optionally set the initial delay before the first keepalive probe is sent
+                    },
+                        responseConfig: {
+                        timeout: 1000 //response timeout
+                    }
                 }
                 return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=6"
                 //  + "&$select=Title,StatusId,OwnerId,CreatedOn,Id,ModifiedOn,TsiSymptoms,TsiFFMWorkCategoryId,TsiFFMWorkCategoryL2Id,TsiFFMResCategoryId,TsiFFMResCategoryL2Id,TsiSymptoms,TsiDescription"
@@ -347,7 +365,7 @@ class Model{
     }
     sendActivity(data){
         return new Promise(function(resolve,reject){
-            
+
         })
     }
 }
@@ -367,7 +385,6 @@ class Profile{
     showdata(){
         return this.data
     }
-
 }
 
 
