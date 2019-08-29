@@ -72,14 +72,61 @@ const globalSettings = {
                 name_2:'Виконано діагностику. Очікування дій абонента',
                 id_1:'b4c2fbe0-6d41-46c8-a099-6c7aa37be832',
                 id_2:'ec2da8fe-8d6c-4786-831d-11b7a6b7ccb1'
-            },
+            }
         ],
-        res:{
-
-        }
+        res:[
+            {
+                name_1:'Кабельна мережа доступу',
+                name_2:'Розподільча мережа доступу',
+                id_1:'12a5ec07-9bbd-4054-8d20-1f7605c470f3',
+                id_2:'a5380df5-64ec-4841-9930-8a48defd6572'
+            },
+            {
+                name_1:'Електрообладнання постійного струму',
+                name_2:'Електроживильні установки',
+                id_1:'2281dab0-468a-458b-a2b7-fc0a809377bb',
+                id_2:'276d9445-d246-4208-9c75-3a0bf6b29e66'
+            },
+            {
+                name_1:'Кабельна мережа доступу',
+                name_2:'Магістральна мережа доступу',
+                id_1:'12a5ec07-9bbd-4054-8d20-1f7605c470f3',
+                id_2:'79d44c14-703a-4fc1-8853-96002fdc5648'
+            },
+            {
+                name_1:'Кінцеве пакетне обладнання',
+                name_2:'xDSL-модеми',
+                id_1:'8bffc6c9-294c-4c9d-bc52-2212f694f31a',
+                id_2:'536a1e92-3159-418e-939a-0b0c5f1f3d46'
+            },
+            {
+                name_1:'Кабельна мережа доступу',
+                name_2:'Абонентський ввід',
+                id_1:'12a5ec07-9bbd-4054-8d20-1f7605c470f3',
+                id_2:'58e051fd-8d95-4d96-9b0a-87b72db3f374'
+            },
+            {
+                name_1:'Кінцеві кабельні пристрої',
+                name_2:'Розподільча коробка',
+                id_1:'7dccd565-1253-4fc0-a62c-d8a588ed0b83',
+                id_2:'25cc0589-f90f-4c9e-86cc-cf87018b2192'
+            },
+            {
+                name_1:'Кінцеві кабельні пристрої',
+                name_2:'Розподільча шафа',
+                id_1:'7dccd565-1253-4fc0-a62c-d8a588ed0b83',
+                id_2:'451bbfff-57d1-44d6-8812-6ed52ada92d8'
+            }
+        ]
     }
 }
 
+
+// function insert(a){
+//     return a.res[Math.floor(Math.random()*a.work.length)]
+
+// }
+// console.log(insert(globalSettings.tsiFfm))
 
 class Model{
     constructor(){
@@ -165,7 +212,6 @@ class Model{
         for (let i = activityarr.length - 1 ; i >= 0; i--) {
             console.log(activityarr[i].Id);
             if(activityarr[i].StatusId == '384d4b84-58e6-df11-971b-001d60e938c6'){
-                console.log("created > accepted")
                 return {
                     activity:{
                         Id:activityarr[i].Id,
@@ -184,7 +230,11 @@ class Model{
                         TsiActivityStatusId: '394d4b84-58e6-df11-971b-001d60e938c6',
                         TsiActivityId:activityarr[i].Id,
                         TsiDateCreatedOn: new Date()   
+                    },
+                    metadata:{
+                        action:'Подтверждена'
                     }
+
                 }
 
 
@@ -193,14 +243,12 @@ class Model{
                 let actDate = (Number(activityarr[i].ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
                 let nowDate = Date.parse(new Date())
                 if (nowDate - actDate > profile.intervals.aTob * 60 * 1000){
-                    console.log("Accepted > in")
                     return {
                         activity:{
                             Id:activityarr[i].Id,
                             StatusId:'9dea4d63-6beb-4211-abd9-db4c90eb6496',
                             ModifiedOn: new Date(),
                             TsiCommonStatusId:'9dea4d63-6beb-4211-abd9-db4c90eb6496'
-                            // TsiRespondedOn: new Date()
                         },
                         tsiVisit:{
                             Id:Math.random().toString(36).substring(2, 10)
@@ -212,6 +260,9 @@ class Model{
                             TsiActivityStatusId: '9dea4d63-6beb-4211-abd9-db4c90eb6496',
                             TsiActivityId:activityarr[i].Id,
                             TsiDateCreatedOn: new Date()   
+                        },
+                        metadata:{
+                            action:'В Пути'
                         }
                     }
                 }
@@ -223,14 +274,12 @@ class Model{
                 let actDate = (Number(activityarr[i].ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
                 let nowDate = Date.parse(new Date())
                 if (nowDate - actDate > profile.intervals.bToc * 60 * 1000){
-                    console.log("in > on")
                     return {
                         activity:{
                             Id:activityarr[i].Id,
                             StatusId:'7fa82408-d9f1-41d6-a56d-ce3746701a46',
                             ModifiedOn: new Date(),
                             TsiCommonStatusId:'7fa82408-d9f1-41d6-a56d-ce3746701a46'
-                            // TsiRespondedOn: new Date()
                         },
                         tsiVisit:{
                             Id:Math.random().toString(36).substring(2, 10)
@@ -242,29 +291,32 @@ class Model{
                             TsiActivityStatusId: '7fa82408-d9f1-41d6-a56d-ce3746701a46',
                             TsiActivityId:activityarr[i].Id,
                             TsiDateCreatedOn: new Date()   
+                        },
+                        metadata:{
+                            action:'На обьекте'
                         }
                     }
                 }
-                console.log('in to on time left: ' +  (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))));
                 return ('in to on time left: ' +  (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))));
-               
             }
             if(activityarr[i].StatusId == '7fa82408-d9f1-41d6-a56d-ce3746701a46'){
                 let actDate = (Number(activityarr[i].ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
                 let nowDate = Date.parse(new Date())
                 if (nowDate - actDate > profile.intervals.cTod * 60 * 1000){
-                    console.log("in > on")
+                    let getRandomRes = profile.tsiFfm.res[Math.floor(Math.random()*profile.tsiFfm.res.length)]
+                    let getRandomWork = profile.tsiFfm.work[Math.floor(Math.random()*profile.tsiFfm.work.length)]
+                    console.log(getRandomRes);
+                    console.log(getRandomWork);
                     return {
                         activity:{
                             Id:activityarr[i].Id,
                             StatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
                             ModifiedOn: new Date(),
                             TsiCommonStatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
-                            TsiFFMWorkCategoryId:"b4c2fbe0-6d41-46c8-a099-6c7aa37be832",
-                            TsiFFMWorkCategoryL2Id:"17671ab7-8136-4cbc-82ac-b79ffe800b69",
-                            TsiFFMResCategoryId:"3c1a67ac-5d0c-4fe0-afc2-cac4a2c21cdd",
-                            TsiFFMResCategoryL2Id:"cef712e1-20a7-49fc-98ef-6a2102fdf355",
-                            // TsiRespondedOn: new Date(),
+                            TsiFFMWorkCategoryId:getRandomWork.id_1,
+                            TsiFFMWorkCategoryL2Id:getRandomWork.id_2,
+                            TsiFFMResCategoryId:getRandomRes.id_1,
+                            TsiFFMResCategoryL2Id:getRandomRes.id_2
 
                         },
                         tsiVisit:{
@@ -277,12 +329,17 @@ class Model{
                             TsiActivityStatusId: '4bdbb88f-58e6-df11-971b-001d60e938c6',
                             TsiActivityId:activityarr[i].Id,
                             TsiDateCreatedOn: new Date()   
+                        },
+                        metadata:{
+                            action:'Выполнена',
+                            TsiFFMWorkCategoryId:getRandomWork.name_1,
+                            TsiFFMWorkCategoryL2Id:getRandomWork.name_2,
+                            TsiFFMResCategoryId:getRandomRes.name_1,
+                            TsiFFMResCategoryL2Id:getRandomRes.name_2
                         }
                     }
                 }
-                console.log('on to close time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));
-                return ('on to close time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));
-               
+                return ('on to close time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));  
             }
         }
         return 'Nothnt to process';
@@ -307,22 +364,6 @@ class Profile{
     }
 
 }
-
-console.log(new Date(1565708289905))
-console.log(new Date(1565684632696))
-jsonDate = "/Date(1565684632696)/"
-var date = eval(jsonDate.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"));
-console.log(new Date(1565724084181))
-console.log(new Date(1565724084181))
-
-console.log((new Date(1565684632696)) < (new Date(1565708289905)))
-
-
-
-// model.loadActivityData('vkomelkov').then(a => {
-//     l(model.getitem('vkomelkov').showdata());
-// }).catch(a => l("error " + a));
-
 
 
 module.exports = {

@@ -18,8 +18,8 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 200,
+    height: 100,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -29,7 +29,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -40,6 +40,7 @@ function createWindow () {
   })
   console.log('window run');
   setTimeout(dothat,5000);
+  // setInterval(dothat,30000);
 }
 
 // This method will be called when Electron has finished
