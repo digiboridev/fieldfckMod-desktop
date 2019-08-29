@@ -345,6 +345,11 @@ class Model{
         return 'Nothnt to process';
         // profile.data.activity
     }
+    sendActivity(data){
+        return new Promise(function(resolve,reject){
+            
+        })
+    }
 }
 
 const model = new Model();
