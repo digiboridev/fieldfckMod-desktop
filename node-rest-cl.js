@@ -51,7 +51,7 @@ client.post("https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login", log
     // var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityStatusCollection?$filter=Name" + 
     // encodeURIComponent(" eq 'Выполнена'");
 
-    var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiResCategoryCollection"
+    var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiResourceTypeTTCollection"
 
 
     client.get(lnk,reqArgs, function (a, b){
@@ -59,7 +59,7 @@ client.post("https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login", log
         var answer = JSON.parse(a);
         console.log(answer);
         // process.stdout.write(a);
-        let readableData = JSON.stringify(answer.d.results).replace(/(,")/g, ',\n"');
+        let readableData = JSON.stringify(answer.d).replace(/(,")/g, ',\n"');
         fs.writeFile('data.json', readableData , function (err) {
             if (err) throw err;
             console.log('Saved!');
