@@ -1,6 +1,6 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
-
+var fs = require('fs')
 // var client = require('node-rest-client-promise').Client();
 
 var Model = require('./model').Model;
@@ -73,10 +73,10 @@ model.additem(
             cTod:5
         },
         gpsPattern:[
-            {long:42.123123,lat:34.321321},
-            {long:44.123123,lat:36.321321},
-            {long:45.123123,lat:31.321321},
-            {long:46.123123,lat:37.321321}
+            {long:42.123121,lat:34.321321},
+            {long:44.123122,lat:36.321322},
+            {long:45.123123,lat:31.321323},
+            {long:46.123124,lat:37.321324}
         ]})
 )
 model.additem(
@@ -91,17 +91,34 @@ model.additem(
 //     l(model.getitem('vkomelkov').showdata());
 // }).catch(a => l("error " + a));
 function dothat(){
-  model.loadActivityData('vkomelkov')
-  .then(a => {
-    l(a)
-    l(model.getitem('vkomelkov').showdata())
-    return model.processActivityData('vkomelkov')
-  })
+  model.login('vkomelkov')
   .then((a) => {
     console.log(a)
-    // l(model.getitem('vkomelkov').showdata())
+    l(model.getitem('vkomelkov').showdata())
+    return a;
   })
-  .catch(a => l("error " + a));
+  .then(a => {
+    return model.loadActivityData('vkomelkov')
+  })
+  .then(a => {
+    l(a);
+    return model.processActivityData('vkomelkov')
+  })
+  .then(a => {
+    l(a)
+    return model.changeActivityState(a)
+  })
+  .then(a => {
+    l(a)
+    // return model.updateLocation('vkomelkov')
+  })
+  .catch(a => {
+    l("error " + a);
+    fs.writeFile('error.json', a , function (err) {
+      if (err) throw err;
+      console.log('Saved!');
+    });
+  });
 }
 // dothat();
 

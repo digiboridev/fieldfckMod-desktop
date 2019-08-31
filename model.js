@@ -153,57 +153,42 @@ class Model{
         const index = this.arr.findIndex(item => item.key == key);
         this.arr.splice(index, 1)
     }
-    loadActivityData(key){
+    login(key){
         const profile = this.arr.find(item => item.key === key);
-
         return new Promise(function(resolve,reject){
             client.postPromise(
                 globalSettings.url + "/ServiceModel/AuthService.svc/Login",
                 {
                     data: JSON.stringify({UserName:profile.login,UserPassword:profile.password}),
-                    headers: { "Content-Type": "application/json" },
-                    requestConfig: {
-                        timeout: 30000, //request timeout in milliseconds
-                        noDelay: true, //Enable/disable the Nagle algorithm
-                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
-                        keepAliveDelay: 1000 //and optionally set the initial delay before the first keepalive probe is sent
-                    },
-                        responseConfig: {
-                        timeout: 1000 //response timeout
-                    }
+                    headers: { "Content-Type": "application/json" }
                 }
             )
             .then(a => {
-                // resolve(a.data)
                 if(a.data.Code !== 0){
                     reject(a.data.Message)
                     throw '0'
                 }
-                // profile.data = a.data;
-                let cookie = a.response.headers['set-cookie'];
-                return a;
-                
-            })
-            .then(a => {
                 let cookie = a.response.headers['set-cookie'];
                 let csrftoken =  cookie[3].slice(8,-8);
                 l(cookie);
                 l(csrftoken);
-                let getargs = {
-                    headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken },
-                    requestConfig: {
-                        timeout: 30000, //request timeout in milliseconds
-                        noDelay: true, //Enable/disable the Nagle algorithm
-                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
-                        keepAliveDelay: 1000 //and optionally set the initial delay before the first keepalive probe is sent
-                    },
-                        responseConfig: {
-                        timeout: 1000 //response timeout
-                    }
-                }
-                return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=6"
-                //  + "&$select=Title,StatusId,OwnerId,CreatedOn,Id,ModifiedOn,TsiSymptoms,TsiFFMWorkCategoryId,TsiFFMWorkCategoryL2Id,TsiFFMResCategoryId,TsiFFMResCategoryL2Id,TsiSymptoms,TsiDescription"
-                 ,getargs)
+                profile.data.cookie = cookie;
+                profile.data.bpmcsrf = csrftoken;
+                resolve('authentifycado');
+                
+            })
+            .catch(a => {
+                reject (a);
+            })
+        })
+    }
+    loadActivityData(key){
+        const profile = this.arr.find(item => item.key === key);
+
+        return new Promise(function(resolve,reject){
+            client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=6" + "&$select=Title,StatusId,OwnerId,CreatedOn,Id,ModifiedOn,TsiSymptoms,TsiFFMWorkCategoryId,TsiFFMWorkCategoryL2Id,TsiFFMResCategoryId,TsiFFMResCategoryL2Id,TsiSymptoms,TsiDescription",
+            {
+                headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": profile.data.cookie ,  "BPMCSRF": profile.data.bpmcsrf }
             })
             .then(a => {
                 let answer = JSON.parse(a.data)
@@ -220,8 +205,6 @@ class Model{
                 resolve ('Data downloaded');
             })
             .catch(a => reject(a));            
-
-
         })
     }
     processActivityData(key){
@@ -239,9 +222,9 @@ class Model{
                         TsiRespondedOn: new Date()
                     },
                     tsiVisit:{
-                        Id:Math.random().toString(36).substring(2, 10)
+                        Id:Math.random().toString(12).substring(2, 10)
                          + "-2ab0-476d-8cf1-" 
-                         + Math.random().toString(36).substring(2, 14),
+                         + Math.random().toString(12).substring(2, 14),
                         CreatedOn: new Date(),
                         ModifiedOn: new Date(),
                         ProcessListeners: 0,
@@ -269,9 +252,9 @@ class Model{
                             TsiCommonStatusId:'9dea4d63-6beb-4211-abd9-db4c90eb6496'
                         },
                         tsiVisit:{
-                            Id:Math.random().toString(36).substring(2, 10)
+                            Id:Math.random().toString(12).substring(2, 10)
                              + "-2ab0-476d-8cf1-" 
-                             + Math.random().toString(36).substring(2, 14),
+                             + Math.random().toString(12).substring(2, 14),
                             CreatedOn: new Date(),
                             ModifiedOn: new Date(),
                             ProcessListeners: 0,
@@ -300,9 +283,9 @@ class Model{
                             TsiCommonStatusId:'7fa82408-d9f1-41d6-a56d-ce3746701a46'
                         },
                         tsiVisit:{
-                            Id:Math.random().toString(36).substring(2, 10)
+                            Id:Math.random().toString(12).substring(2, 10)
                              + "-2ab0-476d-8cf1-" 
-                             + Math.random().toString(36).substring(2, 14),
+                             + Math.random().toString(12).substring(2, 14),
                             CreatedOn: new Date(),
                             ModifiedOn: new Date(),
                             ProcessListeners: 0,
@@ -338,9 +321,9 @@ class Model{
 
                         },
                         tsiVisit:{
-                            Id:Math.random().toString(36).substring(2, 10)
+                            Id:Math.random().toString(12).substring(2, 10)
                              + "-2ab0-476d-8cf1-" 
-                             + Math.random().toString(36).substring(2, 14),
+                             + Math.random().toString(12).substring(2, 14),
                             CreatedOn: new Date(),
                             ModifiedOn: new Date(),
                             ProcessListeners: 0,
@@ -349,6 +332,8 @@ class Model{
                             TsiDateCreatedOn: new Date()   
                         },
                         metadata:{
+                            cookie:profile.data.cookie,
+                            csrftoken:profile.data.bpmcsrf,
                             action:'Выполнена',
                             TsiFFMWorkCategoryId:getRandomWork.name_1,
                             TsiFFMWorkCategoryL2Id:getRandomWork.name_2,
@@ -357,16 +342,117 @@ class Model{
                         }
                     }
                 }
+                
                 return ('on to close time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));  
+                
             }
         }
-        return 'Nothnt to process';
+        // return 'Nothnt to process';
+        let getRandomRes = profile.tsiFfm.res[Math.floor(Math.random()*profile.tsiFfm.res.length)]
+        let getRandomWork = profile.tsiFfm.work[Math.floor(Math.random()*profile.tsiFfm.work.length)]
+        return {
+            activity:{
+                Id:'582ec0d0-b519-48a8-8961-0aba3868d2e5',
+                Title:"Полёт на марс",
+                TsiSymptoms:"Cho-choo!",
+                TsiAddress:"Longer then my"
+
+            },
+            tsiVisit:{
+                Id:Math.random().toString(12).substring(2, 10)
+                 + "-2ab0-476d-8cf1-" 
+                 + Math.random().toString(12).substring(2, 14),
+                CreatedOn: new Date(),
+                ModifiedOn: new Date(),
+                ProcessListeners: 0,
+                TsiActivityStatusId: '9dea4d63-6beb-4211-abd9-db4c90eb6496',
+                TsiActivityId:'582ec0d0-b519-48a8-8961-0aba3868d2e5',
+                TsiDateCreatedOn: new Date()   
+            },
+            metadata:{
+                login:profile.login,
+                password:profile.password,
+                cookie:profile.data.cookie,
+                csrftoken:profile.data.bpmcsrf,
+                action:'Выполнена',
+                TsiFFMWorkCategoryId:getRandomWork.name_1,
+                TsiFFMWorkCategoryL2Id:getRandomWork.name_2,
+                TsiFFMResCategoryId:getRandomRes.name_1,
+                TsiFFMResCategoryL2Id:getRandomRes.name_2
+            }
+        }
         // profile.data.activity
     }
-    sendActivity(data){
+    sendTsiVisit(data){
         return new Promise(function(resolve,reject){
-
+            client.postPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/TsiVisitStatusHistoryCollection",
+            {
+                data: JSON.stringify(data.tsiVisit),
+                headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": data.metadata.cookie ,  "BPMCSRF": data.metadata.csrftoken }
+            })
+            .then(a => {
+                l(JSON.parse(a.data))
+                let answer = JSON.parse(a.data);
+                if(answer.d == undefined){
+                    reject(JSON.parse(a.data).error.message.value)
+                    throw '0'
+                }
+                resolve ('TsivisitAdded');
+            })
+            .catch(a => reject(a)); 
         })
+    }
+    changeActivityState(data){
+        return new Promise(function(resolve,reject){
+            let link = globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'" + data.activity.Id + "')";
+            l(link);
+            
+            client.putPromise(link,
+            {
+                data: JSON.stringify(data.activity),
+                headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": data.metadata.cookie ,  "BPMCSRF": data.metadata.csrftoken }
+            })
+            .then(a => {
+                l(JSON.parse(a.data))
+                let answer = JSON.parse(a.data);
+                if(answer.d == undefined){
+                    reject(JSON.parse(a.data).error.message.value)
+                    throw '0'
+                }
+                resolve ('Activity changed');
+            })
+            .catch(a => reject(a)); 
+        }) 
+    }
+    updateLocation(key,data){
+        const profile = this.arr.find(item => item.key === key);
+        let getRandomLocation = profile.gpsPattern[Math.floor(Math.random()*profile.gpsPattern.length)]
+        l(getRandomLocation);
+        return new Promise(function(resolve,reject){
+            client.postPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/LocationHistoryCollection",
+            {
+                data: JSON.stringify({
+                    Date:new Date(),
+                    Id:Math.random().toString(12).substring(2, 10)
+                     + "-65ff-4033-8f1b-" 
+                     + Math.random().toString(12).substring(2, 14),
+                    Longitude:"Lorem ipsum",
+                    Latitude:"dolor sit amet"
+                }),
+                headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": profile.data.cookie ,  "BPMCSRF": profile.data.bpmcsrf }
+            })
+            .then(a => {
+                l(JSON.parse(a.data))
+                let answer = JSON.parse(a.data);
+                if(answer.d == undefined){
+                    reject(JSON.parse(a.data).error.message.value)
+                    throw '0'
+                }
+                resolve ('Location added');
+            })
+            .catch(a => reject(a));
+        })
+
     }
 }
 
@@ -392,3 +478,4 @@ module.exports = {
     Model,
     Profile
 };
+
