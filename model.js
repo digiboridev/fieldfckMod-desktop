@@ -10,6 +10,10 @@ function l(a){
 l('model run')
 
 
+
+//  Variables
+
+
 const globalSettings = {
     url:"https://ffm.ukrtelecom.net",
     intervals:{
@@ -122,18 +126,15 @@ const globalSettings = {
 }
 
 
-// function insert(a){
-//     return a.res[Math.floor(Math.random()*a.work.length)]
+// Model
 
-// }
-// console.log(insert(globalSettings.tsiFfm))
 
 class Model{
     constructor(){
         this.arr = [];
     }
     additem(data){
-        this.arr.push(data)
+        this.arr.push(new Profile(data))
     }
     getarr(){
         return this.arr;
@@ -152,6 +153,51 @@ class Model{
     removeitem(key){
         const index = this.arr.findIndex(item => item.key == key);
         this.arr.splice(index, 1)
+    }
+    checkAuthData(login,password){
+        return new Promise(function(resolve,reject){
+            client.postPromise(globalSettings.url + "/ServiceModel/AuthService.svc/Login",
+            {
+                data: JSON.stringify({UserName:login,UserPassword:password}),
+                headers: { "Content-Type": "application/json" }
+            })
+            .then(a => {
+                if(a.data.Code !== 0){
+                    reject(a.data.Message)
+                    throw '0'
+                }
+                let cookie = a.response.headers['set-cookie'];
+                let csrftoken =  cookie[3].slice(8,-8);
+                l(cookie);
+                l(csrftoken);
+                return client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ContactCollection?$filter=TsiLogin%20eq%20'" + login + "'&$select=Id,Name,JobTitle,MobilePhone,HomePhone,TsiContactPhone,Email",{
+                    headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken }
+                })
+            })
+            .then(a => {
+                let answer = JSON.parse(a.data)
+                if(answer.d == undefined){
+                    reject(JSON.parse(a.data).error.message.value)
+                    throw '0'
+                }
+                let newProfile = {
+                    login,
+                    password,
+                    id:answer.d.results[0].Id,
+                    name:answer.d.results[0].Name,
+                    job:answer.d.results[0].JobTitle,
+                    email:answer.d.results[0].Email,
+                    mobile:answer.d.results[0].TsiContactPhone
+                }
+                // let readableData = JSON.stringify(answer.d.results).replace(/(,")/g, ',\n"');
+                // fs.writeFile('data.json', readableData , function (err) {
+                //     if (err) throw err;
+                //     console.log('Saved!');
+                // });
+                resolve (newProfile);
+            })
+            .catch(a => reject(a))
+        })
     }
     login(key){
         const profile = this.arr.find(item => item.key === key);
@@ -456,12 +502,18 @@ class Model{
     }
 }
 
-const model = new Model();
+
+// Profile class
 
 class Profile{
     constructor(data){
         this.key = data.login;
         this.login = data.login;
+        this.id = data.id;
+        this.name = data.name;
+        this.job = data.job;
+        this.email = data.email;
+        this.mobile = data.mobile;
         this.password = data.password;
         this.intervals = (data.intervals !== undefined ? data.intervals : globalSettings.intervals);
         this.gpsPattern = (data.gpsPattern !== undefined ? data.gpsPattern : globalSettings.gpsPattern);

@@ -51,7 +51,9 @@ client.post("https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login", log
     // var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityStatusCollection?$filter=Name" + 
     // encodeURIComponent(" eq 'Выполнена'");
 
-    var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiResourceTypeTTCollection"
+    // var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiResourceTypeTTCollection"
+
+    var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ContactCollection?$filter=TsiLogin%20eq%20'vkomelkov'";
 
 
     client.get(lnk,reqArgs, function (a, b){
