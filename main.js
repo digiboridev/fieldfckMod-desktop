@@ -71,7 +71,10 @@ model.additem({
             cTod:5
         },
         gpsPattern:[
-            {lat:50.750528,long:26.043798}
+			{lat:50.750528,long:26.043798},
+			{lat:59.186108,long:39.310144},
+			{lat:-1.602745,long:12.303092},
+			{lat:56.756258,long:60.428263}
         ]}
 )
 
@@ -96,15 +99,17 @@ function processingProfile(key,index){
     	.then(a => {
     	  	l(a)
     	  	if(a == "Nothnt"){
-    	  	  	resolve('Nothn\'t to process');
+				resolve('Nothn\'t to process');
+				throw "olgud"	
     	  	} else if (a == 'w8'){
-    	  	  	resolve('Wait fo next step');
+				resolve('Wait fo next step');
+				throw "olgud"	
     	  	} else {
 				return model.changeActivityState(a)
     	  	}
 		})
 		.then(a => {
-			// return model.sendTsiVisit(a)
+			return model.sendTsiVisit(a)
 		})
 		.then(a => {
 			return model.updateLocation(key)
@@ -114,6 +119,10 @@ function processingProfile(key,index){
     	  	resolve('All done for: ' + key)
     	})
     	.catch(a => {
+			if(a == 'olgud'){
+				l('accepted olgud')
+				return
+			}
     	  	l("error " + a);
     	  	fs.writeFile('error.json', a , function (err) {
     	  	  	if (err) throw err;
