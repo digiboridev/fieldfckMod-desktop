@@ -71,26 +71,8 @@ model.additem({
             cTod:5
         },
         gpsPattern:[
-            {long:42.123121,lat:34.321321},
-            {long:44.123122,lat:36.321322},
-            {long:45.123123,lat:31.321323},
-            {long:46.123124,lat:37.321324}
+            {lat:50.750528,long:26.043798}
         ]}
-)
-model.additem({
-      login:'vvitriv',
-      password:"Qwer1111",
-      intervals:{
-          aTob:5,
-          bToc:5,
-          cTod:5
-      },
-      gpsPattern:[
-          {long:42.123121,lat:34.321321},
-          {long:44.123122,lat:36.321322},
-          {long:45.123123,lat:31.321323},
-          {long:46.123124,lat:37.321324}
-      ]}
 )
 
 
@@ -99,43 +81,53 @@ model.additem({
 //     l(model.getitem('vkomelkov').showdata());
 // }).catch(a => l("error " + a));
 
-
 function processingProfile(key,index){
-  return new Promise(function(resolve,reject){
-    index == undefined ? index = 1 : {};
-
-    model.login(key)
-    .then((a) => {
-      l(a)
-      return model.loadActivityData(key)
-    })
-    .then(a => {
-      l(a)
-      return model.processActivityData(key)
-    })
-    .then(a => {
-      // l(a)
-      // return model.checkAuthData('vvitriv','Qwer1111')
-    })
-    .then(a => {
-      // l(a)
-      resolve('All done for: ' + key)
-    })
-    .catch(a => {
-      l("error " + a);
-      fs.writeFile('error.json', a , function (err) {
-        if (err) throw err;
-        console.log('Saved!');
-      });
-      if(index >= 3){
-        reject(a)
-      } else {
-        resolve(processingProfile(key,++index))
-      }
-    });
-  })
+  	return new Promise(function(resolve,reject){
+    	index == undefined ? index = 1 : {};
+    	model.login(key)
+    	.then((a) => {
+    	  	l(a)
+    	  	return model.loadActivityData(key)
+    	})
+    	.then(a => {
+    	  	l(a)
+    	  	return model.processActivityData(key)
+    	})
+    	.then(a => {
+    	  	l(a)
+    	  	if(a == "Nothnt"){
+    	  	  	resolve('Nothn\'t to process');
+    	  	} else if (a == 'w8'){
+    	  	  	resolve('Wait fo next step');
+    	  	} else {
+				return model.changeActivityState(a)
+    	  	}
+		})
+		.then(a => {
+			// return model.sendTsiVisit(a)
+		})
+		.then(a => {
+			return model.updateLocation(key)
+		})
+    	.then(a => {
+    	  	l(a)
+    	  	resolve('All done for: ' + key)
+    	})
+    	.catch(a => {
+    	  	l("error " + a);
+    	  	fs.writeFile('error.json', a , function (err) {
+    	  	  	if (err) throw err;
+    	  	  	console.log('Saved!');
+    	  	});
+    	  	if(index >= 3){
+    	  	  	reject(a)
+    	  	} else {
+    	  	  	resolve(processingProfile(key,++index))
+    	  	}
+    	});
+  	})
 }
-processingProfile('vvitriv').then(a=>{l(a)}).catch(a => {l('error ' + a)})
+// processingProfile('vvitriv').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 processingProfile('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 
 const controller = {

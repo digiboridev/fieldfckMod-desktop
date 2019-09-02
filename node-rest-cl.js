@@ -5,6 +5,11 @@ l('run')
 
 var fs = require('fs');
 
+fs.readFile('TsiResourceTypeTTCollection.json',function(err,data){
+    let arr = JSON.parse(data);
+    console.log(arr[2])     
+})
+
 var Client = require('node-rest-client').Client;
 
 var client = new Client();
@@ -51,9 +56,12 @@ client.post("https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login", log
     // var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityStatusCollection?$filter=Name" + 
     // encodeURIComponent(" eq 'Выполнена'");
 
-    // var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiResourceTypeTTCollection"
+    var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityStatusCollection";
+    
 
-    var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ContactCollection?$filter=TsiLogin%20eq%20'vkomelkov'";
+    // var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiResponsibilityAreaCollection?$top=400&$select=Id,Name"
+
+    // var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ContactCollection?$filter=TsiLogin%20eq%20'vkomelkov'";
 
 
     client.get(lnk,reqArgs, function (a, b){
