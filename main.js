@@ -1,10 +1,9 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
-
+var fs = require('fs')
 // var client = require('node-rest-client-promise').Client();
 
 var Model = require('./model').Model;
-var Profile = require('./model').Profile;
 
 function l(a){
     console.log(a)
@@ -39,7 +38,7 @@ function createWindow () {
     mainWindow = null
   })
   console.log('window run');
-  setTimeout(dothat,5000);
+  // setTimeout(dothat,5000);
   // setInterval(dothat,30000);
 }
 
@@ -63,8 +62,7 @@ app.on('activate', function () {
 
 const model = new Model();
 
-model.additem(
-    new Profile({
+model.additem({
         login:'vkomelkov',
         password:"Qwer1111",
         intervals:{
@@ -73,37 +71,101 @@ model.additem(
             cTod:5
         },
         gpsPattern:[
-            {long:42.123123,lat:34.321321},
-            {long:44.123123,lat:36.321321},
-            {long:45.123123,lat:31.321321},
-            {long:46.123123,lat:37.321321}
-        ]})
+			{lat:50.750528,long:26.043798},
+			{lat:59.186108,long:39.310144},
+			{lat:-1.602745,long:12.303092},
+			{lat:56.756258,long:60.428263}
+        ]}
 )
-model.additem(
-    new Profile({
-        login:'fghh',
-        password:"123"
-    })
-)
+
 
 // console.log(model.getarr());
 // model.loadActivityData('vkomelkov').then(a => {
 //     l(model.getitem('vkomelkov').showdata());
 // }).catch(a => l("error " + a));
-function dothat(){
-  model.loadActivityData('vkomelkov')
-  .then(a => {
-    l(a)
-    l(model.getitem('vkomelkov').showdata())
-    return model.processActivityData('vkomelkov')
-  })
-  .then((a) => {
-    console.log(a)
-    // l(model.getitem('vkomelkov').showdata())
-  })
-  .catch(a => l("error " + a));
+
+function processingProfile(key,index){
+  	return new Promise(function(resolve,reject){
+    	index == undefined ? index = 1 : {};
+    	model.login(key)
+    	.then((a) => {
+    	  	l(a)
+    	  	return model.loadActivityData(key)
+    	})
+    	.then(a => {
+    	  	l(a)
+    	  	return model.processActivityData(key)
+    	})
+    	.then(a => {
+    	  	l(a)
+    	  	if(a == "Nothnt"){
+				resolve('Nothn\'t to process');
+				throw "olgud"	
+    	  	} else if (a == 'w8'){
+				resolve('Wait fo next step');
+				throw "olgud"	
+    	  	} else {
+				return model.changeActivityState(a)
+    	  	}
+		})
+		.then(a => {
+			return model.sendTsiVisit(a)
+		})
+		.then(a => {
+			return model.updateLocation(key)
+		})
+    	.then(a => {
+    	  	l(a)
+    	  	resolve('All done for: ' + key)
+    	})
+    	.catch(a => {
+			if(a == 'olgud'){
+				l('accepted olgud')
+				return
+			}
+    	  	l("error " + a);
+    	  	fs.writeFile('error.json', a , function (err) {
+    	  	  	if (err) throw err;
+    	  	  	console.log('Saved!');
+    	  	});
+    	  	if(index >= 3){
+    	  	  	reject(a)
+    	  	} else {
+    	  	  	resolve(processingProfile(key,++index))
+    	  	}
+    	});
+  	})
 }
-// dothat();
+// processingProfile('vvitriv').then(a=>{l(a)}).catch(a => {l('error ' + a)})
+processingProfile('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 
-// setInterval(dothat,5000)
+const controller = {
+  
+}
 
+
+
+// function promtst(me,index){
+//   return new Promise(function(rs,rj){
+//       index == undefined ? index = 1 : {};
+//       new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//           reject('time')
+//         },2000)
+//       })
+//       .then(a => {
+//         rs (a)
+//       })
+//       .catch(a => {
+//         if(index > 3){
+//           rj(a)
+//         } else {
+//           rs(promtst(me,++index))
+//         }
+//       })
+      
+//       console.log('iter ' + me)
+//   })
+// }
+
+// promtst('kiss-kiss').then(a=>{console.log(a)}).catch(a=>{console.log('error' + a)})
