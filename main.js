@@ -139,33 +139,23 @@ function processingProfile(key,index){
 // processingProfile('vvitriv').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 processingProfile('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 
-const controller = {
-  
+function controller(data){
+  console.log('is contriller there');
+  let that = 'its me again';
+
+
+  function retThat(){
+    return that
+  }
+
+  function some(){
+    return 'asd'
+  }
+
+  return {
+    retThat,
+    ads:some,
+
+  }
+
 }
-
-
-
-// function promtst(me,index){
-//   return new Promise(function(rs,rj){
-//       index == undefined ? index = 1 : {};
-//       new Promise(function(resolve,reject){
-//         setTimeout(()=>{
-//           reject('time')
-//         },2000)
-//       })
-//       .then(a => {
-//         rs (a)
-//       })
-//       .catch(a => {
-//         if(index > 3){
-//           rj(a)
-//         } else {
-//           rs(promtst(me,++index))
-//         }
-//       })
-      
-//       console.log('iter ' + me)
-//   })
-// }
-
-// promtst('kiss-kiss').then(a=>{console.log(a)}).catch(a=>{console.log('error' + a)})
