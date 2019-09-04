@@ -66,7 +66,7 @@ app.on('activate', function () {
 
 class Controller{
 	constructor (data) {
-		
+		this.data = {};
 	}
 	findUser(data){
 		model.checkAuthData(data.login,data.password)
@@ -81,6 +81,32 @@ class Controller{
 	}
 	deleteUser(key){
 		model.removeitem(key)
+	}
+	updateUser(key,index){
+		return new Promise(function(resolve,reject){
+		  index == undefined ? index = 1 : {};
+		  model.login(key)
+		  .then((a) => {
+				l(a)
+				return model.loadActivityData(key)
+		  })
+		  .then(a => {
+				l(a)
+				resolve('Update done for: ' + key)
+		  })
+		  .catch(a => {
+				l("error " + a);
+				fs.appendFile('error.json', '\n' + (new Date()).toLocaleTimeString() +  ' ' + key + ' ' + a , function (err) {
+					  if (err) throw err;
+					  console.log('Saved!');
+				});
+				if(index >= 3){
+					  reject(a)
+				} else {
+					  resolve(this.processUser(key,++index))
+				}
+		  });
+		}.bind(this))
 	}
 	processUser(key,index){
 		let data = {};
@@ -126,7 +152,7 @@ class Controller{
 				  return
 			  }
 				l("error " + a);
-				fs.writeFile('error.json', a , function (err) {
+				fs.appendFile('error.json', '\n' + (new Date()).toLocaleTimeString() +  ' ' + key + ' ' + a , function (err) {
 					  if (err) throw err;
 					  console.log('Saved!');
 				});
@@ -138,22 +164,65 @@ class Controller{
 		  });
 		}.bind(this))
 	}
-	loop(){
-		let arr = [one,two,three];
+	updateAll(){
+		let arr = model.getarr();
+		arr.reduce((p, c) => 
+		p.then(d => new Promise(resolve =>
+			
+			// setTimeout(function () {
+			// 	console.log(c.login);
+			// 	resolve();
+			// }, 1000)
+			this.updateUser(c.login)
+			.then(a =>{
+				resolve()
+				l('tru loopped')
+			})
+			.catch(a => {
+				resolve()
+				l('no tru loopped')
+			})
 
+			
+		)), Promise.resolve());
+	}
+	processAll(){
+		let arr = model.getarr();
+		arr.reduce((p, c) => 
+		p.then(d => new Promise(resolve =>
+			
+			// setTimeout(function () {
+			// 	console.log(c.login);
+			// 	resolve();
+			// }, 1000)
+			this.processUser(c.login)
+			.then(a =>{
+				resolve()
+				l('tru loopped')
+			})
+			.catch(a => {
+				resolve()
+				l('no tru loopped')
+			})
+
+			
+		)), Promise.resolve());
+	}
+	loopStart(minutes){
+		if(this.data.started == true){
+			return
+		}
+		this.data.started = true;
+		this.data.timer = setInterval(()=>{controller.processAll()},minutes * 60 * 1000)	
+	}
+	loopStop(){
+		this.data.started = false;
+		clearInterval(this.data.timer)
 	}
 }
 
-[2,4,5,3,24,2].reduce( (p, c) => 
-	p.then(d => new Promise(resolve =>
-		
-        setTimeout(function () {
-			console.log(c);
-            resolve();
-		}, 1000)
-		
-    ))
-, Promise.resolve() );
+
+
 
 
 const model = new Model();
@@ -176,6 +245,22 @@ controller.addUser({
 	]}
 )
 
+controller.addUser({
+	login:'vvitriv',
+	password:"Qwer1111",
+	intervals:{
+		aTob:30,
+		bToc:30,
+		cTod:30
+	},
+	gpsPattern:[
+		{lat:48.4656021,long:37.0798415},
+		{lat:48.4655755,long:37.0796653},
+		{lat:48.4655381,long:37.0797163},
+		{lat:48.4655255,long:37.0797871}
+	]}
+)
 
-
-controller.processUser('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
+// controller.processUser('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
+controller.updateAll()
+controller.loopStart(5)
