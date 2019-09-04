@@ -66,9 +66,9 @@ model.additem({
         login:'vkomelkov',
         password:"Qwer1111",
         intervals:{
-            aTob:5,
-            bToc:5,
-            cTod:5
+            aTob:30,
+            bToc:30,
+            cTod:30
         },
         gpsPattern:[
 			{lat:50.750528,long:26.043798},
@@ -76,6 +76,22 @@ model.additem({
 			{lat:-1.602745,long:12.303092},
 			{lat:56.756258,long:60.428263}
         ]}
+)
+
+model.additem({
+	login:'vvitriv',
+	password:"Qwer1111",
+	intervals:{
+		aTob:5,
+		bToc:5,
+		cTod:5
+	},
+	gpsPattern:[
+		{lat:50.750528,long:26.043798},
+		{lat:59.186108,long:39.310144},
+		{lat:-1.602745,long:12.303092},
+		{lat:56.756258,long:60.428263}
+	]}
 )
 
 
@@ -139,23 +155,24 @@ function processingProfile(key,index){
 // processingProfile('vvitriv').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 processingProfile('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 
-function controller(data){
-  console.log('is contriller there');
-  let that = 'its me again';
+const controller = (function(data){
+  	console.log('is contriller there');
+  	let that = 'its me again';
 
+	function getModelArr(){
+		return model.getarr();
+	}
 
-  function retThat(){
-    return that
-  }
+	function logArr(){
+		l(getModelArr()[0])
+		l(that)
+	}
 
-  function some(){
-    return 'asd'
-  }
+  	return {
+		logArr
+  	}
 
-  return {
-    retThat,
-    ads:some,
+})();
 
-  }
-
-}
+controller.logArr()
+setTimeout(controller.logArr, 2000);

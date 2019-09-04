@@ -274,7 +274,7 @@ class Model{
                         }
                     }
                 }
-                l('Acc to in time left: ' +  ((profile.intervals.aTob * 60 * 1000) - (nowDate - actDate)));
+                l('Acc to in time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));
                 return ('w8');
                
             }
