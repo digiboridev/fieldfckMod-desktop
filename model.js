@@ -22,7 +22,10 @@ const globalSettings = {
         cTod:30
     },
     gpsPattern:[
-        {lat:'50.750528',long:'26.043798'}
+        {lat:50.7505280,long:26.0437980},
+        {lat:59.1861080,long:39.3101440},
+        {lat:-1.6027450,long:12.3030920},
+        {lat:56.7562580,long:60.4282630}
     ],
     tsiFfm:{
         work:[
@@ -327,7 +330,7 @@ class Model{
                             TsiCommonStatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
                             TsiTaskCategoryId:"826d6e5a-94aa-41ea-8634-638b52d7149e",
                             TsiResponsibilityAreaId:"4af25e7d-c713-4178-8434-9277060b9d9c",
-                            TsiResCategoryId:"8e08a5fe-daf9-9efe-e055-7f66120c13ae"
+                            TsiResCategoryId:"8e08a5fe-dbb9-9efe-e055-7f66120c13ae"
 
                         },
                         tsiVisit:{
@@ -392,14 +395,14 @@ class Model{
                     reject(JSON.parse(a.data).error.message.value)
                     throw '0'
                 }
-                resolve (data);
+                resolve ('Activity changed');
             })
             .catch(a => reject(a)); 
         }) 
     }
     updateLocation(key){
-        const profile = this.arr.find(item => item.key === key);
-        const getRandomLocation = profile.gpsPattern[Math.floor(Math.random()*profile.gpsPattern.length)]
+        const profile = this.getitem(key);
+        const getRandomLocation = profile.getgps();
         l(getRandomLocation);
         return new Promise(function(resolve,reject){
             client.postPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/LocationHistoryCollection",
@@ -448,7 +451,10 @@ class Profile{
         this.data = {};
     }
     showdata(){
-        return this.data
+        return this.data;
+    }
+    getgps(){
+        return this.gpsPattern[Math.floor(Math.random()*this.gpsPattern.length)];
     }
 }
 

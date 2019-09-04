@@ -4,6 +4,7 @@ var fs = require('fs')
 // var client = require('node-rest-client-promise').Client();
 
 var Model = require('./model').Model;
+var Profile = require('./model').Profile;
 
 function l(a){
     console.log(a)
@@ -71,28 +72,14 @@ model.additem({
             cTod:30
         },
         gpsPattern:[
-			{lat:50.750528,long:26.043798},
-			{lat:59.186108,long:39.310144},
-			{lat:-1.602745,long:12.303092},
-			{lat:56.756258,long:60.428263}
+			{lat:50.7505280,long:26.0437980},
+			{lat:59.1861080,long:39.3101440},
+			{lat:-1.6027450,long:12.3030920},
+			{lat:56.7562580,long:60.4282630}
         ]}
 )
 
-model.additem({
-	login:'vvitriv',
-	password:"Qwer1111",
-	intervals:{
-		aTob:5,
-		bToc:5,
-		cTod:5
-	},
-	gpsPattern:[
-		{lat:50.750528,long:26.043798},
-		{lat:59.186108,long:39.310144},
-		{lat:-1.602745,long:12.303092},
-		{lat:56.756258,long:60.428263}
-	]}
-)
+
 
 
 // console.log(model.getarr());
@@ -100,7 +87,9 @@ model.additem({
 //     l(model.getitem('vkomelkov').showdata());
 // }).catch(a => l("error " + a));
 
+
 function processingProfile(key,index){
+	let data = {};
   	return new Promise(function(resolve,reject){
     	index == undefined ? index = 1 : {};
     	model.login(key)
@@ -113,7 +102,8 @@ function processingProfile(key,index){
     	  	return model.processActivityData(key)
     	})
     	.then(a => {
-    	  	l(a)
+			data = a;
+    	  	l(data)
     	  	if(a == "Nothnt"){
 				resolve('Nothn\'t to process');
 				throw "olgud"	
@@ -121,13 +111,15 @@ function processingProfile(key,index){
 				resolve('Wait fo next step');
 				throw "olgud"	
     	  	} else {
-				return model.changeActivityState(a)
+				return model.changeActivityState(data)
     	  	}
 		})
 		.then(a => {
-			return model.sendTsiVisit(a)
+			l(a);
+			return model.sendTsiVisit(data)
 		})
 		.then(a => {
+			l(a)
 			return model.updateLocation(key)
 		})
     	.then(a => {
@@ -155,24 +147,3 @@ function processingProfile(key,index){
 // processingProfile('vvitriv').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 processingProfile('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 
-const controller = (function(data){
-  	console.log('is contriller there');
-  	let that = 'its me again';
-
-	function getModelArr(){
-		return model.getarr();
-	}
-
-	function logArr(){
-		l(getModelArr()[0])
-		l(that)
-	}
-
-  	return {
-		logArr
-  	}
-
-})();
-
-controller.logArr()
-setTimeout(controller.logArr, 2000);
