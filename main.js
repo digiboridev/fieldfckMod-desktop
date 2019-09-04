@@ -61,89 +61,121 @@ app.on('activate', function () {
   if (mainWindow === null) createWindow()
 })
 
-const model = new Model();
 
-model.additem({
-        login:'vkomelkov',
-        password:"Qwer1111",
-        intervals:{
-            aTob:30,
-            bToc:30,
-            cTod:30
-        },
-        gpsPattern:[
-			{lat:50.7505280,long:26.0437980},
-			{lat:59.1861080,long:39.3101440},
-			{lat:-1.6027450,long:12.3030920},
-			{lat:56.7562580,long:60.4282630}
-        ]}
+
+
+class Controller{
+	constructor (data) {
+		
+	}
+	findUser(data){
+		model.checkAuthData(data.login,data.password)
+		.then(a => {
+			// send data
+		}).catch(a => {
+			// send retry or check  correct
+		})
+	}
+	addUser(data){
+		model.additem(data);
+	}
+	deleteUser(key){
+		model.removeitem(key)
+	}
+	processUser(key,index){
+		let data = {};
+		return new Promise(function(resolve,reject){
+		  index == undefined ? index = 1 : {};
+		  model.login(key)
+		  .then((a) => {
+				l(a)
+				return model.loadActivityData(key)
+		  })
+		  .then(a => {
+				l(a)
+				return model.processActivityData(key)
+		  })
+		  .then(a => {
+			  data = a;
+				l(data)
+				if(a == "Nothnt"){
+				  resolve('Nothn\'t to process');
+				  throw "olgud"	
+				} else if (a == 'w8'){
+				  resolve('Wait fo next step');
+				  throw "olgud"	
+				} else {
+				  return model.changeActivityState(data)
+				}
+		  })
+		  .then(a => {
+			  l(a);
+			  return model.sendTsiVisit(data)
+		  })
+		  .then(a => {
+			  l(a)
+			  return model.updateLocation(key)
+		  })
+		  .then(a => {
+				l(a)
+				resolve('All done for: ' + key)
+		  })
+		  .catch(a => {
+			  if(a == 'olgud'){
+				  l('accepted olgud')
+				  return
+			  }
+				l("error " + a);
+				fs.writeFile('error.json', a , function (err) {
+					  if (err) throw err;
+					  console.log('Saved!');
+				});
+				if(index >= 3){
+					  reject(a)
+				} else {
+					  resolve(this.processUser(key,++index))
+				}
+		  });
+		}.bind(this))
+	}
+	loop(){
+		let arr = [one,two,three];
+
+	}
+}
+
+[2,4,5,3,24,2].reduce( (p, c) => 
+	p.then(d => new Promise(resolve =>
+		
+        setTimeout(function () {
+			console.log(c);
+            resolve();
+		}, 1000)
+		
+    ))
+, Promise.resolve() );
+
+
+const model = new Model();
+const controller = new Controller();
+
+
+controller.addUser({
+	login:'vkomelkov',
+	password:"Qwer1111",
+	intervals:{
+		aTob:30,
+		bToc:30,
+		cTod:30
+	},
+	gpsPattern:[
+		{lat:50.7505280,long:26.0437980},
+		{lat:59.1861080,long:39.3101440},
+		{lat:-1.6027450,long:12.3030920},
+		{lat:56.7562580,long:60.4282630}
+	]}
 )
 
 
 
-
-// console.log(model.getarr());
-// model.loadActivityData('vkomelkov').then(a => {
-//     l(model.getitem('vkomelkov').showdata());
-// }).catch(a => l("error " + a));
-
-
-function processingProfile(key,index){
-	let data = {};
-  	return new Promise(function(resolve,reject){
-    	index == undefined ? index = 1 : {};
-    	model.login(key)
-    	.then((a) => {
-    	  	l(a)
-    	  	return model.loadActivityData(key)
-    	})
-    	.then(a => {
-    	  	l(a)
-    	  	return model.processActivityData(key)
-    	})
-    	.then(a => {
-			data = a;
-    	  	l(data)
-    	  	if(a == "Nothnt"){
-				resolve('Nothn\'t to process');
-				throw "olgud"	
-    	  	} else if (a == 'w8'){
-				resolve('Wait fo next step');
-				throw "olgud"	
-    	  	} else {
-				return model.changeActivityState(data)
-    	  	}
-		})
-		.then(a => {
-			l(a);
-			return model.sendTsiVisit(data)
-		})
-		.then(a => {
-			l(a)
-			return model.updateLocation(key)
-		})
-    	.then(a => {
-    	  	l(a)
-    	  	resolve('All done for: ' + key)
-    	})
-    	.catch(a => {
-			if(a == 'olgud'){
-				l('accepted olgud')
-				return
-			}
-    	  	l("error " + a);
-    	  	fs.writeFile('error.json', a , function (err) {
-    	  	  	if (err) throw err;
-    	  	  	console.log('Saved!');
-    	  	});
-    	  	if(index >= 3){
-    	  	  	reject(a)
-    	  	} else {
-    	  	  	resolve(processingProfile(key,++index))
-    	  	}
-    	});
-  	})
-}
-// processingProfile('vvitriv').then(a=>{l(a)}).catch(a => {l('error ' + a)})
-processingProfile('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
-
+controller.processUser('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
