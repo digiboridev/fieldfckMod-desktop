@@ -27,6 +27,11 @@ const globalSettings = {
         {lat:-1.6027450,long:12.3030920},
         {lat:56.7562580,long:60.4282630}
     ],
+    gpsSettings:{
+        randomSorting:true,
+        randomizePosition:true,
+        currentPosition:0
+    },
     tsiFfm:{
         work:[
             {
@@ -447,6 +452,7 @@ class Profile{
         this.password = data.password;
         this.intervals = (data.intervals !== undefined ? data.intervals : globalSettings.intervals);
         this.gpsPattern = (data.gpsPattern !== undefined ? data.gpsPattern : globalSettings.gpsPattern);
+        this.gpsSettings = (data.gpsSettings !== undefined ? data.gpsSettings : globalSettings.gpsSettings);
         this.tsiFfm = (data.tsiFfm !== undefined ? data.tsiFfm : globalSettings.tsiFfm);
         this.data = {};
     }
@@ -454,7 +460,21 @@ class Profile{
         return this.data;
     }
     getgps(){
-        return this.gpsPattern[Math.floor(Math.random()*this.gpsPattern.length)];
+        let location = {};
+        if (this.gpsSettings.randomSorting) {
+            l('random sorting')
+            location = this.gpsPattern[Math.floor(Math.random()*this.gpsPattern.length)];
+        } else {
+            l('sort by user')
+            l(this.gpsSettings.currentPosition)
+            if (this.gpsSettings.currentPosition == this.gpsPattern.length) {
+                this.gpsSettings.currentPosition = 0;
+            }
+            location = this.gpsPattern[this.gpsSettings.currentPosition];
+            this.gpsSettings.currentPosition++
+        }
+        // return this.gpsPattern[Math.floor(Math.random()*this.gpsPattern.length)];
+        return location;
     }
 }
 

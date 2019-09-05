@@ -7,6 +7,7 @@ var Model = require('./model').Model;
 var Profile = require('./model').Profile;
 
 function l(a){
+    console.log('\n')
     console.log(a)
 }
 l('main run')
@@ -121,23 +122,23 @@ class Controller{
 				l(a)
 				return model.processActivityData(key)
 		  })
-		  .then(a => {
-			  data = a;
-				l(data)
-				if(a == "Nothnt"){
-				  resolve('Nothn\'t to process');
-				  throw "olgud"	
-				} else if (a == 'w8'){
-				  resolve('Wait fo next step');
-				  throw "olgud"	
-				} else {
-				  return model.changeActivityState(data)
-				}
-		  })
-		  .then(a => {
-			  l(a);
-			  return model.sendTsiVisit(data)
-		  })
+		  // .then(a => {
+			 //  data = a;
+				// l(data)
+				// if(a == "Nothnt"){
+				//   resolve('Nothn\'t to process');
+				//   throw "olgud"	
+				// } else if (a == 'w8'){
+				//   resolve('Wait fo next step');
+				//   throw "olgud"	
+				// } else {
+				//   return model.changeActivityState(data)
+				// }
+		  // })
+		  // .then(a => {
+			 //  l(a);
+			 //  return model.sendTsiVisit(data)
+		  // })
 		  .then(a => {
 			  l(a)
 			  return model.updateLocation(key)
@@ -176,11 +177,11 @@ class Controller{
 			this.updateUser(c.login)
 			.then(a =>{
 				resolve()
-				l('tru loopped')
+				l('tru loopped: ' + c.login)
 			})
 			.catch(a => {
 				resolve()
-				l('no tru loopped')
+				l('no tru loopped: ' + c.login)
 			})
 
 			
@@ -198,11 +199,11 @@ class Controller{
 			this.processUser(c.login)
 			.then(a =>{
 				resolve()
-				l('tru loopped')
+				l('tru loopped fo: ' + c.login)
 			})
 			.catch(a => {
 				resolve()
-				l('no tru loopped')
+				l('no tru loopped: ' + c.login)
 			})
 
 			
@@ -242,25 +243,30 @@ controller.addUser({
 		{lat:59.1861080,long:39.3101440},
 		{lat:-1.6027450,long:12.3030920},
 		{lat:56.7562580,long:60.4282630}
-	]}
-)
+	],
+    gpsSettings:{
+        randomSorting:false,
+        randomizePosition:true,
+        currentPosition:0
+    }
+})
 
-controller.addUser({
-	login:'vvitriv',
-	password:"Qwer1111",
-	intervals:{
-		aTob:30,
-		bToc:30,
-		cTod:30
-	},
-	gpsPattern:[
-		{lat:48.4656021,long:37.0798415},
-		{lat:48.4655755,long:37.0796653},
-		{lat:48.4655381,long:37.0797163},
-		{lat:48.4655255,long:37.0797871}
-	]}
-)
+// controller.addUser({
+// 	login:'vvitriv',
+// 	password:"Qwer1111",
+// 	intervals:{
+// 		aTob:30,
+// 		bToc:30,
+// 		cTod:30
+// 	},
+// 	gpsPattern:[
+// 		{lat:48.4656021,long:37.0798415},
+// 		{lat:48.4655755,long:37.0796653},
+// 		{lat:48.4655381,long:37.0797163},
+// 		{lat:48.4655255,long:37.0797871}
+// 	]}
+// )
 
 // controller.processUser('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 controller.updateAll()
-controller.loopStart(5)
+controller.loopStart(1)
