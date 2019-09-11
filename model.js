@@ -22,10 +22,10 @@ const globalSettings = {
         cTod:30
     },
     gpsPattern:[
-        {lat:50.7505280,long:26.0437980},
-        {lat:59.1861080,long:39.3101440},
-        {lat:-1.6027450,long:12.3030920},
-        {lat:56.7562580,long:60.4282630}
+        {lat:50.7505281,long:26.0437981},
+        {lat:59.1861081,long:39.3101441},
+        {lat:-1.6027451,long:12.3030921},
+        {lat:56.7562581,long:60.4282631}
     ],
     gpsSettings:{
         randomSorting:true,
@@ -417,8 +417,8 @@ class Model{
                     Id:Math.random().toString(12).substring(2, 10)
                      + "-65ff-4033-8f1b-" 
                      + Math.random().toString(12).substring(2, 14),
-                    Longitude:getRandomLocation.long.toString(),
-                    Latitude:getRandomLocation.lat.toString()
+                    Longitude:getRandomLocation.long,
+                    Latitude:getRandomLocation.lat
                 }),
                 headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": profile.data.cookie ,  "BPMCSRF": profile.data.bpmcsrf }
             })
@@ -460,21 +460,32 @@ class Profile{
         return this.data;
     }
     getgps(){
-        let location = {};
+        let lat = 0;
+        let long = 0;
+        l(this.gpsPattern)
         if (this.gpsSettings.randomSorting) {
             l('random sorting')
-            location = this.gpsPattern[Math.floor(Math.random()*this.gpsPattern.length)];
+            let randObj = this.gpsPattern[Math.floor(Math.random()*this.gpsPattern.length)];
+            lat = randObj.lat;
+            long = randObj.long;
         } else {
-            l('sort by user')
+            l('sort by order')
             l(this.gpsSettings.currentPosition)
             if (this.gpsSettings.currentPosition == this.gpsPattern.length) {
                 this.gpsSettings.currentPosition = 0;
             }
-            location = this.gpsPattern[this.gpsSettings.currentPosition];
+            let randObj = this.gpsPattern[this.gpsSettings.currentPosition];
+            lat = randObj.lat;
+            long = randObj.long;
             this.gpsSettings.currentPosition++
         }
-        // return this.gpsPattern[Math.floor(Math.random()*this.gpsPattern.length)];
-        return location;
+        
+        if (this.gpsSettings.randomizePosition) {
+            lat = (lat + (Math.floor(Math.random() * 100 - Math.random() * 100) / 1000)).toFixed(7);
+            long = (long + (Math.floor(Math.random() * 100 - Math.random() * 100) / 1000)).toFixed(7);
+            l('Position randomized')
+        }
+        return {lat:lat,long:long};
     }
 }
 

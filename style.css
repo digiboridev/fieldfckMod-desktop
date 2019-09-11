@@ -13,13 +13,25 @@ body {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 header {
     background: #323b43;
     height: 60px;
     width: 100%;
-    position: relative;    
+    position: relative; 
+}
+.logo {
+    height: 40px;
+    width: 140px;
+    background: url(logo.png);
+    background-size: cover;
+    filter: invert(0.9);
+    position: relative;
+    top: 6px;
+    left: 6px;
+    box-shadow: 0 0 40px #fff;
 }
 main {
     display: flex;
@@ -91,22 +103,28 @@ aside {
 .add-card:active {
     border: 1px solid #128fb4;
 }
-.add-card .fa-plus {
+.add-card .add {
     color:#e0e0e1;
     position: absolute;
     font-size: 3em;
-    top: 30px;
-    left: 55px;
+    top: 40px;
+    left: 60px;
+    height: 40px;
+    width: 40px;
+    background: url(svg/add.svg);
+    background-size: 40px 40px;
+    filter: invert(0.6);
 }
 
 .card {
     min-width: 160px;
-    background:url(user.png) center no-repeat,#323b43;   
-    background-size: 50% 80%;
+    background:url(svg/user.svg) center no-repeat,#323b43;   
+    background-size: 40% 40%;
     margin: 5px 0px 5px 5px;
     border-radius: 4px;
     border: 1px solid #323b43;
     position: relative;
+    box-shadow: 0 0 100px #13161a;
 }
 .card:active {
     border: 1px solid #128fb4;
@@ -115,7 +133,7 @@ aside {
 .card-header {
     color: #e0e0e1;
     font-family:'Rubik', sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 0.75em;
     text-align: center;
     margin: 0;
@@ -126,7 +144,7 @@ aside {
     display: flex;
     flex-direction: column;
     bottom: 8px;
-    left: 12px;
+    left: 8px;
     position: absolute;
 
 }
@@ -134,22 +152,32 @@ aside {
     margin: 0;
     color: #e0e0e1;
     font-family:'Rubik', sans-serif;
-    font-weight: 300;
+    font-weight: 200;
     font-size: 0.6em;
 }
-.card .fa-times {
-    color:#e0e0e1;
+.close {
+    display: block;
     position: absolute;
     top: 6px;
     right: 6px;
+    height: 10px;
+    width: 10px;
+    background: url(svg/cancel.svg);
+    background-size: 10px 10px;
+    filter: invert(1);
 }
-.card .fa-info-circle {
-    color:#e0e0e1;
+.info {
+    display: block;
     position: absolute;
-    top: 6px;
+    top: 5px;
     left: 6px;
-    font-size: 0.85em;
+    height: 12px;
+    width: 12px;
+    background: url(svg/info.svg);
+    background-size: 12px 12px;
+    filter: invert(1);
 }
+
 
 aside ul {
     margin: 0;
@@ -167,24 +195,31 @@ aside ul {
 aside ul li {
     flex: auto;
     color: #e0e0e1;
+    box-shadow: 0 0 20px #13161a;
     text-transform: lowercase;
     font-family:'Rubik', sans-serif;
     font-weight: 300;
-    font-size: 0.70em;
-    margin: 1px;
-    padding: 3px;
+    font-size: 0.75em;
+    margin: 3px;
+    padding: 5px;
     position: relative;
     background: #13161a;
     border-radius: 3px;
     /* border-bottom: 1px solid #777; */
 }
 aside ul li::before {
-    content: '\f0da';
-    font-family: 'Font Awesome 5 Free';
+    content: '';
+    /* font-family: 'Font Awesome 5 Free';
     font-weight: 900; 
-    font-size: 1.25em;
+    font-size: 1em; */
+    display: inline-block;
     margin-right: 5px;
-    margin-left: 2px;
+    /* margin-left: 2px; */
+    height: 12px;
+    width: 12px;
+    background: url(svg/complete.svg);
+    background-size: 12px 12px;
+    filter: invert(1);
 }
 .data {
     box-sizing: border-box;

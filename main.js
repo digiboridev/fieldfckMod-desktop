@@ -19,8 +19,8 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 720,
+    width: 900,
+    height: 550,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -122,23 +122,23 @@ class Controller{
 				l(a)
 				return model.processActivityData(key)
 		  })
-		  // .then(a => {
-			 //  data = a;
-				// l(data)
-				// if(a == "Nothnt"){
-				//   resolve('Nothn\'t to process');
-				//   throw "olgud"	
-				// } else if (a == 'w8'){
-				//   resolve('Wait fo next step');
-				//   throw "olgud"	
-				// } else {
-				//   return model.changeActivityState(data)
-				// }
-		  // })
-		  // .then(a => {
-			 //  l(a);
-			 //  return model.sendTsiVisit(data)
-		  // })
+		//   .then(a => {
+		// 	  data = a;
+		// 		l(data)
+		// 		if(a == "Nothnt"){
+		// 		  resolve('Nothn\'t to process');
+		// 		  throw "olgud"	
+		// 		} else if (a == 'w8'){
+		// 		  resolve('Wait fo next step');
+		// 		  throw "olgud"	
+		// 		} else {
+		// 		  return model.changeActivityState(data)
+		// 		}
+		//   })
+		//   .then(a => {
+		// 	  l(a);
+		// 	  return model.sendTsiVisit(data)
+		//   })
 		  .then(a => {
 			  l(a)
 			  return model.updateLocation(key)
@@ -232,24 +232,42 @@ const controller = new Controller();
 
 controller.addUser({
 	login:'vkomelkov',
-	password:"Qwer1111",
+	password:"Qwer2222",
 	intervals:{
 		aTob:30,
 		bToc:30,
 		cTod:30
 	},
 	gpsPattern:[
-		{lat:50.7505280,long:26.0437980},
-		{lat:59.1861080,long:39.3101440},
-		{lat:-1.6027450,long:12.3030920},
-		{lat:56.7562580,long:60.4282630}
+		{lat:50.7505282,long:26.0437982},
+		{lat:59.1861082,long:39.3101442},
+		{lat:-1.6027452,long:12.3030922},
+		{lat:56.7562582,long:60.4282632}
 	],
     gpsSettings:{
-        randomSorting:false,
+        randomSorting:true,
         randomizePosition:true,
         currentPosition:0
     }
 })
+controller.addUser({
+	login:'vnikolin',
+	password:"Qwer2222",
+	intervals:{
+		aTob:30,
+		bToc:30,
+		cTod:30
+	},
+	gpsPattern:[
+		{lat:48.4646372,long:37.0812746}
+	],
+    gpsSettings:{
+        randomSorting:true,
+        randomizePosition:true,
+        currentPosition:0
+    }
+})
+
 
 // controller.addUser({
 // 	login:'vvitriv',
@@ -267,6 +285,6 @@ controller.addUser({
 // 	]}
 // )
 
-// controller.processUser('vkomelkov').then(a=>{l(a)}).catch(a => {l('error ' + a)})
-// controller.updateAll()
-// controller.loopStart(1)
+controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
+controller.updateAll()
+controller.loopStart(0.3)
