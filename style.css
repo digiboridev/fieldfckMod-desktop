@@ -146,7 +146,7 @@ aside {
     background-size: 40% 40%;
     /* text-shadow: 0 0 10px #e0e0e1; */
     box-shadow: 0 0 100px #e0e0e1;
-    transition: 0.4s ease-in-out all;
+    transition: 0.2s ease-in-out box-shadow;
 }
 
 .card-header {
@@ -185,6 +185,9 @@ aside {
     background-size: 10px 10px;
     filter: invert(1);
 }
+.close:hover {
+    cursor: pointer;
+}
 .info {
     display: block;
     position: absolute;
@@ -196,7 +199,9 @@ aside {
     background-size: 12px 12px;
     filter: invert(1);
 }
-
+.info:hover {
+    cursor: pointer;
+}
 
 aside ul {
     margin: 0;
