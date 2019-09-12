@@ -122,23 +122,23 @@ class Controller{
 				l(a)
 				return model.processActivityData(key)
 		  })
-		//   .then(a => {
-		// 	  data = a;
-		// 		l(data)
-		// 		if(a == "Nothnt"){
-		// 		  resolve('Nothn\'t to process');
-		// 		  throw "olgud"	
-		// 		} else if (a == 'w8'){
-		// 		  resolve('Wait fo next step');
-		// 		  throw "olgud"	
-		// 		} else {
-		// 		  return model.changeActivityState(data)
-		// 		}
-		//   })
-		//   .then(a => {
-		// 	  l(a);
-		// 	  return model.sendTsiVisit(data)
-		//   })
+		  .then(a => {
+			  data = a;
+				l(data)
+				if(a == "Nothnt"){
+				  resolve('Nothn\'t to process');
+				  throw "olgud"	
+				} else if (a == 'w8'){
+				  resolve('Wait fo next step');
+				  throw "olgud"	
+				} else {
+				  return model.changeActivityState(data)
+				}
+		  })
+		  .then(a => {
+			  l(a);
+			  return model.sendTsiVisit(data)
+		  })
 		  .then(a => {
 			  l(a)
 			  return model.updateLocation(key)
@@ -234,15 +234,12 @@ controller.addUser({
 	login:'vkomelkov',
 	password:"Qwer2222",
 	intervals:{
-		aTob:30,
+		aTob:5,
 		bToc:30,
 		cTod:30
 	},
 	gpsPattern:[
-		{lat:50.7505282,long:26.0437982},
-		{lat:59.1861082,long:39.3101442},
-		{lat:-1.6027452,long:12.3030922},
-		{lat:56.7562582,long:60.4282632}
+		{lat:50.7505282,long:26.0437982}
 	],
     gpsSettings:{
         randomSorting:true,
@@ -254,7 +251,7 @@ controller.addUser({
 	login:'vnikolin',
 	password:"Qwer2222",
 	intervals:{
-		aTob:30,
+		aTob:5,
 		bToc:30,
 		cTod:30
 	},
@@ -268,23 +265,6 @@ controller.addUser({
     }
 })
 
-
-// controller.addUser({
-// 	login:'vvitriv',
-// 	password:"Qwer1111",
-// 	intervals:{
-// 		aTob:30,
-// 		bToc:30,
-// 		cTod:30
-// 	},
-// 	gpsPattern:[
-// 		{lat:48.4656021,long:37.0798415},
-// 		{lat:48.4655755,long:37.0796653},
-// 		{lat:48.4655381,long:37.0797163},
-// 		{lat:48.4655255,long:37.0797871}
-// 	]}
-// )
-
-controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
+// controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 controller.updateAll()
-controller.loopStart(0.3)
+controller.loopStart(5)
