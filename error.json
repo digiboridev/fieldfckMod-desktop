@@ -241,3 +241,12 @@ Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
 20:44:56 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
 20:44:56 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
 20:44:56 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
+07:59:03 vnikolin Error: read ECONNRESET
+07:59:03 vkomelkov Error: read ECONNRESET
+07:59:03 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
+07:59:03 vkomelkov Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
+07:59:03 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
+07:59:03 vkomelkov Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
+07:59:03 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
+07:59:03 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
+07:59:03 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
