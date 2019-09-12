@@ -119,6 +119,10 @@ class Controller{
 				return model.loadActivityData(key)
 		  })
 		  .then(a => {
+			  	l(a)
+				return model.updateLocation(key)
+		  })
+		  .then(a => {
 				l(a)
 				return model.processActivityData(key)
 		  })
@@ -139,10 +143,10 @@ class Controller{
 			  l(a);
 			  return model.sendTsiVisit(data)
 		  })
-		  .then(a => {
-			  l(a)
-			  return model.updateLocation(key)
-		  })
+		//   .then(a => {
+		// 	  l(a)
+		// 	  return model.updateLocation(key)
+		//   })
 		  .then(a => {
 				l(a)
 				resolve('All done for: ' + key)
@@ -235,7 +239,7 @@ controller.addUser({
 	password:"Qwer2222",
 	intervals:{
 		aTob:5,
-		bToc:30,
+		bToc:20,
 		cTod:30
 	},
 	gpsPattern:[
@@ -252,7 +256,7 @@ controller.addUser({
 	password:"Qwer2222",
 	intervals:{
 		aTob:5,
-		bToc:30,
+		bToc:20,
 		cTod:30
 	},
 	gpsPattern:[
