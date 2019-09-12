@@ -269,6 +269,6 @@ controller.addUser({
     }
 })
 
-controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
+// controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 controller.updateAll()
-controller.loopStart(5)
+controller.loopStart(2)

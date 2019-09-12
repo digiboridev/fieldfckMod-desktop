@@ -481,8 +481,8 @@ class Profile{
         }
         
         if (this.gpsSettings.randomizePosition) {
-            lat = (lat + (Math.floor(Math.random() * 100 - Math.random() * 100) / 1000)).toFixed(7);
-            long = (long + (Math.floor(Math.random() * 100 - Math.random() * 100) / 1000)).toFixed(7);
+            lat = (lat + (Math.floor(Math.random() * 100 - Math.random() * 100) / 10000)).toFixed(7);
+            long = (long + (Math.floor(Math.random() * 100 - Math.random() * 100) / 10000)).toFixed(7);
             l('Position randomized')
         }
         return {lat:lat,long:long};
