@@ -20,7 +20,7 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 900,
-    height: 550,
+    height: 500,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -271,4 +271,4 @@ controller.addUser({
 
 // controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 // controller.updateAll()
-// controller.loopStart(2)
+controller.loopStart(2)

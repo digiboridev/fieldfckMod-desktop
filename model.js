@@ -335,7 +335,7 @@ class Model{
                             TsiCommonStatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
                             TsiTaskCategoryId:"826d6e5a-94aa-41ea-8634-638b52d7149e",
                             TsiResponsibilityAreaId:"4af25e7d-c713-4178-8434-9277060b9d9c",
-                            TsiResCategoryId:"8e08a5fe-dbb9-9efe-e055-7f66120c13ae"
+                            TsiResCategoryId:"360a6294-ec9e-4afa-9462-18b8039094be"
 
                         },
                         tsiVisit:{

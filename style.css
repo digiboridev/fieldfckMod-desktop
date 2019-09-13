@@ -1,68 +1,81 @@
-/* html {
-    height: 100vh;
-} */
+html {
+    padding: 0;
+    margin: 0;  
+}
 body {
     background: #13161a;
     padding: 0;
     margin: 0;  
-    height: 100vh;
+    height: 98vh;
     width: 100vw;
-    top: 0;
-    left: 0;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    /* overflow: hidden; */
+    position: relative;
 }
 
 header {
     background: #323b43;
-    height: 60px;
+    height: 15%;
     width: 100%;
     position: relative; 
+    margin: 0;
+    padding: 0;
 }
-.logo {
-    height: 60px;
-    width: 60px;
-    background: url(logo.png);
-    background-size: cover;
-    /* filter: invert(0.9); */
+.head-container {
     position: relative;
-    /* top: 6px;
-    left: 6px; */
-    /* box-shadow: 0 0 40px #fff; */
-    display: inline-block;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #323b43;
 }
+.head-container img {
+    height: 100%;
+}
+
 .logo-text {
-    height: 45px;
-    width: 200px;
+    height: 10vh;
+    width: 40vh;
     background: url(logo-text.png);
     background-size: cover;
-    /* filter: invert(0.9); */
     position: relative;
-    bottom: 10px;
-    /* box-shadow: 0 0 40px #fff; */
+    bottom: 15%;
     display: inline-block;
 }
 main {
-    display: flex;
-    height: 90%;
+    height: 85%;
+    max-height: 85%;
     width: 100%;
     position: relative;
+    background: #13161a;
+    margin: 0;
+    padding: 0;
+    overflow: auto;    
 }
+/* .child {
+    background: #222;
+    height: 800px;
+    width: 100%;
+} */
+
 section {
+    float: left;
+    height: 100%;
     width: 80%;
+    margin: 0;
+    padding: 0;
     position: relative;
-    display: flex;
+    background: #888;
+    display: block;
     flex-direction: column;
 }
 aside {
-    margin-top: 2px;
-    background: #323b43;
+    float: left;
+    height: 100%;
     width: 20%;
+    margin: 0;
+    padding: 0;
     position: relative;
-    border-radius: 3px;
+    background: #323b43;
+    display: block;
+    border-top:2px solid #13161a;
     box-sizing: border-box;
 }
 .profiles {
