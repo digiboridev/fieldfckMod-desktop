@@ -62,7 +62,7 @@ section {
     margin: 0;
     padding: 0;
     position: relative;
-    background: #888;
+    /* background: #888; */
     display: block;
     flex-direction: column;
 }
@@ -80,7 +80,8 @@ aside {
 }
 .profiles {
     width: 100%;
-    min-height: 120px;
+    /* min-height: 120px; */
+    height: 25%;
     background: #13161a;
     padding: 0;
     margin: 0;
@@ -217,26 +218,23 @@ aside {
 
 aside ul {
     margin: 0;
-    padding: 6px;
-    position: absolute;
-    height: 95%;
-    width: 95%;
-    top: 0;
-    left: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     list-style: none;
     overflow: auto;
 }
 aside ul li {
-    flex: auto;
     color: #e0e0e1;
     box-shadow: 0 0 20px #13161a;
     text-transform: lowercase;
     font-family:'Rubik', sans-serif;
     font-weight: 300;
     font-size: 0.75em;
-    margin: 3px;
+    margin: 3px 6px;
     padding: 5px;
     position: relative;
     background: #13161a;
@@ -258,9 +256,11 @@ aside ul li::before {
     filter: invert(1);
 }
 .data {
-    flex: 1 1 0;
+    height: 70%;
+    width: 100%;
     position: relative;
     background: #000;
+    /* overflow: scroll; */
 }
 .data-container {
     background: #13161a;
@@ -283,19 +283,42 @@ aside ul li::before {
     bottom: 8px;
     left: 20px;
     width: 1px;
-    background: #e0e0e1;
+    background: #128fb4;
 }
 .event-card {
-    background: #323b43;
-    border-radius: 3px;
+    background: #fff;
+    border-radius: 5px;
     position: relative;
     width: 90%; 
     left: 20px;
-    margin: 10px;
-    padding: 10px; 
+    margin: 20px 10px;
+    padding: 10px 20px;
+}
+.event-card::after {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: #128fb4;
+    top: 0;
+    left: -24px;
+    border-radius: 4px;
+    z-index: 2;
 }
 .event-card p {
     margin: 0;
     padding: 0;
-    color: #e0e0e1;
+    color: #222;
+}
+.event-card .event-name {
+    color: #02f;
+    position: relative;
+}
+.event-card .event-name:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #000;
+    position: relative;
+    display: inline-block;
 }
