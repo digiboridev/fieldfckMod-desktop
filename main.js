@@ -20,9 +20,10 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 900,
-    height: 500,
+    height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+	  preload: path.join(__dirname, 'preload.js'),
+	  nodeIntegration: true
     }
   })
 
@@ -204,6 +205,7 @@ class Controller{
 			.then(a =>{
 				resolve()
 				l('tru loopped fo: ' + c.login)
+				l(model.getarr())
 			})
 			.catch(a => {
 				resolve()
@@ -271,4 +273,7 @@ controller.addUser({
 
 // controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 // controller.updateAll()
-// controller.loopStart(2)
+controller.loopStart(2)
+global.sharedObject = {
+	someProperty: model.getarr()
+}

@@ -2,3 +2,6 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 console.log('render run');
+var el = require('electron')
+console.log(el.remote.getGlobal('sharedObject').someProperty)
+let modelData = el.remote.getGlobal('sharedObject').someProperty;

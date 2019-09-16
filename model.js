@@ -335,7 +335,7 @@ class Model{
                             TsiCommonStatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
                             TsiTaskCategoryId:"826d6e5a-94aa-41ea-8634-638b52d7149e",
                             TsiResponsibilityAreaId:"4af25e7d-c713-4178-8434-9277060b9d9c",
-                            TsiResCategoryId:"360a6294-ec9e-4afa-9462-18b8039094be"
+                            TsiResCategoryId:"5c896492-8f0b-46d7-9087-4e7dc6cdf87a"
 
                         },
                         tsiVisit:{
@@ -454,7 +454,7 @@ class Profile{
         this.gpsPattern = (data.gpsPattern !== undefined ? data.gpsPattern : globalSettings.gpsPattern);
         this.gpsSettings = (data.gpsSettings !== undefined ? data.gpsSettings : globalSettings.gpsSettings);
         this.tsiFfm = (data.tsiFfm !== undefined ? data.tsiFfm : globalSettings.tsiFfm);
-        this.data = {};
+        this.data = {cookie:{},bpmcsrf:{},activity:{}};
     }
     showdata(){
         return this.data;
@@ -495,3 +495,4 @@ module.exports = {
     Profile
 };
 
+console.log(new Date().toDateString())
