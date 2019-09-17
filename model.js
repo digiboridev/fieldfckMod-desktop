@@ -119,11 +119,11 @@ class Model{
                     email:answer.d.results[0].Email,
                     mobile:answer.d.results[0].TsiContactPhone
                 }
-                // let readableData = JSON.stringify(answer.d.results).replace(/(,")/g, ',\n"');
-                // fs.writeFile('data.json', readableData , function (err) {
-                //     if (err) throw err;
-                //     console.log('Saved!');
-                // });
+                let readableData = JSON.stringify(answer.d.results).replace(/(,")/g, ',\n"');
+                fs.writeFile('contact.json', readableData , function (err) {
+                    if (err) throw err;
+                    console.log('Saved!');
+                });
                 resolve (newProfile);
             })
             .catch(a => reject(a))
@@ -495,4 +495,3 @@ module.exports = {
     Profile
 };
 
-console.log(new Date().toDateString())

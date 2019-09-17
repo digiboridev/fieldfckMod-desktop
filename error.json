@@ -250,3 +250,14 @@ Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
 07:59:03 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
 07:59:03 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
 07:59:03 vnikolin Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
+21:01:02  Неправильное имя пользователя или пароль.
+21:02:48  Неправильное имя пользователя или пароль.
+21:03:04  Неправильное имя пользователя или пароль.
+21:03:25  ReferenceError: login is not defined
+21:03:35  Неправильное имя пользователя или пароль.
+21:03:50  Неправильное имя пользователя или пароль.
+21:05:01  ReferenceError: login is not defined
+21:05:47  ReferenceError: login is not defined
+21:07:01  ReferenceError: login is not defined
+21:08:07  ReferenceError: login is not defined
+21:09:14  ReferenceError: a is not defined

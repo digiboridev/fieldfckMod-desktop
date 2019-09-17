@@ -1,4 +1,5 @@
 const {app, BrowserWindow} = require('electron')
+const { ipcMain } = require('electron')
 const path = require('path')
 var fs = require('fs')
 // var client = require('node-rest-client-promise').Client();
@@ -31,7 +32,10 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
+
+  //send nuuds
+  mainWindow.webContents.send('info' , {msg:'hello from main process'});
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -74,8 +78,14 @@ class Controller{
 		model.checkAuthData(data.login,data.password)
 		.then(a => {
 			// send data
+			l(a)
 		}).catch(a => {
 			// send retry or check  correct
+			l(a)
+			fs.appendFile('error.json', '\n' + (new Date()).toLocaleTimeString() +  ' ' + ' ' + a , function (err) {
+				if (err) throw err;
+				console.log('Saved!');
+		  });
 		})
 	}
 	addUser(data){
@@ -205,7 +215,7 @@ class Controller{
 			.then(a =>{
 				resolve()
 				l('tru loopped fo: ' + c.login)
-				l(model.getarr())
+				mainWindow.webContents.send('update-all' , {msg:'update all data'});
 			})
 			.catch(a => {
 				resolve()
@@ -241,7 +251,7 @@ controller.addUser({
 	password:"Qwer2222",
 	intervals:{
 		aTob:5,
-		bToc:20,
+		bToc:10,
 		cTod:30
 	},
 	gpsPattern:[
@@ -258,7 +268,7 @@ controller.addUser({
 	password:"Qwer2222",
 	intervals:{
 		aTob:5,
-		bToc:20,
+		bToc:10,
 		cTod:30
 	},
 	gpsPattern:[
@@ -274,6 +284,13 @@ controller.addUser({
 // controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 // controller.updateAll()
 controller.loopStart(2)
+// controller.findUser({login:'vkomelkov',password:'Qwer2222'})
 global.sharedObject = {
 	someProperty: model.getarr()
 }
+
+
+
+setTimeout(() => {
+	mainWindow.webContents.send('info' , {msg:'hello from main process'});
+}, 2000);
