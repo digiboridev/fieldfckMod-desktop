@@ -162,7 +162,7 @@ class Model{
         const profile = this.arr.find(item => item.key === key);
 
         return new Promise(function(resolve,reject){
-            client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=6" + "&$select=Title,StatusId,OwnerId,CreatedOn,Id,ModifiedOn,TsiSymptoms,TsiFFMWorkCategoryId,TsiFFMWorkCategoryL2Id,TsiFFMResCategoryId,TsiFFMResCategoryL2Id,TsiSymptoms,TsiDescription",
+            client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=6" + "&$select=Title,StatusId,OwnerId,CreatedOn,Id,ModifiedOn,TsiSymptoms,TsiAddress,TsiDescription,TsiTaskCategoryId,TsiResponsibilityAreaId,TsiResCategoryId",
             {
                 headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": profile.data.cookie ,  "BPMCSRF": profile.data.bpmcsrf }
             })
@@ -190,38 +190,6 @@ class Model{
             console.log(activityarr[i].Id);
             let getRandomRes = profile.tsiFfm.res[Math.floor(Math.random()*profile.tsiFfm.res.length)]
             let getRandomWork = profile.tsiFfm.work[Math.floor(Math.random()*profile.tsiFfm.work.length)]
-
-            
-            // return {
-            //     activity:{
-            //         Id:'02f43d27-034d-4556-b05e-57ed7f003479',
-            //         StatusId:"9dea4d63-6beb-4211-abd9-db4c90eb6496"
-            //     },
-            //     tsiVisit:{
-            //         Id:Math.random().toString(12).substring(2, 10)
-            //          + "-2ab0-476d-8cf1-" 
-            //          + Math.random().toString(12).substring(2, 14),
-            //         CreatedOn: new Date(),
-            //         ModifiedOn: new Date(),
-            //         TsiActivityStatusId: '9dea4d63-6beb-4211-abd9-db4c90eb6496',
-            //         TsiActivityId:'02f43d27-034d-4556-b05e-57ed7f003479',
-            //         TsiDateCreatedOn: new Date()   
-            //     },
-            //     metadata:{
-            //         login:profile.login,
-            //         password:profile.password,
-            //         cookie:profile.data.cookie,
-            //         csrftoken:profile.data.bpmcsrf,
-            //         action:'Выполнена',
-            //         TsiFFMWorkCategoryId:getRandomWork.name_1,
-            //         TsiFFMWorkCategoryL2Id:getRandomWork.name_2,
-            //         TsiFFMResCategoryId:getRandomRes.name_1,
-            //         TsiFFMResCategoryL2Id:getRandomRes.name_2
-            //     }
-            // }
-            
-
-
 
             if(activityarr[i].StatusId == '384d4b84-58e6-df11-971b-001d60e938c6'){
                 return {
@@ -282,7 +250,8 @@ class Model{
                         }
                     }
                 }
-                l('Acc to in time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));
+                l('Acc to in time left: ' +  (Math.floor((profile.intervals.aTob) - ((nowDate - actDate) / 1000 / 60))));
+                profile.nowOn = ('Подтверждена: ' + (Math.floor((profile.intervals.aTob) - ((nowDate - actDate) / 1000 / 60))));
                 return ('w8');
                
             }
@@ -317,6 +286,7 @@ class Model{
                     }
                 }
                 l('in to on time left: ' +  (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))));
+                profile.nowOn = ('В Пути: ' + (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))));
                 return ('w8');
             }
             if(activityarr[i].StatusId == '7fa82408-d9f1-41d6-a56d-ce3746701a46'){
@@ -359,10 +329,12 @@ class Model{
                 }
                 
                 l('on to close time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));
+                profile.nowOn = ('На обьекте: ' + (Math.floor(((nowDate - actDate) / 1000 / 60))));
                 return ('w8');
                 
             }
         }
+        profile.nowOn = 'Нет заданий';
         return 'Nothnt';
     }
     sendTsiVisit(data){
@@ -455,6 +427,8 @@ class Profile{
         this.gpsSettings = (data.gpsSettings !== undefined ? data.gpsSettings : globalSettings.gpsSettings);
         this.tsiFfm = (data.tsiFfm !== undefined ? data.tsiFfm : globalSettings.tsiFfm);
         this.data = {cookie:{},bpmcsrf:{},activity:{}};
+        this.nowOn = '№: SR06712836; Усунення пошкоджень ШСД; Роботи: Лінійно-кабельне обладнання';
+        this.status = 'No Data';
     }
     showdata(){
         return this.data;

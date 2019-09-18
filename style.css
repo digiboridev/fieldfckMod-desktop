@@ -154,6 +154,16 @@ aside {
 .card:active {
     border: 1px solid #128fb4;
     color: #fff;
+    background:url(svg/user.svg) center no-repeat,#128fb4;
+    background-size: 40% 40%;
+    /* text-shadow: 0 0 10px #e0e0e1; */
+    box-shadow: 0 0 100px #e0e0e1;
+    transition: 0.2s ease-in-out box-shadow;
+}
+
+.card.active {
+    border: 1px solid #128fb4;
+    color: #fff;
     background:url(svg/user.svg) center no-repeat,#13161a;
     background-size: 40% 40%;
     /* text-shadow: 0 0 10px #e0e0e1; */
@@ -274,6 +284,10 @@ aside ul li::before {
     padding: 10px;
     position: relative;
     min-height: 100%;
+    display: none;
+}
+.event-cards.active{
+    display: block;
 }
 .event-cards::after {
     content: '';

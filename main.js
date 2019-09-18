@@ -95,74 +95,104 @@ class Controller{
 		model.removeitem(key)
 	}
 	updateUser(key,index){
+		let profile = model.getitem(key);
 		return new Promise(function(resolve,reject){
-		  index == undefined ? index = 1 : {};
-		  model.login(key)
-		  .then((a) => {
+			index == undefined ? index = 1 : {};
+			profile.status = 'Авторизация';
+			this.viewUpdateUsersData();
+		  	model.login(key)
+		  	.then((a) => {
 				l(a)
+				profile.status = 'Загрузка активностей';
+				this.viewUpdateUsersData();
 				return model.loadActivityData(key)
-		  })
-		  .then(a => {
+		  	})
+		  	.then(a => {
 				l(a)
+				profile.status = 'Обновлено:  ' + (new Date().toTimeString()).substring(0,5);
+				this.viewUpdateUsersData();
 				resolve('Update done for: ' + key)
-		  })
-		  .catch(a => {
+		  	})
+		  	.catch(a => {
 				l("error " + a);
 				fs.appendFile('error.json', '\n' + (new Date()).toLocaleTimeString() +  ' ' + key + ' ' + a , function (err) {
-					  if (err) throw err;
-					  console.log('Saved!');
+					if (err) throw err;
+					console.log('Saved!');
 				});
+				profile.status = 'Ошибка:  ' + (new Date().toTimeString()).substring(0,5);
+				this.viewUpdateUsersData();
 				if(index >= 3){
-					  reject(a)
+					reject(a)
 				} else {
-					  resolve(this.processUser(key,++index))
+					resolve(this.processUser(key,++index))
 				}
-		  });
+		  	});
 		}.bind(this))
 	}
 	processUser(key,index){
 		let data = {};
+		let profile = model.getitem(key);
 		return new Promise(function(resolve,reject){
-		  index == undefined ? index = 1 : {};
-		  model.login(key)
-		  .then((a) => {
+		index == undefined ? index = 1 : {};
+		profile.status = 'Авторизация';
+		this.viewUpdateUsersData();
+		model.login(key)
+		.then((a) => {
 				l(a)
+				profile.status = 'Загрузка активностей';
+				this.viewUpdateUsersData();
 				return model.loadActivityData(key)
-		  })
-		  .then(a => {
-			  	l(a)
-				return model.updateLocation(key)
-		  })
-		  .then(a => {
+		})
+		.then(a => {
 				l(a)
+				profile.status = 'Обновление местоположения';
+				this.viewUpdateUsersData();
+				return model.updateLocation(key)
+		})
+		.then(a => {
+				l(a)
+				profile.status = 'Обработка данных';
+				this.viewUpdateUsersData();
 				return model.processActivityData(key)
-		  })
-		  .then(a => {
+		})
+		.then(a => {
 			  data = a;
 				l(data)
 				if(a == "Nothnt"){
-				  resolve('Nothn\'t to process');
-				  throw "olgud"	
+					resolve('Nothn\'t to process');
+					profile.status = 'Обновлено:  ' + (new Date().toTimeString()).substring(0,5);
+					this.viewUpdateUsersData();
+					throw "olgud"	
 				} else if (a == 'w8'){
-				  resolve('Wait fo next step');
-				  throw "olgud"	
+					resolve('Wait fo next step');
+					profile.status = 'Обновлено:  ' + (new Date().toTimeString()).substring(0,5);
+					this.viewUpdateUsersData();
+					throw "olgud"	
 				} else {
-				  return model.changeActivityState(data)
+					profile.status = 'Изменение активности';
+					this.viewUpdateUsersData();
+					return model.changeActivityState(data)
 				}
-		  })
-		  .then(a => {
+		})
+		.then(a => {
 			  l(a);
+			  profile.status = 'Добавление визита';
+			  this.viewUpdateUsersData();
 			  return model.sendTsiVisit(data)
-		  })
-		//   .then(a => {
-		// 	  l(a)
-		// 	  return model.updateLocation(key)
-		//   })
-		  .then(a => {
+		})
+		.then((a) => {
+				l(a)
+				profile.status = 'Загрузка данных';
+				this.viewUpdateUsersData();
+				return model.loadActivityData(key)
+		})
+		.then(a => {
 				l(a)
 				resolve('All done for: ' + key)
-		  })
-		  .catch(a => {
+				profile.status = 'Обновлено:  ' + (new Date().toTimeString()).substring(0,5);
+				this.viewupdateActivityes();
+		})
+		.catch(a => {
 			  if(a == 'olgud'){
 				  l('accepted olgud')
 				  return
@@ -172,6 +202,8 @@ class Controller{
 					  if (err) throw err;
 					  console.log('Saved!');
 				});
+				profile.status = 'Ошибка:  ' + (new Date().toTimeString()).substring(0,5);
+				this.viewUpdateUsersData();
 				if(index >= 3){
 					  reject(a)
 				} else {
@@ -193,6 +225,7 @@ class Controller{
 			.then(a =>{
 				resolve()
 				l('tru loopped: ' + c.login)
+				this.viewUpdateActivityes();
 			})
 			.catch(a => {
 				resolve()
@@ -215,7 +248,7 @@ class Controller{
 			.then(a =>{
 				resolve()
 				l('tru loopped fo: ' + c.login)
-				mainWindow.webContents.send('update-all' , {msg:'update all data'});
+				this.viewUpdateActivityes();
 			})
 			.catch(a => {
 				resolve()
@@ -224,6 +257,15 @@ class Controller{
 
 			
 		)), Promise.resolve());
+	}
+	viewUpdateUsers(){
+		mainWindow.webContents.send('updateUsers' , {msg:'hello from main process'})
+	}
+	viewUpdateUsersData(){
+		mainWindow.webContents.send('updateUsersData' , {msg:'hello from main process'})
+	}
+	viewUpdateActivityes(){
+		mainWindow.webContents.send('updateActivityes' , {msg:'hello from main process'})	
 	}
 	loopStart(minutes){
 		if(this.data.started == true){
@@ -284,6 +326,11 @@ controller.addUser({
 // controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 // controller.updateAll()
 controller.loopStart(2)
+setTimeout(() => {
+	controller.viewUpdateUsers();
+	controller.updateAll()
+}, 2000);
+
 // controller.findUser({login:'vkomelkov',password:'Qwer2222'})
 global.sharedObject = {
 	someProperty: model.getarr()
@@ -291,6 +338,6 @@ global.sharedObject = {
 
 
 
-setTimeout(() => {
-	mainWindow.webContents.send('info' , {msg:'hello from main process'});
-}, 2000);
+// setTimeout(() => {
+// 	mainWindow.webContents.send('info' , {msg:'hello from main process'});
+// }, 2000);
