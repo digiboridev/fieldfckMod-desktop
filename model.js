@@ -192,6 +192,7 @@ class Model{
             let getRandomWork = profile.tsiFfm.work[Math.floor(Math.random()*profile.tsiFfm.work.length)]
 
             if(activityarr[i].StatusId == '384d4b84-58e6-df11-971b-001d60e938c6'){
+                profile.nowOn = 'Выдана';
                 return {
                     activity:{
                         Id:activityarr[i].Id,
@@ -251,7 +252,7 @@ class Model{
                     }
                 }
                 l('Acc to in time left: ' +  (Math.floor((profile.intervals.aTob) - ((nowDate - actDate) / 1000 / 60))));
-                profile.nowOn = ('Подтверждена: ' + (Math.floor((profile.intervals.aTob) - ((nowDate - actDate) / 1000 / 60))));
+                profile.nowOn = ('Подтверждена: ' + (Math.floor((profile.intervals.aTob) - ((nowDate - actDate) / 1000 / 60))) + ' минут');
                 return ('w8');
                
             }
@@ -286,7 +287,7 @@ class Model{
                     }
                 }
                 l('in to on time left: ' +  (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))));
-                profile.nowOn = ('В Пути: ' + (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))));
+                profile.nowOn = ('В Пути: ' + (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))) + ' минут');
                 return ('w8');
             }
             if(activityarr[i].StatusId == '7fa82408-d9f1-41d6-a56d-ce3746701a46'){
@@ -329,7 +330,7 @@ class Model{
                 }
                 
                 l('on to close time left: ' +  (Math.floor((profile.intervals.cTod) - ((nowDate - actDate) / 1000 / 60))));
-                profile.nowOn = ('На обьекте: ' + (Math.floor(((nowDate - actDate) / 1000 / 60))));
+                profile.nowOn = ('На обьекте: ' + (Math.floor(((nowDate - actDate) / 1000 / 60))) + ' минут');
                 return ('w8');
                 
             }
@@ -427,7 +428,7 @@ class Profile{
         this.gpsSettings = (data.gpsSettings !== undefined ? data.gpsSettings : globalSettings.gpsSettings);
         this.tsiFfm = (data.tsiFfm !== undefined ? data.tsiFfm : globalSettings.tsiFfm);
         this.data = {cookie:{},bpmcsrf:{},activity:{}};
-        this.nowOn = '№: SR06712836; Усунення пошкоджень ШСД; Роботи: Лінійно-кабельне обладнання';
+        this.nowOn = 'Действие отсутствует';
         this.status = 'No Data';
     }
     showdata(){

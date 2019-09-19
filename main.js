@@ -7,9 +7,16 @@ var fs = require('fs')
 var Model = require('./model').Model;
 var Profile = require('./model').Profile;
 
+let windowReady = false;
+
 function l(a){
     console.log('\n')
     console.log(a)
+    function sendLog(){
+        // mainWindow.webContents.send('log-add' , {msg:a})
+        windowReady == false ? {} : mainWindow.webContents.send('log-add' , {msg:a})
+    }
+    sendLog()
 }
 l('main run')
 
@@ -34,8 +41,6 @@ function createWindow () {
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
 
-  //send nuuds
-  mainWindow.webContents.send('info' , {msg:'hello from main process'});
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -325,11 +330,11 @@ controller.addUser({
 
 // controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 // controller.updateAll()
-controller.loopStart(2)
-setTimeout(() => {
-	controller.viewUpdateUsers();
-	controller.updateAll()
-}, 4000);
+// controller.loopStart(2)
+// setTimeout(() => {
+// 	controller.viewUpdateUsers();
+// 	controller.updateAll()
+// }, 4000);
 
 // controller.findUser({login:'vkomelkov',password:'Qwer2222'})
 global.sharedObject = {
@@ -338,6 +343,15 @@ global.sharedObject = {
 
 
 
+ipcMain.on('started', (event, arg) => {
+  console.log('received started')
+    setTimeout(() => {
+        controller.loopStart(2)
+        controller.viewUpdateUsers();
+        controller.updateAll()
+    }, 4000);
+    windowReady = true;
+})
 // setTimeout(() => {
 // 	mainWindow.webContents.send('info' , {msg:'hello from main process'});
 // }, 2000);

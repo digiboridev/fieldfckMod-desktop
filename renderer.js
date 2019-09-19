@@ -120,13 +120,13 @@ class View {
                     <div class="event-card">
                         <p class="event-name">${act.Title}</p>
                         <p class="event-status">${statusId}</p>
-                        <p class="event-created">${(new Date(createdDate).toString())}</p>
+                        <p class="event-created">Создана: ${(new Date(createdDate).toString())}</p>
                         <p class="event-modifyed">Последнее изменение: ${(new Date(modifiedDate).toTimeString()).substring(0,5)}</p>
                         <p class="event-simptoms">${act.TsiSymptoms}</p>
                         <p class="event-adress">${act.TsiAddress}</p>
                         <p class="event-info">${act.TsiDescription}</p>
-                        <p class="event-categorys">${tsiResCategoryId}</p>
-                        <p class="event-categorys">${tsiTaskCategoryId}</p>
+                        <p class="event-categorys">${tsiResCategoryId == '' ? 'x3' : tsiResCategoryId}</p>
+                        <p class="event-categorys">${tsiTaskCategoryId == '' ? 'x3' : tsiTaskCategoryId}</p>
                     </div>
                 `
             });
@@ -154,5 +154,16 @@ ipcRenderer.on('updateActivityes' , function(event , data){
     view.updateActivityes();
 });
 
+ipcRenderer.on('log-add' , function(event , data){
+    // document.querySelector('aside > ul').appendChild(`<li><marquee behavior="scroll" direction="left" scrollamount="2" >${data.msg}</marquee></li>`)
+    console.log(data)
+    let child = document.createElement('li');
+    child.innerHTML = `<marquee behavior="slide" direction="left" scrollamount="10" loop="1">${data.msg}</marquee>`;
+    document.querySelector('aside > ul').appendChild(child)
+    document.querySelector('aside > ul').scrollTop = document.querySelector('aside > ul').scrollHeight;
+});
+
 const view = new View(el.remote.getGlobal('sharedObject').someProperty);
+
+ipcRenderer.send('started' , {msg:'hello from renderer'});
 

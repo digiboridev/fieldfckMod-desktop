@@ -244,12 +244,19 @@ aside ul li {
     font-weight: 300;
     font-size: 0.75em;
     margin: 3px 6px;
+/*    height: 20px;
+    overflow: hidden;*/
     padding: 5px;
     position: relative;
     background: #13161a;
     border-radius: 3px;
     /* border-bottom: 1px solid #777; */
 }
+aside ul li marquee {
+    width: 80%;
+    display: inline-block;
+}
+
 aside ul li::before {
     content: '';
     /* font-family: 'Font Awesome 5 Free';
@@ -321,6 +328,9 @@ aside ul li::before {
     left: -26px;
     border-radius: 6px;
     z-index: 2;
+
+    background: url(svg/spinner.svg) center no-repeat,#fff;
+    background-size: cover;
 }
 .event-card.updating::after {
     background: url(svg/spinner.svg) center no-repeat,#e0e0e1;
