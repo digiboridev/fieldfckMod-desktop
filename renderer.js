@@ -31,6 +31,7 @@ addListToProfiles()
 
 var el = require('electron')
 const { ipcRenderer } = require('electron');
+var fs = require('fs')
 
 
 class View {
@@ -87,17 +88,45 @@ class View {
         this.data.forEach(profile => {
             let activity = ''
             profile.data.activity.forEach(act => {
+                
+                let activityStatusCollection = JSON.parse(fs.readFileSync('ActivityStatusCollection.json')).results;
+                let statusId = '';
+                activityStatusCollection.forEach(element => {
+                    if (element.Id == act.StatusId) {
+                        statusId = element.Name
+                    }
+                });
+
+                let tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
+                let tsiResCategoryId = '';
+                tsiResCategory.forEach(element => {
+                    if (element.Id == act.TsiResCategoryId) {
+                        tsiResCategoryId = element.Name
+                    }
+                });
+
+                let tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
+                let tsiTaskCategoryId = '';
+                tsiTaskCategory.forEach(element => {
+                    if (element.Id == act.TsiTaskCategoryId) {
+                        tsiTaskCategoryId = element.Name
+                    }
+                });
+
+                let createdDate = (Number(act.CreatedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
+                let modifiedDate = (Number(act.ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
+
                 activity += `
                     <div class="event-card">
                         <p class="event-name">${act.Title}</p>
-                        <p class="event-status">В пути</p>
-                        <p class="event-created">2019-09-16T14:35:10.407Z</p>
-                        <p class="event-modifyed">2019-09-16T14:50:19.407Z</p>
-                        <p class="event-simptoms">не раб.тлф</p>
-                        <p class="event-adress">Донецька область; Добропілля; ул.Первомайская, 125-79.</p>
-                        <p class="event-info">Описание:"Причина: не раб.тлф\nТЗ: 27390"</p>
-                        <p class="event-categorys">Сигнальний контроллер SPS</p>
-                        <p class="event-categorys">Діагностика</p>
+                        <p class="event-status">${statusId}</p>
+                        <p class="event-created">${(new Date(createdDate).toString())}</p>
+                        <p class="event-modifyed">Последнее изменение: ${(new Date(modifiedDate).toTimeString()).substring(0,5)}</p>
+                        <p class="event-simptoms">${act.TsiSymptoms}</p>
+                        <p class="event-adress">${act.TsiAddress}</p>
+                        <p class="event-info">${act.TsiDescription}</p>
+                        <p class="event-categorys">${tsiResCategoryId}</p>
+                        <p class="event-categorys">${tsiTaskCategoryId}</p>
                     </div>
                 `
             });
@@ -105,6 +134,7 @@ class View {
         });
     }
 }
+
 
 
 ipcRenderer.on('info' , function(event , data){

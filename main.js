@@ -329,7 +329,7 @@ controller.loopStart(2)
 setTimeout(() => {
 	controller.viewUpdateUsers();
 	controller.updateAll()
-}, 2000);
+}, 4000);
 
 // controller.findUser({login:'vkomelkov',password:'Qwer2222'})
 global.sharedObject = {

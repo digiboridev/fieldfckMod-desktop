@@ -303,7 +303,7 @@ class Model{
                             StatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
                             ModifiedOn: new Date(),
                             TsiCommonStatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
-                            TsiTaskCategoryId:"826d6e5a-94aa-41ea-8634-638b52d7149e",
+                            TsiTaskCategoryId:"5e80e45b-c453-32e9-e053-710c000afcf5",
                             TsiResponsibilityAreaId:"4af25e7d-c713-4178-8434-9277060b9d9c",
                             TsiResCategoryId:"5c896492-8f0b-46d7-9087-4e7dc6cdf87a"
 

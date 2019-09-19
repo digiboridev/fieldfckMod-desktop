@@ -263,3 +263,11 @@ Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
 21:09:14  ReferenceError: a is not defined
 17:00:23 vkomelkov An error occurred while processing this request.
 18:42:37 vkomelkov ReferenceError: profile is not defined
+11:27:33 vkomelkov TypeError: this.viewupdateActivityes is not a function
+11:27:36 vkomelkov TypeError: this.viewupdateActivityes is not a function
+11:27:36 vnikolin TypeError: this.viewupdateActivityes is not a function
+11:39:32 vkomelkov TypeError: this.viewupdateActivityes is not a function
+11:39:34 vnikolin TypeError: this.viewupdateActivityes is not a function
+12:09:51 vkomelkov TypeError: this.viewupdateActivityes is not a function
+12:09:54 vnikolin TypeError: this.viewupdateActivityes is not a function
+12:49:11 vkomelkov TypeError: this.viewupdateActivityes is not a function
