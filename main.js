@@ -32,7 +32,8 @@ function createWindow () {
     webPreferences: {
 	  preload: path.join(__dirname, 'preload.js'),
 	  nodeIntegration: true
-    }
+	},
+	icon:'logo.png'
   })
 
   // and load the index.html of the app.
@@ -41,6 +42,7 @@ function createWindow () {
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
 
+  mainWindow.setMenu(null);
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
