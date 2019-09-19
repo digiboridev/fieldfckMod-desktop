@@ -11,6 +11,16 @@ body {
     position: relative;
 }
 
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
+
 header {
     background: #323b43;
     height: 10%;
@@ -64,6 +74,10 @@ section {
     /* background: #888; */
     display: block;
     flex-direction: column;
+    opacity: 1;
+}
+section.active{
+    opacity: 0.5;
 }
 aside {
     float: left;
@@ -235,6 +249,7 @@ aside ul {
     flex-direction: column;
     list-style: none;
     overflow: auto;
+    overflow-x: hidden;
 }
 aside ul li {
     color: #e0e0e1;
@@ -251,12 +266,22 @@ aside ul li {
     background: #13161a;
     border-radius: 3px;
     /* border-bottom: 1px solid #777; */
-}
-aside ul li marquee {
-    width: 80%;
-    display: inline-block;
+    animation-name: addLionLi;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
 }
 
+@keyframes addLionLi {
+    0% {
+      left: 200px;
+      opacity: 0;
+    }
+    100% {
+      left: 0px;
+      opacity: 1;
+    }
+  }
 aside ul li::before {
     content: '';
     /* font-family: 'Font Awesome 5 Free';
@@ -328,9 +353,9 @@ aside ul li::before {
     left: -26px;
     border-radius: 6px;
     z-index: 2;
-
+/* 
     background: url(svg/spinner.svg) center no-repeat,#fff;
-    background-size: cover;
+    background-size: cover; */
 }
 .event-card.updating::after {
     background: url(svg/spinner.svg) center no-repeat,#e0e0e1;

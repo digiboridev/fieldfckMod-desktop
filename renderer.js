@@ -8,6 +8,14 @@ function l(a){
     console.log("\n")
 }
 
+var el = require('electron')
+const { ipcRenderer } = require('electron');
+var fs = require('fs')
+
+const activityStatusCollection = JSON.parse(fs.readFileSync('ActivityStatusCollection.json')).results;
+const tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
+const tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
+
 l("run");
 
 // Page workers
@@ -27,11 +35,17 @@ function addListToProfiles(){
     }
 }
 addListToProfiles()
-//
 
-var el = require('electron')
-const { ipcRenderer } = require('electron');
-var fs = require('fs')
+function addActionstoP(){
+    document.querySelectorAll('.close').forEach(function (e){
+        e.addEventListener("click", function(ev) {
+            console.log(ev)
+        });
+    })
+}
+addActionstoP()
+
+//
 
 
 class View {
@@ -73,6 +87,7 @@ class View {
         document.querySelector('.profiles > ul').innerHTML = usersCollection;
         document.querySelector('.data-container').innerHTML = eventCardsUsers;
         addListToProfiles();
+        addActionstoP();
         return usersCollection
 
     }
@@ -80,16 +95,15 @@ class View {
         this.data.forEach(element => {
             document.querySelectorAll(`[login=${element.login}] > .card-info > p`)[0].innerHTML = element.nowOn;
             document.querySelectorAll(`[login=${element.login}] > .card-info > p`)[1].innerHTML = element.status;
-            console.log(element.data.activity)
         });
     }
     updateActivityes(){
-        console.log('asd')
+        
         this.data.forEach(profile => {
             let activity = ''
             profile.data.activity.forEach(act => {
                 
-                let activityStatusCollection = JSON.parse(fs.readFileSync('ActivityStatusCollection.json')).results;
+                // let activityStatusCollection = JSON.parse(fs.readFileSync('ActivityStatusCollection.json')).results;
                 let statusId = '';
                 activityStatusCollection.forEach(element => {
                     if (element.Id == act.StatusId) {
@@ -97,7 +111,7 @@ class View {
                     }
                 });
 
-                let tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
+                // let tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
                 let tsiResCategoryId = '';
                 tsiResCategory.forEach(element => {
                     if (element.Id == act.TsiResCategoryId) {
@@ -105,7 +119,7 @@ class View {
                     }
                 });
 
-                let tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
+                // let tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
                 let tsiTaskCategoryId = '';
                 tsiTaskCategory.forEach(element => {
                     if (element.Id == act.TsiTaskCategoryId) {
@@ -117,7 +131,7 @@ class View {
                 let modifiedDate = (Number(act.ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
 
                 activity += `
-                    <div class="event-card">
+                    <div class="event-card ${statusId !== 'Завершена' ? 'updating' : {}}">
                         <p class="event-name">${act.Title}</p>
                         <p class="event-status">${statusId}</p>
                         <p class="event-created">Создана: ${(new Date(createdDate).toString())}</p>
@@ -131,16 +145,11 @@ class View {
                 `
             });
             document.querySelector(`.event-cards[login=${profile.login}]`).innerHTML = activity;
+            
         });
     }
 }
 
-
-
-ipcRenderer.on('info' , function(event , data){
-    console.log(data.msg);
-    console.log(view.showOne());
-});
 
 ipcRenderer.on('updateUsers' , function(event , data){
     view.updateUsers();
@@ -148,19 +157,29 @@ ipcRenderer.on('updateUsers' , function(event , data){
 
 ipcRenderer.on('updateUsersData' , function(event , data){
     view.updateUsersData();
+    document.querySelector('section').className = 'active';
+    setTimeout(() => {
+        document.querySelector('section').className = '';
+    }, 1000);
 });
 
 ipcRenderer.on('updateActivityes' , function(event , data){
     view.updateActivityes();
+    // document.querySelector('section').className = 'active';
+    // // document.querySelector('section').className.replace(" active", "");
+    // setTimeout(() => {
+    //     document.querySelector('section').className = '';
+    // }, 1000);
 });
 
 ipcRenderer.on('log-add' , function(event , data){
-    // document.querySelector('aside > ul').appendChild(`<li><marquee behavior="scroll" direction="left" scrollamount="2" >${data.msg}</marquee></li>`)
-    console.log(data)
     let child = document.createElement('li');
-    child.innerHTML = `<marquee behavior="slide" direction="left" scrollamount="10" loop="1">${data.msg}</marquee>`;
-    document.querySelector('aside > ul').appendChild(child)
-    document.querySelector('aside > ul').scrollTop = document.querySelector('aside > ul').scrollHeight;
+    child.innerHTML = data.msg;
+    
+    setTimeout(() => {
+        document.querySelector('aside > ul').appendChild(child)
+        document.querySelector('aside > ul').scrollTop = document.querySelector('aside > ul').scrollHeight;
+    }, 5000);
 });
 
 const view = new View(el.remote.getGlobal('sharedObject').someProperty);
