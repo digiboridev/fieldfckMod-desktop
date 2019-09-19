@@ -86,6 +86,9 @@ class View {
         `
         document.querySelector('.profiles > ul').innerHTML = usersCollection;
         document.querySelector('.data-container').innerHTML = eventCardsUsers;
+        setTimeout(() => {
+            document.querySelector('.card').click();
+        }, 2000);
         addListToProfiles();
         addActionstoP();
         return usersCollection

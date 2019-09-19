@@ -49,6 +49,27 @@ header {
     bottom: 15%;
     display: inline-block;
 }
+.buttons {
+    display: inline-block;
+    position: absolute;
+    top: 5%;
+    right: 1%;
+
+}
+.buttons button {
+    background: #323b43;
+    color: #000;
+    border: none;
+    border: 1px solid #000;
+    padding: 6px;
+    border-radius: 3px;
+    outline: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px #13161a;
+    font-family:'Rubik', sans-serif;
+    font-weight: 200;
+    font-size: 0.5em;
+}
 main {
     height: 90%;
     width: 100%;
@@ -342,6 +363,11 @@ aside ul li::before {
     box-shadow: 0 0 10px #000;
     
 }
+.event-card.updating{
+    background: #ed704b;
+    box-shadow: 0 0 10px #fff;
+    filter: invert(1);
+}
 .event-card::after {
     content: '';
     position: absolute;
@@ -358,14 +384,14 @@ aside ul li::before {
     background-size: cover; */
 }
 .event-card.updating::after {
-    background: url(svg/spinner.svg) center no-repeat,#e0e0e1;
+    background: url(svg/spinner.svg) center no-repeat,#000;
     background-size: cover;
     
 }
 .event-card p {
     margin: 0;
     padding: 0;
-    color: #13161a;
+    color: #000;
     font-family:'Rubik', sans-serif;
     font-weight: 200;
     font-size: 0.75em;
