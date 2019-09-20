@@ -197,7 +197,7 @@ class Controller{
 				l(a)
 				resolve('All done for: ' + key)
 				profile.status = 'Обновлено:  ' + (new Date().toTimeString()).substring(0,5);
-				this.viewupdateActivityes();
+				this.viewUpdateActivityes();
 		})
 		.catch(a => {
 			  if(a == 'olgud'){
@@ -301,7 +301,7 @@ controller.addUser({
 	intervals:{
 		aTob:5,
 		bToc:10,
-		cTod:30
+		cTod:40
 	},
 	gpsPattern:[
 		{lat:50.7505282,long:26.0437982}
@@ -318,7 +318,7 @@ controller.addUser({
 	intervals:{
 		aTob:5,
 		bToc:10,
-		cTod:30
+		cTod:40
 	},
 	gpsPattern:[
 		{lat:48.4646372,long:37.0812746}

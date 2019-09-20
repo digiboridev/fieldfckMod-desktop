@@ -177,7 +177,7 @@ ipcRenderer.on('updateActivityes' , function(event , data){
 
 ipcRenderer.on('log-add' , function(event , data){
     let child = document.createElement('li');
-    child.innerHTML = data.msg;
+    child.innerHTML = (new Date().toTimeString()).substring(0,8) + ' ' + data.msg;
     
     setTimeout(() => {
         document.querySelector('aside > ul').appendChild(child)

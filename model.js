@@ -150,7 +150,7 @@ class Model{
                 // l(csrftoken);
                 profile.data.cookie = cookie;
                 profile.data.bpmcsrf = csrftoken;
-                resolve('authentifycado');
+                resolve(profile.login + ' authentifycado');
                 
             })
             .catch(a => {
@@ -178,7 +178,7 @@ class Model{
                     if (err) throw err;
                     console.log('Saved!');
                 });
-                resolve ('Data downloaded');
+                resolve (profile.login + ' Activity data downloaded');
             })
             .catch(a => reject(a));            
         })
