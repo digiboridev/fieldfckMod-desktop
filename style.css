@@ -503,7 +503,16 @@ footer  {
     position: absolute;
     width: 100%;
     bottom: 0;
-    height: 10px;
+    height: 11px;
     background: #000;
-
+    color: #fff;
+    /* text-transform: lowercase; */
+    font-variant: small-caps;
+    font-family:'Rubik', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+    font-size: 0.6em;
+    text-align: right;
+    filter:invert(1);
+    opacity: 0.8;
 }
