@@ -45,6 +45,30 @@ function addActionstoP(){
 }
 addActionstoP()
 
+
+let loopStatus = false;
+document.querySelector('.start-button').addEventListener("click", function() {
+    if (loopStatus) {
+        l('already started')
+    } else {
+        loopStatus = true;       
+        ipcRenderer.send('loop-start' , {});
+        document.querySelector('.start-button').className += " active";
+        document.querySelector('.stop-button').disabled = false;
+    }
+})
+document.querySelector('.stop-button').addEventListener("click", function() {
+    loopStatus = false;       
+    ipcRenderer.send('loop-stop' , {});
+    document.querySelector('.start-button').className = document.querySelector('.start-button').className.replace(" active", "");
+    document.querySelector('.stop-button').disabled = true;
+})
+document.querySelector('.process-button').addEventListener("click", function() {   
+    ipcRenderer.send('processNow' , {});
+})
+document.querySelector('.update-button').addEventListener("click", function() {   
+    ipcRenderer.send('updateNow' , {});
+})
 //
 
 
@@ -135,25 +159,26 @@ class View {
 
                 activity += `
                     <div class="event-card ${statusId !== 'Завершена' ? 'updating' : {}}">
-                        <p class="event-name">${act.Title}</p>
-                        <p class="event-status">${statusId}</p>
-                        <p class="event-created">Создана: ${(new Date(createdDate).toString())}</p>
-                        <p class="event-modifyed">Последнее изменение: ${(new Date(modifiedDate).toTimeString()).substring(0,5)}</p>
-                        <p class="event-simptoms">${act.TsiSymptoms}</p>
-                        <p class="event-adress">${act.TsiAddress}</p>
-                        <p class="event-info">${act.TsiDescription}</p>
-                        <p class="event-categorys">${tsiResCategoryId == '' ? 'x3' : tsiResCategoryId}</p>
-                        <p class="event-categorys">${tsiTaskCategoryId == '' ? 'x3' : tsiTaskCategoryId}</p>
+                    <p class="event-name">${act.Title}</p>
+                    <p class="event-status">${statusId}</p>
+                    <p class="event-created">Создана: ${(new Date(createdDate).toString())}</p>
+                    <p class="event-modifyed">Последнее изменение: ${(new Date(modifiedDate).toTimeString()).substring(0,5)}</p>
+                    <p class="event-simptoms">${act.TsiSymptoms}</p>
+                    <p class="event-adress">${act.TsiAddress}</p>
+                    <p class="event-info">${act.TsiDescription}</p>
+                    <p class="event-categorys">${tsiResCategoryId == '' ? 'x3' : tsiResCategoryId}</p>
+                    <p class="event-categorys">${tsiTaskCategoryId == '' ? 'x3' : tsiTaskCategoryId}</p>
                     </div>
-                `
+                    `
+                });
+                document.querySelector(`.event-cards[login=${profile.login}]`).innerHTML = activity;
+                
             });
-            document.querySelector(`.event-cards[login=${profile.login}]`).innerHTML = activity;
-            
-        });
+        }
     }
-}
-
-
+    
+const view = new View(el.remote.getGlobal('sharedObject').someProperty);
+    
 ipcRenderer.on('updateUsers' , function(event , data){
     view.updateUsers();
 });
@@ -185,7 +210,20 @@ ipcRenderer.on('log-add' , function(event , data){
     }, 5000);
 });
 
-const view = new View(el.remote.getGlobal('sharedObject').someProperty);
+ipcRenderer.on('status' , function(e,data){
+    console.log(data);
+    document.querySelector('.status').innerHTML = data.msg;
+    if (data.status) {
+        document.querySelector('.process-button').disabled = true;
+        document.querySelector('.update-button').disabled = true;
+        document.querySelector('.status').className += " start"
+    } else {
+        document.querySelector('.process-button').disabled = false;
+        document.querySelector('.update-button').disabled = false;
+        document.querySelector('.status').className = document.querySelector('.status').className.replace(" start", "");
+    }
+});
+
 
 ipcRenderer.send('started' , {msg:'hello from renderer'});
 

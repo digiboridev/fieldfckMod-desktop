@@ -50,26 +50,131 @@ header {
     display: inline-block;
 }
 .buttons {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     position: absolute;
-    top: 5%;
+    top: 0;
     right: 1%;
-
+    height: 100%;
+    background: #323b43;
+    
+    /* box-shadow: 0 0 5px #13161a; */
 }
 .buttons button {
-    background: #323b43;
-    color: #000;
+    filter: drop-shadow(0 0 4rem #13161a);
+    background: #566068;
+    color: #ebebeb;
+    margin:0.5px;
     border: none;
-    border: 1px solid #000;
     padding: 6px;
-    border-radius: 3px;
     outline: none;
     text-transform: uppercase;
-    box-shadow: 0 0 5px #13161a;
     font-family:'Rubik', sans-serif;
     font-weight: 200;
     font-size: 0.5em;
+    display: inline-block;
+    float: left;
+    height: 4vh;
+    width: 6vh;
+    position: relative;
+    transition: 0.1s background ease-in-out;
 }
+.buttons button:hover {
+    filter: contrast(1.5);
+    box-shadow: 0 0 5px #13161a;
+ 
+}
+.buttons button:disabled{
+    opacity: 0.5;
+}
+.buttons button:disabled:hover{
+    opacity: 0.5;
+    filter:none;
+}
+.buttons button:first-child {
+    border-radius: 4px 0px 0px 4px;
+}
+.buttons button:last-child {
+    border-radius: 0px 4px 4px 0px;
+}
+.buttons .update-button {
+    background: url(svg/repeat.svg) center no-repeat,#566068;
+    background-size: 40%;
+}
+.buttons .process-button {
+    background: url(svg/skip.svg) center no-repeat,#566068;
+    background-size: 40%;
+}
+.buttons .start-button {
+    background: url(svg/play-button.svg) center no-repeat,#566068;
+    background-size: 40%;
+}
+.buttons .stop-button {
+    background: url(svg/stop.svg) center no-repeat,#566068;
+    background-size: 40%;
+}
+.buttons .update-button:active {
+    background: url(svg/repeat.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+.buttons .process-button:active {
+    background: url(svg/skip.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+.buttons .start-button:active {
+    background: url(svg/play-button.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+.buttons .stop-button:active {
+    background: url(svg/stop.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+
+
+.buttons .update-button.active {
+    background: url(svg/repeat.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+.buttons .process-button.active {
+    background: url(svg/skip.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+.buttons .start-button.active {
+    background: url(svg/play-button.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+.buttons .stop-button.active {
+    background: url(svg/stop.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+
+.status {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    font-size: 0.6em;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 100;
+    color: #ebebeb;
+}
+.status.start{
+    left: 16px;
+}
+.status.start::before{
+    content: '';
+    width: 12px;
+    height: 12px;
+    left: -16px;
+    top: 0;
+    position: absolute;
+    margin-right: 10px;
+    background: url(svg/spinner.svg) center no-repeat;
+    background-size: cover;
+}
+
 main {
     height: 90%;
     width: 100%;
@@ -387,6 +492,7 @@ aside ul li::before {
 .event-card.updating::after {
     background: url(svg/spinner.svg) center no-repeat,#000;
     background-size: cover;
+    z-index: 10;
     
 }
 .event-card p {

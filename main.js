@@ -102,6 +102,7 @@ class Controller{
 		model.removeitem(key)
 	}
 	updateUser(key,index){
+		mainWindow.webContents.send('status' , {msg:'обновление данных',status:true})
 		let profile = model.getitem(key);
 		return new Promise(function(resolve,reject){
 			index == undefined ? index = 1 : {};
@@ -137,6 +138,7 @@ class Controller{
 		}.bind(this))
 	}
 	processUser(key,index){
+		mainWindow.webContents.send('status' , {msg:'обработка',status:true})
 		let data = {};
 		let profile = model.getitem(key);
 		return new Promise(function(resolve,reject){
@@ -233,10 +235,12 @@ class Controller{
 				resolve()
 				l('tru loopped: ' + c.login)
 				this.viewUpdateActivityes();
+				mainWindow.webContents.send('status' , {msg:'обновлено: ' + (new Date().toTimeString()).substring(0,5),status:false})
 			})
 			.catch(a => {
 				resolve()
 				l('no tru loopped: ' + c.login)
+				mainWindow.webContents.send('status' , {msg:'обновлено c ошибками : ' + (new Date().toTimeString()).substring(0,5),status:false})
 			})
 
 			
@@ -256,10 +260,22 @@ class Controller{
 				resolve()
 				l('tru loopped fo: ' + c.login)
 				this.viewUpdateActivityes();
+				// mainWindow.webContents.send('status' , {msg:'обработано: ' + (new Date().toTimeString()).substring(0,5),status:false})
+				if(this.data.started == true){
+					mainWindow.webContents.send('status' , {msg:'Запущен',status:false})
+				} else {
+					mainWindow.webContents.send('status' , {msg:'Остановлен',status:false})
+				}
 			})
 			.catch(a => {
 				resolve()
 				l('no tru loopped: ' + c.login)
+				// mainWindow.webContents.send('status' , {msg:'обработано c ошибками : ' + (new Date().toTimeString()).substring(0,5),status:false})
+				if(this.data.started == true){
+					mainWindow.webContents.send('status' , {msg:'Запущен',status:false})
+				} else {
+					mainWindow.webContents.send('status' , {msg:'Остановлен',status:false})
+				}
 			})
 
 			
@@ -279,11 +295,13 @@ class Controller{
 			return
 		}
 		this.data.started = true;
-		this.data.timer = setInterval(()=>{controller.processAll()},minutes * 60 * 1000)	
+		this.data.timer = setInterval(()=>{controller.processAll()},minutes * 60 * 1000)
+		mainWindow.webContents.send('status' , {msg:'Запущен'})	
 	}
 	loopStop(){
 		this.data.started = false;
 		clearInterval(this.data.timer)
+		mainWindow.webContents.send('status' , {msg:'Остановлен'})
 	}
 }
 
@@ -348,12 +366,30 @@ global.sharedObject = {
 ipcMain.on('started', (event, arg) => {
   console.log('received started')
     setTimeout(() => {
-        controller.loopStart(2)
+        // controller.loopStart(2)
         controller.viewUpdateUsers();
         controller.updateAll()
     }, 4000);
     windowReady = true;
 })
+
+ipcMain.on('loop-start', (event, arg) => {
+	l('Interval add')
+	controller.loopStart(2)
+	setTimeout(() => {
+		controller.processAll()
+	}, 500);
+  })
+ipcMain.on('loop-stop', (event, arg) => {
+	l('Interval cleared')
+	controller.loopStop();
+  })
+ipcMain.on('processNow', (event, arg) => {
+	controller.processAll()
+  })
+ipcMain.on('updateNow', (event, arg) => {
+	controller.updateAll();
+  })
 // setTimeout(() => {
 // 	mainWindow.webContents.send('info' , {msg:'hello from main process'});
 // }, 2000);
