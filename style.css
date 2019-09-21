@@ -72,7 +72,7 @@ header {
     font-family:'Rubik', sans-serif;
     font-weight: 200;
     font-size: 0.5em;
-    display: inline-block;
+    display: block;
     float: left;
     height: 4vh;
     width: 6vh;

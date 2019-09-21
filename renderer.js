@@ -33,6 +33,9 @@ function addListToProfiles(){
       document.querySelector(`.event-cards[login=${this.attributes[1].value}]`).className += " active";
       });
     }
+    document.querySelector('.add-card').addEventListener("click", function() {   
+        ipcRenderer.send('add-card' , {});
+    })
 }
 addListToProfiles()
 
@@ -69,6 +72,8 @@ document.querySelector('.process-button').addEventListener("click", function() {
 document.querySelector('.update-button').addEventListener("click", function() {   
     ipcRenderer.send('updateNow' , {});
 })
+
+
 //
 
 

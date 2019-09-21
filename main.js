@@ -20,8 +20,6 @@ function l(a){
 }
 l('main run')
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
@@ -30,47 +28,62 @@ function createWindow () {
     width: 900,
     height: 600,
     webPreferences: {
-	  preload: path.join(__dirname, 'preload.js'),
+	//   preload: path.join(__dirname, 'preload.js'),
 	  nodeIntegration: true
 	},
 	icon:'logo.png'
   })
 
-  // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+//   mainWindow.webContents.openDevTools()
 
   mainWindow.setMenu(null);
 
-  // Emitted when the window is closed.
   mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null
+	app.quit()
   })
+
   console.log('window run');
-  // setTimeout(dothat,5000);
-  // setInterval(dothat,30000);
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
+let addWindow
+
+function createAddWindow () {
+	// Create the browser window.
+	addWindow = new BrowserWindow({
+	  width: 600,
+	  height: 600,
+	  webPreferences: {
+		// preload: path.join(__dirname, 'preload.js'),
+		nodeIntegration: true
+	  },
+	  icon:'logo.png'
+	})
+  
+	addWindow.loadFile('add.html')
+  
+	// Open the DevTools.
+  //   mainWindow.webContents.openDevTools()
+  
+  	addWindow.setMenu(null);
+  
+	// Emitted when the window is closed.
+	addWindow.on('closed', function () {
+
+	  addWindow = null
+	})
+  }
+
+
 app.on('ready', createWindow)
 
-// Quit when all windows are closed.
 app.on('window-all-closed', function () {
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') app.quit()
 })
 
 app.on('activate', function () {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) createWindow()
 })
 
@@ -389,6 +402,12 @@ ipcMain.on('processNow', (event, arg) => {
   })
 ipcMain.on('updateNow', (event, arg) => {
 	controller.updateAll();
+  })
+
+
+ipcMain.on('add-card', (event, arg) => {
+	createAddWindow()
+	l('add')
   })
 // setTimeout(() => {
 // 	mainWindow.webContents.send('info' , {msg:'hello from main process'});

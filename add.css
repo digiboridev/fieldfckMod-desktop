@@ -1,0 +1,144 @@
+body {
+    height: 400px;
+    width: 600px;
+    background: #13161a;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.card {
+    height: 30%;
+    width: 80%;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    filter: drop-shadow(0 0 2em #000)
+}
+
+.card-logo {
+    float: left;
+    width: 40%;
+    height: 100%;
+    background:url(svg/user.svg) center no-repeat,#222; 
+    filter: invert(1); 
+    background-size: 60% 60%;
+}
+.card-info {
+    float: left;
+    width: 60%;
+    height: 100%;
+    background: #fff;
+    display: block;
+    padding: 6px 4px;
+    box-sizing: border-box;
+    
+}
+
+.card-info p {
+    font-family:'Rubik', sans-serif;
+    font-weight: 300;
+    font-size:0.8em;
+    margin: 3px;
+    width: 100%;
+    filter: drop-shadow(0 0 0.4em #ebebeb)
+}
+.card-info p::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    /* background: #000; */
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    margin-right: 6px;
+}
+.card-id::before{
+    background:url(svg/key.svg) center no-repeat;  
+    background-size: 100% 100%;
+}
+.card-name::before{
+    background:url(svg/dog-tag.svg) center no-repeat;  
+    background-size: 100% 100%;
+}
+.card-job::before{
+    background:url(svg/domain.svg) center no-repeat;  
+    background-size: 100% 100%;
+}
+.card-email::before{
+    background:url(svg/email.svg) center no-repeat;  
+    background-size: 100% 100%;
+}
+.card-mobile::before{
+    background:url(svg/call.svg) center no-repeat;  
+    background-size: 100% 100%;
+}
+form {
+    height: 30%;
+    width: 80%;
+    background: #fff;
+    margin: 0;
+    padding: 10px 0;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    font-family:'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 0.75em;
+    box-sizing: border-box;
+    filter: drop-shadow(0 0 2em #000)
+}
+.login-label {
+    width: 80%;
+    display: block;
+    margin: 3px auto;
+    filter: drop-shadow(0 0 2em #222)
+}
+.login-input {
+    width: 80%;
+    display: block;
+    margin: 3px auto;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
+    filter: drop-shadow(0 0 1em #ebebeb)
+}
+.password-label {
+    width: 80%;
+    display: block;
+    margin: 3px auto;
+    filter: drop-shadow(0 0 2em #222)
+}
+.password-input {
+    width: 80%;
+    display: block;
+    margin: 3px auto;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
+    filter: drop-shadow(0 0 1em #ebebeb)
+}
+.check-btn {
+    background: #ebebeb;
+    display: block;
+    margin: 3px auto;
+    border: none;   
+    margin-left: 10%;
+    float: left;
+    font-family:'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 1;
+}
+.add-btn {
+    background: #ebebeb;
+    display: block;
+    margin: 3px auto;
+    border: none; 
+    margin-left: 5px;
+    float: left;
+    font-family:'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 1;
+}
