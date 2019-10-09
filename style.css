@@ -605,6 +605,65 @@ aside ul li::before {
     /* box-shadow: 0 0 10px #13161a; */
 }
 
+
+.popup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(19,22,32,0.8);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0;
+}
+.popup .form-check {
+    position: relative;
+    margin: 200px auto 0;
+    width: 200px;
+    height: 200px;
+    font-family:'Rubik', sans-serif;
+    color: #e0e0e1;
+    font-weight: 300;
+    font-size: 0.6em;
+    padding: 2px;
+    filter: drop-shadow(0 0 2em #000)
+}
+.form-check button {
+    background: #ebebeb;
+    margin: 3px;
+    border: none; 
+    font-size: 1;
+    border-radius: 3px;
+    outline: none;
+    padding: 3px;
+}
+.form-check button:active{
+    background: #128fb4;
+}
+.form-check input {
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 3px;
+    margin: 3px 0;
+}
+.form-check .form-status {
+    margin: 20px;
+    position: relative;
+}
+.form-status.loading:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    padding: 0;
+    margin: 0 3px 0 0;
+    /* bottom: -5px; */
+    position: relative;
+    float: left;
+    background: url(svg/spinner.svg) center no-repeat;
+    background-size: cover;
+}
 footer  {
     position: absolute;
     width: 100%;
@@ -622,3 +681,5 @@ footer  {
     filter:invert(1);
     opacity: 0.8;
 }
+
+

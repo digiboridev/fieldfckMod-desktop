@@ -132,7 +132,10 @@ class View {
     updateActivityes(){
         
         this.data.forEach(profile => {
-            let activity = ''
+            let activity = '';
+            if (profile.data.activity[0] == null) {
+                return
+            }
             profile.data.activity.forEach(act => {
                 
                 // let activityStatusCollection = JSON.parse(fs.readFileSync('ActivityStatusCollection.json')).results;

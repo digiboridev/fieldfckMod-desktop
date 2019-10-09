@@ -39,7 +39,7 @@ function createWindow () {
   // Open the DevTools.
 //   mainWindow.webContents.openDevTools()
 
-  mainWindow.setMenu(null);
+//   mainWindow.setMenu(null);
 
   mainWindow.on('closed', function () {
 	app.quit()
@@ -335,7 +335,7 @@ controller.addUser({
 		cTod:40
 	},
 	gpsPattern:[
-		{lat:50.7505282,long:26.0437982}
+		{lat:48.4646372,long:37.0812746}
 	],
     gpsSettings:{
         randomSorting:true,
@@ -345,6 +345,23 @@ controller.addUser({
 })
 controller.addUser({
 	login:'vnikolin',
+	password:"Qwer2222",
+	intervals:{
+		aTob:5,
+		bToc:10,
+		cTod:40
+	},
+	gpsPattern:[
+		{lat:48.4646372,long:37.0812746}
+	],
+    gpsSettings:{
+        randomSorting:true,
+        randomizePosition:true,
+        currentPosition:0
+    }
+})
+controller.addUser({
+	login:'vvitriv',
 	password:"Qwer2222",
 	intervals:{
 		aTob:5,
