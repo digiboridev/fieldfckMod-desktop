@@ -345,7 +345,7 @@ controller.addUser({
 })
 controller.addUser({
 	login:'vnikolin',
-	password:"Qwer2222",
+	password:"Qwer3333",
 	intervals:{
 		aTob:5,
 		bToc:10,
@@ -362,6 +362,23 @@ controller.addUser({
 })
 controller.addUser({
 	login:'vvitriv',
+	password:"Qwer2222",
+	intervals:{
+		aTob:5,
+		bToc:10,
+		cTod:40
+	},
+	gpsPattern:[
+		{lat:48.4646372,long:37.0812746}
+	],
+    gpsSettings:{
+        randomSorting:true,
+        randomizePosition:true,
+        currentPosition:0
+    }
+})
+controller.addUser({
+	login:'smyhydiuk',
 	password:"Qwer2222",
 	intervals:{
 		aTob:5,
@@ -405,7 +422,7 @@ ipcMain.on('started', (event, arg) => {
 
 ipcMain.on('loop-start', (event, arg) => {
 	l('Interval add')
-	controller.loopStart(2)
+	controller.loopStart(4)
 	setTimeout(() => {
 		controller.processAll()
 	}, 500);
