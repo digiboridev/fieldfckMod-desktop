@@ -200,7 +200,9 @@ ipcRenderer.on('updateUsersData' , function(event , data){
 });
 
 ipcRenderer.on('updateActivityes' , function(event , data){
-    view.updateActivityes();
+    setTimeout(() => {      
+        view.updateActivityes();
+    }, 5000);
     // document.querySelector('section').className = 'active';
     // // document.querySelector('section').className.replace(" active", "");
     // setTimeout(() => {
@@ -212,14 +214,13 @@ ipcRenderer.on('log-add' , function(event , data){
     let child = document.createElement('li');
     child.innerHTML = (new Date().toTimeString()).substring(0,8) + ' ' + data.msg;
     
-    setTimeout(() => {
-        document.querySelector('aside > ul').appendChild(child)
-        document.querySelector('aside > ul').scrollTop = document.querySelector('aside > ul').scrollHeight;
-    }, 5000);
+    document.querySelector('aside > ul').appendChild(child)
+    document.querySelector('aside > ul').scrollTop = document.querySelector('aside > ul').scrollHeight;
+    // setTimeout(() => {
+    // }, 1000);
 });
 
 ipcRenderer.on('status' , function(e,data){
-    console.log(data);
     document.querySelector('.status').innerHTML = data.msg;
     if (data.status) {
         document.querySelector('.process-button').disabled = true;

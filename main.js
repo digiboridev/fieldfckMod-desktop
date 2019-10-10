@@ -16,7 +16,8 @@ function l(a){
         // mainWindow.webContents.send('log-add' , {msg:a})
         windowReady == false ? {} : mainWindow.webContents.send('log-add' , {msg:a})
     }
-    sendLog()
+	sendLog()
+
 }
 l('main run')
 
