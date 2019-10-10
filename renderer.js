@@ -16,6 +16,7 @@ const activityStatusCollection = JSON.parse(fs.readFileSync('ActivityStatusColle
 const tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
 const tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
 
+
 l("run");
 
 // Page workers
@@ -130,37 +131,38 @@ class View {
         });
     }
     updateActivityes(){
-        
-        this.data.forEach(profile => {
+
+        for (var i = this.data.length - 1; i >= 0; i--) {
             let activity = '';
+            let profile = this.data[i];
             if (profile.data.activity[0] == null) {
-                return
+                continue
             }
-            profile.data.activity.forEach(act => {
-                
-                // let activityStatusCollection = JSON.parse(fs.readFileSync('ActivityStatusCollection.json')).results;
+
+            for (var iAct = 0; iAct <= profile.data.activity.length - 1; iAct++) {
+                let act = profile.data.activity[iAct];
+
                 let statusId = '';
-                activityStatusCollection.forEach(element => {
-                    if (element.Id == act.StatusId) {
-                        statusId = element.Name
+                for (var iSt = activityStatusCollection.length - 1; iSt >= 0; iSt--) {
+                    if (activityStatusCollection[iSt].Id == act.StatusId) {
+                        statusId = activityStatusCollection[iSt].Name
                     }
-                });
+                }
 
-                // let tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
                 let tsiResCategoryId = '';
-                tsiResCategory.forEach(element => {
-                    if (element.Id == act.TsiResCategoryId) {
-                        tsiResCategoryId = element.Name
-                    }
-                });
 
-                // let tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
-                let tsiTaskCategoryId = '';
-                tsiTaskCategory.forEach(element => {
-                    if (element.Id == act.TsiTaskCategoryId) {
-                        tsiTaskCategoryId = element.Name
+                for (var iRes = tsiResCategory.length - 1; iRes >= 0; iRes--) {
+                    if (tsiResCategory[iRes].Id == act.TsiResCategoryId) {
+                        tsiResCategoryId = tsiResCategory[iRes].Name
                     }
-                });
+                }
+
+                let tsiTaskCategoryId = '';
+                for (var iTask = tsiTaskCategory.length - 1; iTask >= 0; iTask--) {
+                    if (tsiTaskCategory[iTask].Id == act.TsiTaskCategoryId) {
+                        tsiTaskCategoryId = tsiTaskCategory[iTask].Name
+                    }
+                }
 
                 let createdDate = (Number(act.CreatedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
                 let modifiedDate = (Number(act.ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
@@ -178,13 +180,67 @@ class View {
                     <p class="event-categorys">${tsiTaskCategoryId == '' ? 'x3' : tsiTaskCategoryId}</p>
                     </div>
                     `
-                });
-                document.querySelector(`.event-cards[login=${profile.login}]`).innerHTML = activity;
+
+            }
+
+            document.querySelector(`.event-cards[login=${profile.login}]`).innerHTML = activity;
+        }
+        
+        // this.data.forEach(profile => {
+        //     let activity = '';
+        //     if (profile.data.activity[0] == null) {
+        //         return
+        //     }
+        //     profile.data.activity.forEach(act => {
                 
-            });
+        //         // let activityStatusCollection = JSON.parse(fs.readFileSync('ActivityStatusCollection.json')).results;
+        //         let statusId = '';
+        //         activityStatusCollection.forEach(element => {
+        //             if (element.Id == act.StatusId) {
+        //                 statusId = element.Name
+        //             }
+        //         });
+
+        //         // let tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
+        //         let tsiResCategoryId = '';
+        //         tsiResCategory.forEach(element => {
+        //             if (element.Id == act.TsiResCategoryId) {
+        //                 tsiResCategoryId = element.Name
+        //             }
+        //         });
+
+        //         // let tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
+        //         let tsiTaskCategoryId = '';
+        //         tsiTaskCategory.forEach(element => {
+        //             if (element.Id == act.TsiTaskCategoryId) {
+        //                 tsiTaskCategoryId = element.Name
+        //             }
+        //         });
+
+        //         let createdDate = (Number(act.CreatedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
+        //         let modifiedDate = (Number(act.ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
+
+        //         activity += `
+        //             <div class="event-card ${statusId !== 'Завершена' ? 'updating' : {}}">
+        //             <p class="event-name">${act.Title}</p>
+        //             <p class="event-status">${statusId}</p>
+        //             <p class="event-created">Создана: ${(new Date(createdDate).toString())}</p>
+        //             <p class="event-modifyed">Последнее изменение: ${(new Date(modifiedDate).toTimeString()).substring(0,5)}</p>
+        //             <p class="event-simptoms">${act.TsiSymptoms}</p>
+        //             <p class="event-adress">${act.TsiAddress}</p>
+        //             <p class="event-info">${act.TsiDescription}</p>
+        //             <p class="event-categorys">${tsiResCategoryId == '' ? 'x3' : tsiResCategoryId}</p>
+        //             <p class="event-categorys">${tsiTaskCategoryId == '' ? 'x3' : tsiTaskCategoryId}</p>
+        //             </div>
+        //             `
+        //         });
+        //         document.querySelector(`.event-cards[login=${profile.login}]`).innerHTML = activity;
+        //         console.log('up')
+                
+        //     });
         }
     }
-    
+
 const view = new View(el.remote.getGlobal('sharedObject').someProperty);
     
 ipcRenderer.on('updateUsers' , function(event , data){
@@ -202,7 +258,7 @@ ipcRenderer.on('updateUsersData' , function(event , data){
 ipcRenderer.on('updateActivityes' , function(event , data){
     setTimeout(() => {      
         view.updateActivityes();
-    }, 5000);
+    }, 1000);
     // document.querySelector('section').className = 'active';
     // // document.querySelector('section').className.replace(" active", "");
     // setTimeout(() => {
