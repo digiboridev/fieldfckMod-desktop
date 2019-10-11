@@ -423,7 +423,7 @@ ipcMain.on('started', (event, arg) => {
 
 ipcMain.on('loop-start', (event, arg) => {
 	l('Interval add')
-	controller.loopStart(4)
+	controller.loopStart(3)
 	setTimeout(() => {
 		controller.processAll()
 	}, 500);

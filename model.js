@@ -321,19 +321,24 @@ class Model{
                 let actDate = (Number(activityarr[i].ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
                 let nowDate = Date.parse(new Date())
                 if (nowDate - actDate > profile.intervals.cTod * 60 * 1000){
-                    let getRandomRes = profile.tsiFfm.res[Math.floor(Math.random()*profile.tsiFfm.res.length)]
-                    let getRandomWork = profile.tsiFfm.work[Math.floor(Math.random()*profile.tsiFfm.work.length)]
+                    // var fs = require('fs')
+                    let tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
+                    let tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
+
+                    let getRandomRes = tsiResCategory[Math.floor(Math.random()*tsiResCategory.length)].Id
+                    let getRandomTask = tsiTaskCategory[Math.floor(Math.random()*tsiTaskCategory.length)].Id
                     console.log(getRandomRes);
-                    console.log(getRandomWork);
+                    console.log(getRandomTask);
+
                     return {
                         activity:{
                             Id:activityarr[i].Id,
                             StatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
                             ModifiedOn: new Date(),
                             TsiCommonStatusId:'4bdbb88f-58e6-df11-971b-001d60e938c6',
-                            TsiTaskCategoryId:"5e80e45b-c453-32e9-e053-710c000afcf5",
+                            TsiTaskCategoryId:getRandomTask,
                             TsiResponsibilityAreaId:"4af25e7d-c713-4178-8434-9277060b9d9c",
-                            TsiResCategoryId:"5c896492-8f0b-46d7-9087-4e7dc6cdf87a"
+                            TsiResCategoryId:getRandomRes
 
                         },
                         tsiVisit:{
