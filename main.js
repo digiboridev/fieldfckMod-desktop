@@ -1,5 +1,4 @@
-const {app, BrowserWindow} = require('electron')
-const { ipcMain } = require('electron')
+const { app, BrowserWindow, Menu, ipcMain, Tray } = require('electron')
 const path = require('path')
 var fs = require('fs')
 // var client = require('node-rest-client-promise').Client();
@@ -21,6 +20,8 @@ function l(a){
 }
 l('main run')
 
+
+
 let mainWindow
 
 function createWindow () {
@@ -40,20 +41,62 @@ function createWindow () {
   // Open the DevTools.
 //   mainWindow.webContents.openDevTools()
 
-//   mainWindow.setMenu(null);
+  mainWindow.setMenu(null);
 
   mainWindow.on('closed', function () {
-	app.quit()
+	// app.quit()
+	mainWindow = null;
+	windowReady = false;
   })
 
   console.log('window run');
 }
+let tray = null
 
 
-app.on('ready', createWindow)
+
+app.on('ready', () => {
+	createWindow()
+	tray = new Tray('logo.png')
+	const contextMenu = Menu.buildFromTemplate([
+		{ label: 'Показать окно', click() {
+			windowReady == true ? {} : createWindow();
+			windowReady = true;
+			}
+		},
+		{ label: 'Запустить', click() {
+			if (controller.data.started == true) {
+				l('started')
+				return
+			}
+			l('Interval add')
+			controller.loopStart(3)
+			setTimeout(() => {
+				controller.processAll()
+			}, 500);
+			}
+		},
+		{ label: 'Остановить', click() {
+			l('Interval cleared')
+			controller.loopStop();
+			}
+		},
+		{ label: 'Выход', click() {
+			app.quit()
+			}
+		}
+	])
+	tray.setToolTip('Field fuck Mod')
+	tray.setContextMenu(contextMenu)
+	tray.on("double-click", () => {
+		l('clicked')
+		windowReady == true ? {} : createWindow();
+		windowReady = true;
+	})
+})
 
 app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') app.quit()
+//   if (process.platform !== 'darwin') app.quit()
 })
 
 app.on('activate', function () {
@@ -88,7 +131,7 @@ class Controller{
 		model.removeitem(key)
 	}
 	updateUser(key,index){
-		mainWindow.webContents.send('status' , {msg:'обновление данных',status:true})
+		windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'обновление данных',status:true})
 		let profile = model.getitem(key);
 		return new Promise(function(resolve,reject){
 			index == undefined ? index = 1 : {};
@@ -124,7 +167,7 @@ class Controller{
 		}.bind(this))
 	}
 	processUser(key,index){
-		mainWindow.webContents.send('status' , {msg:'обработка',status:true})
+		windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'обработка',status:true})
 		let data = {};
 		let profile = model.getitem(key);
 		return new Promise(function(resolve,reject){
@@ -221,12 +264,12 @@ class Controller{
 				resolve()
 				l('tru loopped: ' + c.login)
 				this.viewUpdateActivityes();
-				mainWindow.webContents.send('status' , {msg:'обновлено: ' + (new Date().toTimeString()).substring(0,5),status:false})
+				windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'обновлено: ' + (new Date().toTimeString()).substring(0,5),status:false})
 			})
 			.catch(a => {
 				resolve()
 				l('no tru loopped: ' + c.login)
-				mainWindow.webContents.send('status' , {msg:'обновлено c ошибками : ' + (new Date().toTimeString()).substring(0,5),status:false})
+				windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'обновлено c ошибками : ' + (new Date().toTimeString()).substring(0,5),status:false})
 			})
 
 			
@@ -246,21 +289,19 @@ class Controller{
 				resolve()
 				l('tru loopped fo: ' + c.login)
 				this.viewUpdateActivityes();
-				// mainWindow.webContents.send('status' , {msg:'обработано: ' + (new Date().toTimeString()).substring(0,5),status:false})
 				if(this.data.started == true){
-					mainWindow.webContents.send('status' , {msg:'Запущен',status:false})
+					windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'Запущен',status:false})
 				} else {
-					mainWindow.webContents.send('status' , {msg:'Остановлен',status:false})
+					windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'Остановлен',status:false})
 				}
 			})
 			.catch(a => {
 				resolve()
 				l('no tru loopped: ' + c.login)
-				// mainWindow.webContents.send('status' , {msg:'обработано c ошибками : ' + (new Date().toTimeString()).substring(0,5),status:false})
 				if(this.data.started == true){
-					mainWindow.webContents.send('status' , {msg:'Запущен',status:false})
+					windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'Запущен',status:false})
 				} else {
-					mainWindow.webContents.send('status' , {msg:'Остановлен',status:false})
+					windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'Остановлен',status:false})
 				}
 			})
 
@@ -268,26 +309,27 @@ class Controller{
 		)), Promise.resolve());
 	}
 	viewUpdateUsers(){
-		mainWindow.webContents.send('updateUsers' , {msg:'hello from main process'})
+		windowReady == false ? {} : mainWindow.webContents.send('updateUsers' , {msg:'hello from main process'})
 	}
 	viewUpdateUsersData(){
-		mainWindow.webContents.send('updateUsersData' , {msg:'hello from main process'})
+		windowReady == false ? {} : mainWindow.webContents.send('updateUsersData' , {msg:'hello from main process'})
 	}
 	viewUpdateActivityes(){
-		mainWindow.webContents.send('updateActivityes' , {msg:'hello from main process'})	
+		windowReady == false ? {} : mainWindow.webContents.send('updateActivityes' , {msg:'hello from main process'})	
 	}
 	loopStart(minutes){
 		if(this.data.started == true){
+			l('already')
 			return
 		}
 		this.data.started = true;
 		this.data.timer = setInterval(()=>{controller.processAll()},minutes * 60 * 1000)
-		mainWindow.webContents.send('status' , {msg:'Запущен'})	
+		windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'Запущен'})	
 	}
 	loopStop(){
 		this.data.started = false;
 		clearInterval(this.data.timer)
-		mainWindow.webContents.send('status' , {msg:'Остановлен'})
+		windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'Остановлен'})
 	}
 }
 
@@ -390,9 +432,11 @@ ipcMain.on('started', (event, arg) => {
   console.log('received started')
     setTimeout(() => {
         // controller.loopStart(2)
-        controller.viewUpdateUsers();
-        controller.updateAll()
-    }, 4000);
+		controller.viewUpdateUsers();
+		controller.viewUpdateUsersData();
+		controller.viewUpdateActivityes();
+        // controller.updateAll()
+    }, 100);
     windowReady = true;
 })
 
@@ -414,7 +458,9 @@ ipcMain.on('updateNow', (event, arg) => {
 	controller.updateAll();
   })
 
+ipcMain.on('leave-window',() => {
+	l('haha')
+	mainWindow.close()
+	
+})
 
-// setTimeout(() => {
-// 	mainWindow.webContents.send('info' , {msg:'hello from main process'});
-// }, 2000);

@@ -48,6 +48,7 @@ function addListToPoppup(){
         document.querySelector('.popup_add').disabled = true; 
         document.querySelector('.popup [type=text]').value = "";
         document.querySelector('.popup [type=password]').value ="";
+        document.querySelector('.form-status').innerHTML = "";
     })
 
     document.querySelector('.popup_add').addEventListener("click", () => {
@@ -55,6 +56,7 @@ function addListToPoppup(){
         document.querySelector('.popup_add').disabled = true; 
         document.querySelector('.popup [type=text]').value = "";
         document.querySelector('.popup [type=password]').value ="";
+        document.querySelector('.form-status').innerHTML = "";
     })
 
     let answerData = {};
@@ -65,6 +67,7 @@ function addListToPoppup(){
             password:answerData.password
         })
         view.updateUsers()
+        view.updateActivityes()
     }
     
     document.querySelector('.popup_find').addEventListener("click",() => {
@@ -84,7 +87,7 @@ function addListToPoppup(){
         .catch((a) => {
             console.log(a)
             document.querySelector('.form-status').className = "form-status";
-            document.querySelector('.form-status').innerHTML = "Вы ввели неправильный логин или пароль. "
+            document.querySelector('.form-status').innerHTML = a;
             document.querySelector('.popup_add').disabled = true
         })
     })
@@ -106,6 +109,7 @@ addActionstoP()
 
 
 let loopStatus = false;
+
 document.querySelector('.start-button').addEventListener("click", function() {
     if (loopStatus) {
         l('already started')
