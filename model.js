@@ -17,9 +17,9 @@ l('model run')
 const globalSettings = {
     url:"https://ffm.ukrtelecom.net",
     intervals:{
-        aTob:30,
-        bToc:30,
-        cTod:30
+        aTob:10,
+        bToc:10,
+        cTod:40
     },
     gpsPattern:[
         {lat:50.7505281,long:26.0437981},

@@ -610,12 +610,17 @@ aside ul li::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(19,22,32,0.8);
+    background: rgba(19,22,32,0.5);
     top: 0;
     left: 0;
     z-index: 2;
     padding: 0;
+    display: none;
 }
+.popup.active {
+    display: block;
+}
+
 .popup .form-check {
     position: relative;
     margin: 200px auto 0;
@@ -626,16 +631,19 @@ aside ul li::before {
     font-weight: 300;
     font-size: 0.6em;
     padding: 2px;
-    filter: drop-shadow(0 0 2em #000)
+    filter: drop-shadow(0 0 4em #000)
+}
+.popup input {
+    width: 190px;
 }
 .form-check button {
     background: #ebebeb;
     margin: 3px;
     border: none; 
-    font-size: 1;
+    font-size: 1em;
     border-radius: 3px;
     outline: none;
-    padding: 3px;
+    padding: 4px;
 }
 .form-check button:active{
     background: #128fb4;

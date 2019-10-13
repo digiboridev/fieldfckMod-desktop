@@ -49,34 +49,6 @@ function createWindow () {
   console.log('window run');
 }
 
-let addWindow
-
-function createAddWindow () {
-	// Create the browser window.
-	addWindow = new BrowserWindow({
-	  width: 600,
-	  height: 600,
-	  webPreferences: {
-		// preload: path.join(__dirname, 'preload.js'),
-		nodeIntegration: true
-	  },
-	  icon:'logo.png'
-	})
-  
-	addWindow.loadFile('add.html')
-  
-	// Open the DevTools.
-  //   mainWindow.webContents.openDevTools()
-  
-  	addWindow.setMenu(null);
-  
-	// Emitted when the window is closed.
-	addWindow.on('closed', function () {
-
-	  addWindow = null
-	})
-  }
-
 
 app.on('ready', createWindow)
 
@@ -327,23 +299,23 @@ const model = new Model();
 const controller = new Controller();
 
 
-controller.addUser({
-	login:'vkomelkov',
-	password:"Qwer2222",
-	intervals:{
-		aTob:5,
-		bToc:10,
-		cTod:40
-	},
-	gpsPattern:[
-		{lat:48.4646372,long:37.0812746}
-	],
-    gpsSettings:{
-        randomSorting:true,
-        randomizePosition:true,
-        currentPosition:0
-    }
-})
+// controller.addUser({
+// 	login:'vkomelkov',
+// 	password:"Qwer2222",
+// 	intervals:{
+// 		aTob:5,
+// 		bToc:10,
+// 		cTod:40
+// 	},
+// 	gpsPattern:[
+// 		{lat:48.4646372,long:37.0812746}
+// 	],
+//     gpsSettings:{
+//         randomSorting:true,
+//         randomizePosition:true,
+//         currentPosition:0
+//     }
+// })
 controller.addUser({
 	login:'vnikolin',
 	password:"Qwer3333",
@@ -406,7 +378,10 @@ controller.addUser({
 
 // controller.findUser({login:'vkomelkov',password:'Qwer2222'})
 global.sharedObject = {
-	someProperty: model.getarr()
+	modelArray: model.getarr(),
+	modelFinder: model.checkAuthData,
+	addUser:controller.addUser,
+	removeUser:controller.deleteUser
 }
 
 
@@ -440,10 +415,6 @@ ipcMain.on('updateNow', (event, arg) => {
   })
 
 
-ipcMain.on('add-card', (event, arg) => {
-	createAddWindow()
-	l('add')
-  })
 // setTimeout(() => {
 // 	mainWindow.webContents.send('info' , {msg:'hello from main process'});
 // }, 2000);

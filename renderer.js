@@ -35,15 +35,70 @@ function addListToProfiles(){
       });
     }
     document.querySelector('.add-card').addEventListener("click", function() {   
-        ipcRenderer.send('add-card' , {});
+        document.querySelector('.popup').className += " active";
+        
     })
 }
+
 addListToProfiles()
+
+function addListToPoppup(){
+    document.querySelector('.popup_close').addEventListener("click",() => {
+        document.querySelector('.popup').className = "popup";
+        document.querySelector('.popup_add').disabled = true; 
+        document.querySelector('.popup [type=text]').value = "";
+        document.querySelector('.popup [type=password]').value ="";
+    })
+
+    document.querySelector('.popup_add').addEventListener("click", () => {
+        add();
+        document.querySelector('.popup_add').disabled = true; 
+        document.querySelector('.popup [type=text]').value = "";
+        document.querySelector('.popup [type=password]').value ="";
+    })
+
+    let answerData = {};
+
+    function add(){
+        el.remote.getGlobal('sharedObject').addUser({
+            login:answerData.login,
+            password:answerData.password
+        })
+        view.updateUsers()
+    }
+    
+    document.querySelector('.popup_find').addEventListener("click",() => {
+        let login = document.querySelector('.popup [type=text]').value;
+        let password = document.querySelector('.popup [type=password]').value;
+        l(login + password)
+        document.querySelector('.form-status').className += " loading";
+        document.querySelector('.form-status').innerHTML = "Загрузка";
+        el.remote.getGlobal('sharedObject').modelFinder(login,password)
+        .then((a) => {
+            console.log(a)
+            answerData = a;
+            document.querySelector('.form-status').className = "form-status";
+            document.querySelector('.form-status').innerHTML = a.name
+            document.querySelector('.popup_add').disabled = false;            
+        })
+        .catch((a) => {
+            console.log(a)
+            document.querySelector('.form-status').className = "form-status";
+            document.querySelector('.form-status').innerHTML = "Вы ввели неправильный логин или пароль. "
+            document.querySelector('.popup_add').disabled = true
+        })
+    })
+}
+
+addListToPoppup()
 
 function addActionstoP(){
     document.querySelectorAll('.close').forEach(function (e){
         e.addEventListener("click", function(ev) {
-            console.log(ev)
+            let key = ev.path[1].attributes[1].value;
+            l(key)
+            el.remote.getGlobal('sharedObject').removeUser(key)
+            view.updateUsers()
         });
     })
 }
@@ -79,8 +134,8 @@ document.querySelector('.update-button').addEventListener("click", function() {
 
 
 class View {
-    constructor (data) {
-        this.data = data;
+    constructor () {
+        this.data = el.remote.getGlobal('sharedObject').modelArray;
         
     }
     showAll(){
@@ -90,6 +145,7 @@ class View {
         return this.data[0];
     }
     updateUsers(){
+        this.data = el.remote.getGlobal('sharedObject').modelArray;
         let usersCollection = '';
         let eventCardsUsers = '';
         this.data.forEach(element => {
@@ -241,7 +297,7 @@ class View {
         }
     }
 
-const view = new View(el.remote.getGlobal('sharedObject').someProperty);
+const view = new View();
     
 ipcRenderer.on('updateUsers' , function(event , data){
     view.updateUsers();
