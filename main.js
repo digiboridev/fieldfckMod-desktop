@@ -341,23 +341,23 @@ const model = new Model();
 const controller = new Controller();
 
 
-// controller.addUser({
-// 	login:'vkomelkov',
-// 	password:"Qwer2222",
-// 	intervals:{
-// 		aTob:5,
-// 		bToc:10,
-// 		cTod:40
-// 	},
-// 	gpsPattern:[
-// 		{lat:48.4646372,long:37.0812746}
-// 	],
-//     gpsSettings:{
-//         randomSorting:true,
-//         randomizePosition:true,
-//         currentPosition:0
-//     }
-// })
+controller.addUser({
+	login:'vkomelkov',
+	password:"Qwer2222",
+	intervals:{
+		aTob:5,
+		bToc:10,
+		cTod:40
+	},
+	gpsPattern:[
+		{lat:48.4646372,long:37.0812746}
+	],
+    gpsSettings:{
+        randomSorting:true,
+        randomizePosition:true,
+        currentPosition:0
+    }
+})
 controller.addUser({
 	login:'vnikolin',
 	password:"Qwer3333",

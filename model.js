@@ -17,7 +17,7 @@ l('model run')
 const globalSettings = {
     url:"https://ffm.ukrtelecom.net",
     intervals:{
-        aTob:10,
+        aTob:5,
         bToc:10,
         cTod:40
     },
