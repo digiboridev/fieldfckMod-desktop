@@ -11,10 +11,11 @@ function l(a){
 var el = require('electron')
 const { ipcRenderer } = require('electron');
 var fs = require('fs')
+const path = require('path')
 
-const activityStatusCollection = JSON.parse(fs.readFileSync('ActivityStatusCollection.json')).results;
-const tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
-const tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
+const activityStatusCollection = JSON.parse(fs.readFileSync(path.join(__dirname, 'ActivityStatusCollection.json'))).results;
+const tsiResCategory = JSON.parse(fs.readFileSync(path.join(__dirname, 'TsiResourceTypeTTCollection.json')));
+const tsiTaskCategory = JSON.parse(fs.readFileSync(path.join(__dirname, 'TsiTaskCategoryCollection.json')));
 
 
 l("run");

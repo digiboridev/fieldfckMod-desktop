@@ -33,13 +33,13 @@ function createWindow () {
 	//   preload: path.join(__dirname, 'preload.js'),
 	  nodeIntegration: true
 	},
-	icon:'logo.png'
+	icon:path.join(__dirname, 'logo.png')
   })
 
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-//   mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   mainWindow.setMenu(null);
 
@@ -57,7 +57,7 @@ let tray = null
 
 app.on('ready', () => {
 	createWindow()
-	tray = new Tray('logo.png')
+	tray = new Tray(path.join(__dirname, 'logo.png'))
 	const contextMenu = Menu.buildFromTemplate([
 		{ label: 'Показать окно', click() {
 			windowReady == true ? {} : createWindow();

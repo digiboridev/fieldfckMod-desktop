@@ -322,8 +322,8 @@ class Model{
                 let nowDate = Date.parse(new Date())
                 if (nowDate - actDate > profile.intervals.cTod * 60 * 1000){
                     // var fs = require('fs')
-                    let tsiResCategory = JSON.parse(fs.readFileSync('TsiResourceTypeTTCollection.json'));
-                    let tsiTaskCategory = JSON.parse(fs.readFileSync('TsiTaskCategoryCollection.json'));
+                    let tsiResCategory = JSON.parse(fs.readFileSync(path.join(__dirname, 'TsiResourceTypeTTCollection.json')));
+                    let tsiTaskCategory = JSON.parse(fs.readFileSync(path.join(__dirname, 'TsiTaskCategoryCollection.json')));
 
                     let getRandomRes = tsiResCategory[Math.floor(Math.random()*tsiResCategory.length)].Id
                     let getRandomTask = tsiTaskCategory[Math.floor(Math.random()*tsiTaskCategory.length)].Id
