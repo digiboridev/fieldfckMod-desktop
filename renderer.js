@@ -8,6 +8,7 @@ function l(a){
     console.log("\n")
 }
 
+
 var el = require('electron')
 const { ipcRenderer } = require('electron');
 var fs = require('fs')

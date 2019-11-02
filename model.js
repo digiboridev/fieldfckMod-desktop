@@ -317,6 +317,7 @@ class Model{
                 profile.nowOn = ('В Пути: ' + (Math.floor((profile.intervals.bToc) - ((nowDate - actDate) / 1000 / 60))) + ' минут');
                 return ('w8');
             }
+            
             if(activityarr[i].StatusId == '7fa82408-d9f1-41d6-a56d-ce3746701a46'){
                 let actDate = (Number(activityarr[i].ModifiedOn.substring(6,19)) + (new Date().getTimezoneOffset()) * 60 * 1000);
                 let nowDate = Date.parse(new Date())

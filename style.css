@@ -659,6 +659,7 @@ aside ul li::before {
     margin: 20px;
     position: relative;
 }
+
 .form-status.loading:before {
     content: "";
     width: 10px;
