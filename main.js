@@ -343,23 +343,6 @@ const controller = new Controller();
 
 controller.addUser({
 	login:'vkomelkov',
-	password:"Qwer2222",
-	intervals:{
-		aTob:5,
-		bToc:10,
-		cTod:40
-	},
-	gpsPattern:[
-		{lat:48.4646372,long:37.0812746}
-	],
-    gpsSettings:{
-        randomSorting:true,
-        randomizePosition:true,
-        currentPosition:0
-    }
-})
-controller.addUser({
-	login:'vnikolin',
 	password:"Qwer3333",
 	intervals:{
 		aTob:5,
@@ -375,6 +358,7 @@ controller.addUser({
         currentPosition:0
     }
 })
+
 controller.addUser({
 	login:'vvitriv',
 	password:"Qwer2222",
@@ -409,6 +393,23 @@ controller.addUser({
         currentPosition:0
     }
 })
+controller.addUser({
+	login:'AVSemenyuk',
+	password:"Qwer4646",
+	intervals:{
+		aTob:5,
+		bToc:10,
+		cTod:40
+	},
+	gpsPattern:[
+		{lat:48.4646372,long:37.0812746}
+	],
+    gpsSettings:{
+        randomSorting:true,
+        randomizePosition:true,
+        currentPosition:0
+    }
+})
 
 // controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 // controller.updateAll()
@@ -425,6 +426,7 @@ global.sharedObject = {
 	addUser:controller.addUser,
 	removeUser:controller.deleteUser
 }
+
 
 
 
@@ -451,7 +453,7 @@ ipcMain.on('loop-stop', (event, arg) => {
 	l('Interval cleared')
 	controller.loopStop();
   })
-ipcMain.on('processNow', (event, arg) => {
+  ipcMain.on('processNow', (event, arg) => {
 	controller.processAll()
   })
 ipcMain.on('updateNow', (event, arg) => {
@@ -463,4 +465,3 @@ ipcMain.on('leave-window',() => {
 	mainWindow.close()
 	
 })
-

@@ -663,7 +663,7 @@ aside ul li::before {
     content: "";
     width: 10px;
     height: 10px;
-    display: inline-block;
+    display: block;
     padding: 0;
     margin: 0 3px 0 0;
     /* bottom: -5px; */
