@@ -354,3 +354,11 @@ ipcRenderer.on('status' , function(e,data){
 
 ipcRenderer.send('started' , {msg:'hello from renderer'});
 
+
+
+
+l(LikeButton)
+
+const domContainer = document.querySelector('#like_button_container');
+const element = <LikeButton name="Алиса" />;
+ReactDOM.render(<LikeButton name="Алиса" />, domContainer);

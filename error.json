@@ -410,3 +410,26 @@ Error: getaddrinfo ENOTFOUND ffm.ukrtelecom.net
 17:13:16 vvitriv TimeoutError: timeout error
 17:13:46 smyhydiuk TimeoutError: timeout error
 17:14:16 smyhydiuk TimeoutError: timeout error
+12:10:58 vkomelkov ReferenceError: path is not defined
+12:10:59 vkomelkov ReferenceError: path is not defined
+12:10:59 vkomelkov ReferenceError: path is not defined
+12:11:01 smyhydiuk ReferenceError: path is not defined
+12:11:02 smyhydiuk ReferenceError: path is not defined
+12:11:02 smyhydiuk ReferenceError: path is not defined
+12:11:03 AVSemenyuk ReferenceError: path is not defined
+12:11:04 AVSemenyuk ReferenceError: path is not defined
+12:12:36 vkomelkov ReferenceError: path is not defined
+12:12:37 vkomelkov ReferenceError: path is not defined
+12:12:38 vkomelkov ReferenceError: path is not defined
+12:12:39 smyhydiuk ReferenceError: path is not defined
+12:12:40 smyhydiuk ReferenceError: path is not defined
+12:12:41 smyhydiuk ReferenceError: path is not defined
+12:12:42 AVSemenyuk ReferenceError: path is not defined
+12:12:42 AVSemenyuk ReferenceError: path is not defined
+12:12:43 AVSemenyuk ReferenceError: path is not defined
+12:14:44 vkomelkov ReferenceError: path is not defined
+12:14:44 vkomelkov ReferenceError: path is not defined
+12:14:45 vkomelkov ReferenceError: path is not defined
+12:14:47 smyhydiuk ReferenceError: path is not defined
+12:14:47 smyhydiuk ReferenceError: path is not defined
+12:14:48 smyhydiuk ReferenceError: path is not defined

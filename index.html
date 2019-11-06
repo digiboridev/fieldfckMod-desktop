@@ -66,6 +66,7 @@
         </div>
         <div class="decor-line"></div>
         <div class="data">
+            <div id="like_button_container"></div>
           <div class="data-container">
             <div class="event-cards" login="vkomelkov">
               <div class="event-card updating">
@@ -201,6 +202,12 @@
           </li>
         </ul>
       </aside>
+
+
+      
+
+
+
     </main>
     <div class="popup">
       <form class="form-check" action="#">
@@ -220,8 +227,16 @@
 
     </div> -->
 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+    
+
+    <script src="like_button.js"></script>
     <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <script src="./renderer.js" type="text/babel"></script>
+
     
     
   </body>
