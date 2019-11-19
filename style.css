@@ -10,6 +10,10 @@ body {
     width: 100vw;
     position: relative;
 }
+#app {
+    height: 100%;
+    width: 100%;
+}
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -85,18 +89,18 @@ header {
  
 }
 .buttons button:disabled{
-    opacity: 0.5;
+    /* opacity: 0.5; */
 }
 .buttons button:disabled:hover{
-    opacity: 0.5;
+    /* opacity: 0.5; */
     filter:none;
 }
-.buttons button:first-child {
+/* .buttons button:first-child {
     border-radius: 4px 0px 0px 4px;
 }
 .buttons button:last-child {
     border-radius: 0px 4px 4px 0px;
-}
+} */
 .buttons .update-button {
     background: url(svg/repeat.svg) center no-repeat,#566068;
     background-size: 40%;

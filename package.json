@@ -4,7 +4,7 @@
   "description": "electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": ".\\node_modules\\electron\\dist\\electron.exe .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },

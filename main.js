@@ -40,7 +40,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   mainWindow.setMenu(null);
 
@@ -109,7 +109,7 @@ app.on('activate', function () {
 
 class Controller{
 	constructor (data) {
-		this.data = {};
+		this.data = {started:false};
 	}
 	findUser(data){
 		model.checkAuthData(data.login,data.password)
@@ -332,6 +332,9 @@ class Controller{
 		clearInterval(this.data.timer)
 		windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'Остановлен'})
 	}
+	getLoopStatus(){
+		return this.data;
+	}
 }
 
 
@@ -425,10 +428,9 @@ global.sharedObject = {
 	modelArray: model.getarr(),
 	modelFinder: model.checkAuthData,
 	addUser:controller.addUser,
-	removeUser:controller.deleteUser
+	removeUser:controller.deleteUser,
+	getLoopStatus:controller.getLoopStatus()
 }
-
-
 
 
 ipcMain.on('started', (event, arg) => {

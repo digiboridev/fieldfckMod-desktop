@@ -8,7 +8,8 @@
     
   </head>
   <body>
-    <header>
+    <div id="app"></div>
+    <!-- <header>
       <div class="head-container">
         <img src="logo.png" alt="">
         <div class="logo-text"></div>
@@ -19,37 +20,13 @@
           <button class="update-button"></button>
           <p class="status">nothin</p>
         </div>
-        <!-- <p class="status">Обработка</p> -->
       </div>
-      <!-- <p class="status">обработка</p> -->
     </header>
     <main>
       <div class="child"></div>
       <section class="asdasd">
         <div class="profiles noselect">
           <ul>
-            <li class="card">
-              <h3 class="card-header">Ivan Zeneth</h3>
-              <div class="card-info">
-                <p>В Пути SR021545</p>
-                <p>Ожидание следующего шага</p>
-              </div>
-              <div class="close"></div>
-              <div class="info"></div>
-            </li>
-            <li class="card">
-              <h3 class="card-header">Ivan Zeneth</h3>
-              <div class="card-info">
-                <p>
-                  <marquee behavior="scroll" direction="left" scrollamount="2" >
-                    №: SR06712836; Усунення пошкоджень ШСД; Роботи: Лінійно-кабельне обладнання
-                  </marquee>
-                </p>
-                <p>Ожидание следующего шага</p>
-              </div>
-              <div class="close"></div>
-              <div class="info"></div>
-            </li>
             <li class="card">
               <h3 class="card-header">Ivan Zeneth</h3>
               <div class="card-info">
@@ -77,62 +54,6 @@
                 <p class="event-adress">Донецька область; Добропілля; ул.Первомайская, 125-79.</p>
                 <p class="event-info">Описание:"Причина: не раб.тлф\nТЗ: 27390"</p>
               </div>
-              <div class="event-card">
-                <p class="event-name">№: SR06674197; Інше; Охоронно-роз'яснювальна робота (ОРР)</p>
-                <p class="event-status">В пути</p>
-                <p class="event-created">2019-09-16T14:35:10.407Z</p>
-                <p class="event-modifyed">2019-09-16T14:50:19.407Z</p>
-                <p class="event-simptoms">не раб.тлф</p>
-                <p class="event-adress">Донецька область; Добропілля; ул.Первомайская, 125-79.</p>
-                <p class="event-info">Описание:"Причина: не раб.тлф\nТЗ: 27390"</p>
-                <p class="event-categorys">Сигнальний контроллер SPS</p>
-                <p class="event-categorys">Діагностика</p>
-              </div>
-              <div class="event-card">
-                <p class="event-name">№: SR06672014; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку</p>
-                <p class="event-status">В пути</p>
-                <p class="event-created">2019-09-16T14:35:10.407Z</p>
-                <p class="event-modifyed">2019-09-16T14:50:19.407Z</p>
-                <p class="event-simptoms">не раб.тлф</p>
-                <p class="event-adress">Донецька область; Добропілля; ул.Первомайская, 125-79.</p>
-                <p class="event-info">Описание:"Причина: не раб.тлф\nТЗ: 27390"</p>
-                <p class="event-categorys">Сигнальний контроллер SPS</p>
-                <p class="event-categorys">Діагностика</p>
-              </div>
-            </div>
-            <div class="event-cards active" login="vnikolin">
-                <div class="event-card updating">
-                  <p class="event-name">№: SR06632095; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку</p>
-                  <p class="event-status">vn</p>
-                  <p class="event-created">2019-09-16T14:35:10.407Z</p>
-                  <p class="event-modifyed">2019-09-16T14:50:19.407Z</p>
-                  <p class="event-simptoms">не раб.тлф</p>
-                  <p class="event-adress">Донецька область; Добропілля; ул.Первомайская, 125-79.</p>
-                  <p class="event-info">Описание:"Причина: не раб.тлф\nТЗ: 27390"</p>
-                </div>
-                <div class="event-card">
-                  <p class="event-name">№: SR06674197; Інше; Охоронно-роз'яснювальна робота (ОРР)</p>
-                  <p class="event-status">В пути</p>
-                  <p class="event-created">2019-09-16T14:35:10.407Z</p>
-                  <p class="event-modifyed">2019-09-16T14:50:19.407Z</p>
-                  <p class="event-simptoms">не раб.тлф</p>
-                  <p class="event-adress">Донецька область; Добропілля; ул.Первомайская, 125-79.</p>
-                  <p class="event-info">Описание:"Причина: не раб.тлф\nТЗ: 27390"</p>
-                  <p class="event-categorys">Сигнальний контроллер SPS</p>
-                  <p class="event-categorys">Діагностика</p>
-                </div>
-                <div class="event-card">
-                  <p class="event-name">№: SR06672014; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку</p>
-                  <p class="event-status">В пути</p>
-                  <p class="event-created">2019-09-16T14:35:10.407Z</p>
-                  <p class="event-modifyed">2019-09-16T14:50:19.407Z</p>
-                  <p class="event-simptoms">не раб.тлф</p>
-                  <p class="event-adress">Донецька область; Добропілля; ул.Первомайская, 125-79.</p>
-                  <p class="event-info">Описание:"Причина: не раб.тлф\nТЗ: 27390"</p>
-                  <p class="event-categorys">Сигнальний контроллер SPS</p>
-                  <p class="event-categorys">Діагностика</p>
-                </div>
-              </div>
           </div>
         </div>
       </section>
@@ -145,13 +66,7 @@
           
         </ul>
       </aside>
-
-
-      
-
-
-
-    </main>
+    </main> -->
     <div class="popup">
       <form class="form-check" action="#">
         Логин:<br>
@@ -176,12 +91,15 @@
 
     
 
-    <script src="like_button.js"></script>
     <!-- You can also require other files to run in this process -->
+    <script src="./react_components/activity_data.js" type="text/babel"></script>
+    <script src="./react_components/profiles.js" type="text/babel"></script>
+    <script src="./react_components/control_buttons.js" type="text/babel"></script>
+    <script src="./like_button.js" type="text/babel"></script>
     <script src="./renderer.js" type="text/babel"></script>
 
     
-    <!-- <div id="like_button_container"></div> -->
+    <div id="like_button_container"></div>
   </body>
   <footer>FieldFuckMod v20191013     |      digiborimusik@gmail.com    |</footer>
 </html>
