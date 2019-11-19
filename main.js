@@ -379,7 +379,7 @@ controller.addUser({
 })
 controller.addUser({
 	login:'smyhydiuk',
-	password:"Qwer2222",
+	password:"Qwer3333",
 	intervals:{
 		aTob:5,
 		bToc:10,
