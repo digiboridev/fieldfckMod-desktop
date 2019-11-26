@@ -88,9 +88,9 @@ header {
     box-shadow: 0 0 5px #13161a;
  
 }
-.buttons button:disabled{
-    /* opacity: 0.5; */
-}
+/* .buttons button:disabled{
+    opacity: 0.5;
+} */
 .buttons button:disabled:hover{
     /* opacity: 0.5; */
     filter:none;
