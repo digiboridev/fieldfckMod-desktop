@@ -254,10 +254,10 @@ aside {
     width: 5px;
 }
 ::-webkit-scrollbar-track {
-    background: #000;
+    background: rgba(0, 0, 0,0.1);
   }
 ::-webkit-scrollbar-thumb {
-    background: #a5acb2;
+    background: rgba(165, 172, 178,1);
 }
  
 .add-card {
