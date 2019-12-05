@@ -1,0 +1,7 @@
+directories:
+  output: dist
+  buildResources: build
+appId: ffm.puhulizer
+mac:
+  category: ffm.puhulizer
+electronVersion: 6.1.3
