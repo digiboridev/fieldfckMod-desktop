@@ -40,7 +40,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   mainWindow.setMenu(null);
 
@@ -347,7 +347,7 @@ const controller = new Controller();
 
 controller.addUser({
 	login:'vkomelkov',
-	password:"Qwer3333",
+	password:"Qwer4444",
 	intervals:{
 		aTob:5,
 		bToc:10,
