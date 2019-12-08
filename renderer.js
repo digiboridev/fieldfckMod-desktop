@@ -405,8 +405,11 @@ class AppRender extends React.Component {
 function renderApp(){
     ReactDOM.render(<AppRender />, document.querySelector('#app'))
 }
-function renderPoppup(a){
-    ReactDOM.render(<PoppupAdd act={a} />, document.querySelector('#poppup'))
+function renderAddUserPopup(a){
+    ReactDOM.render(<PopupAdd act={a} />, document.querySelector('#poppup'))
+}
+function renderSettingsPopup(a){
+    ReactDOM.render(<PopupSettings />, document.querySelector('#poppup'))
 }
 
 renderApp()

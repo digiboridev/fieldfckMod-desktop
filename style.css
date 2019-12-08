@@ -619,7 +619,7 @@ aside ul li::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(19,22,32,0.5);
+    background: rgba(19,22,32,0.9);
     top: 0;
     left: 0;
     z-index: 2;
@@ -638,24 +638,30 @@ aside ul li::before {
     font-family:'Rubik', sans-serif;
     color: #e0e0e1;
     font-weight: 300;
-    font-size: 0.6em;
+    font-size: 0.7em;
     padding: 2px;
-    filter: drop-shadow(0 0 4em #000)
+    filter: drop-shadow(0 0 3em #000)
 }
-.popup input {
+.form-check input {
     width: 190px;
 }
 .form-check button {
     background: #ebebeb;
-    margin: 3px;
+    margin: 0px;
+    margin-top: 12px;
+    margin-right: 6px;
     border: none; 
     font-size: 1em;
-    border-radius: 3px;
+    border-radius: 2px;
     outline: none;
-    padding: 4px;
+    padding: 5px;
 }
 .form-check button:active{
     background: #128fb4;
+}
+.form-check button:disabled{
+    background: #000;
+    filter: drop-shadow(2px 4px 6px black);
 }
 .form-check input {
     border-radius: 3px;
@@ -665,15 +671,12 @@ aside ul li::before {
     margin: 3px 0;
 }
 .form-check .form-status {
-    margin: 20px;
+    margin: 0;
+    margin-top: 12px;
     position: relative;
+    filter: drop-shadow(2px 4px 6px black);
 }
-/* .popup_find {
-    width: 100px;
-    height: 10px;
-    display: block;
-    background: #000;
-} */
+
 
 .form-status.loading:before {
     content: "";

@@ -25,7 +25,7 @@ class Profiles extends React.Component {
     }
 
     addBtn = () => {
-        renderPoppup(1)
+        renderAddUserPopup(1)
     }
     render() {
         // console.log(this.props.users)

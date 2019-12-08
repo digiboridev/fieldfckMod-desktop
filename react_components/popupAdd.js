@@ -1,4 +1,4 @@
-class PoppupAdd extends React.Component {
+class PopupAdd extends React.Component {
     constructor(props) {
         super(props);
         this.state = { show:props.act,status:"" , login: "", pass:"",data:{}};
@@ -18,7 +18,7 @@ class PoppupAdd extends React.Component {
         })
         .catch((a) => {
             console.log(a)
-            this.setState({status:a})
+            this.setState({status:JSON.stringify(a).substring(0,200)})
             this.setState({data:{}}) 
         })
     }
