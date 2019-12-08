@@ -10,20 +10,23 @@
   <body>
     <div id="app"></div>
 
-    <div class="popup">
-      <form class="form-check" action="#">
-        Логин:<br>
-        <input type="text" name="firstname" value="vkomelkov">
-        <br>
-        Пароль:<br>
-        <input type="password" name="lastname" value="Qwer2222">
-        <br><br>
-        <button class="popup_find" type="button">Найти</button>
-        <button class="popup_add" type="button" disabled>Добавить</button>
-        <button class="popup_close" type="button">Закрыть</button>
-        <div class="form-status"></div>
-      </form> 
+    <div id="poppup">
+      <!-- <div class="popup active">
+        <form class="form-check" action="#">
+          Логин:<br>
+          <input type="text" name="firstname" value="vkomelkov">
+          <br>
+          Пароль:<br>
+          <input type="password" name="lastname" value="Qwer2222">
+          <br><br>
+          <button class="popup_find" type="button">Найти</button>
+          <button class="popup_add" type="button" disabled>Добавить</button>
+          <button class="popup_close" type="button">Закрыть</button>
+          <div class="form-status"></div>
+        </form> 
+      </div> -->
     </div>
+    
     <!-- <div class="profile_settings active">
 
     </div> -->
@@ -35,6 +38,7 @@
     
 
     <!-- You can also require other files to run in this process -->
+    <script src="./react_components/poppupAdd.js" type="text/babel"></script>
     <script src="./react_components/activity_data.js" type="text/babel"></script>
     <script src="./react_components/profiles.js" type="text/babel"></script>
     <script src="./react_components/control_buttons.js" type="text/babel"></script>

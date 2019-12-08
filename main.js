@@ -40,7 +40,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-//   mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   mainWindow.setMenu(null);
 
@@ -110,6 +110,9 @@ app.on('activate', function () {
 class Controller{
 	constructor (data) {
 		this.data = {started:false};
+	}
+	checkUser(login){
+		return model.getitem(login)
 	}
 	findUser(data){
 		model.checkAuthData(data.login,data.password)
@@ -347,7 +350,7 @@ const controller = new Controller();
 
 controller.addUser({
 	login:'vkomelkov',
-	password:"Qwer3333",
+	password:"Qwer4444",
 	intervals:{
 		aTob:5,
 		bToc:10,
@@ -426,6 +429,7 @@ controller.addUser({
 // controller.findUser({login:'vkomelkov',password:'Qwer2222'})
 global.sharedObject = {
 	modelArray: model.getarr(),
+	checkUser:controller.checkUser,
 	modelFinder: model.checkAuthData,
 	addUser:controller.addUser,
 	removeUser:controller.deleteUser,

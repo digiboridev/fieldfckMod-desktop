@@ -405,7 +405,12 @@ class AppRender extends React.Component {
 function renderApp(){
     ReactDOM.render(<AppRender />, document.querySelector('#app'))
 }
+function renderPoppup(a){
+    ReactDOM.render(<PoppupAdd act={a} />, document.querySelector('#poppup'))
+}
+
 renderApp()
+
 
 ipcRenderer.send('started' , {msg:'hello from renderer'});
 

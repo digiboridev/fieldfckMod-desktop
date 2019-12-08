@@ -24,6 +24,9 @@ class Profiles extends React.Component {
         this.props.forceUpdate()
     }
 
+    addBtn = () => {
+        renderPoppup(1)
+    }
     render() {
         // console.log(this.props.users)
         return (
@@ -40,7 +43,7 @@ class Profiles extends React.Component {
                             <div className="info"></div>
                         </li>
                     )}
-                    <li className="add-card">
+                    <li className="add-card" onClick={this.addBtn}>
                         <div className="add"></div>
                     </li>
                 </ul>

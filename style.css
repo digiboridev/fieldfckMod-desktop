@@ -668,6 +668,12 @@ aside ul li::before {
     margin: 20px;
     position: relative;
 }
+/* .popup_find {
+    width: 100px;
+    height: 10px;
+    display: block;
+    background: #000;
+} */
 
 .form-status.loading:before {
     content: "";
