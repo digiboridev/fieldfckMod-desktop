@@ -405,11 +405,11 @@ class AppRender extends React.Component {
 function renderApp(){
     ReactDOM.render(<AppRender />, document.querySelector('#app'))
 }
-function renderAddUserPopup(a){
-    ReactDOM.render(<PopupAdd act={a} />, document.querySelector('#poppup'))
+function renderAddUserPopup(){
+    ReactDOM.render(<PopupAdd />, document.querySelector('#poppup'))
 }
-function renderSettingsPopup(a){
-    ReactDOM.render(<PopupSettings />, document.querySelector('#poppup'))
+function renderSettingsPopup(key){
+    ReactDOM.render(<PopupSettings user={el.remote.getGlobal('sharedObject').checkUser(key)} />, document.querySelector('#poppup'))
 }
 
 renderApp()

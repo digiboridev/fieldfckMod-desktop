@@ -1,11 +1,11 @@
 class PopupAdd extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { show:props.act,status:"" , login: "", pass:"",data:{}};
+        this.state = { show:true,status:"" , login: "", pass:"",data:{}};
     }
 
     componentWillReceiveProps = (prop) => {
-        this.setState({show:prop.act,status:"",login: "", pass:"",data:{}})
+        this.setState({show:true,status:"",login: "", pass:"",data:{}})
     }
 
     findBtn = () => {
@@ -41,7 +41,7 @@ class PopupAdd extends React.Component {
         
     }
     closeBtn = () => {
-        this.setState({ show:0})
+        this.setState({ show:false})
     }
 
     handleChangeLogin = (e) => {
@@ -53,7 +53,7 @@ class PopupAdd extends React.Component {
 
     render() {
         console.log(this.state)
-        if (this.state.show == 1) {
+        if (this.state.show) {
             console.log("showing")
             return (
                 <div className="popup active">

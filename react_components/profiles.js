@@ -23,9 +23,11 @@ class Profiles extends React.Component {
         el.remote.getGlobal('sharedObject').removeUser(a)
         this.props.forceUpdate()
     }
-
+    setupHandler = (a) => {
+        renderSettingsPopup(a)
+    }
     addBtn = () => {
-        renderAddUserPopup(1)
+        renderAddUserPopup()
     }
     render() {
         // console.log(this.props.users)
@@ -40,7 +42,7 @@ class Profiles extends React.Component {
                                 <p>{x.status}</p>
                             </div>
                             <div className="close" onClick={(e) => this.deleteHandler(x.login, e)}></div>
-                            <div className="info"></div>
+                            <div className="info" onClick={(e) => this.setupHandler(x.login, e)}></div>
                         </li>
                     )}
                     <li className="add-card" onClick={this.addBtn}>

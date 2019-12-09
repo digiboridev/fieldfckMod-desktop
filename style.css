@@ -625,16 +625,18 @@ aside ul li::before {
     z-index: 2;
     padding: 0;
     display: none;
+    justify-content: center;
+    align-items: center;
 }
 .popup.active {
-    display: block;
+    display: flex;
 }
 
 .popup .form-check {
     position: relative;
-    margin: 200px auto 0;
+    margin: auto;
     width: 200px;
-    height: 200px;
+    /* height: 200px; */
     font-family:'Rubik', sans-serif;
     color: #e0e0e1;
     font-weight: 300;

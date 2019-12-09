@@ -354,7 +354,7 @@ controller.addUser({
 	intervals:{
 		aTob:5,
 		bToc:10,
-		cTod:40
+		cTod:60
 	},
 	gpsPattern:[
 		{lat:48.4646372,long:37.0812746}
@@ -372,7 +372,7 @@ controller.addUser({
 	intervals:{
 		aTob:5,
 		bToc:10,
-		cTod:40
+		cTod:60
 	},
 	gpsPattern:[
 		{lat:48.4646372,long:37.0812746}
@@ -389,7 +389,7 @@ controller.addUser({
 	intervals:{
 		aTob:5,
 		bToc:10,
-		cTod:40
+		cTod:60
 	},
 	gpsPattern:[
 		{lat:48.4646372,long:37.0812746}
@@ -406,7 +406,7 @@ controller.addUser({
 	intervals:{
 		aTob:5,
 		bToc:10,
-		cTod:40
+		cTod:60
 	},
 	gpsPattern:[
 		{lat:48.4646372,long:37.0812746}
