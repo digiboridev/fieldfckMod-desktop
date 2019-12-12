@@ -41,8 +41,8 @@ class Profiles extends React.Component {
                                 <p>{x.nowOn}</p>
                                 <p>{x.status}</p>
                             </div>
-                            <div className="close" onClick={(e) => this.deleteHandler(x.login, e)}></div>
-                            <div className="info" onClick={(e) => this.setupHandler(x.login, e)}></div>
+                            <div title="delete user" className="close" onClick={(e) => this.deleteHandler(x.login, e)}></div>
+                            <div title="settings" className="info" onClick={(e) => this.setupHandler(x.login, e)}></div>
                         </li>
                     )}
                     <li className="add-card" onClick={this.addBtn}>

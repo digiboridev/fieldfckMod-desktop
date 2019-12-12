@@ -28,11 +28,11 @@ class Control_buttons extends React.Component {
     render() {
         return (
             <div className="buttons">
-                <button className={"start-button " + (this.state.started ? 'active' : '')} disabled={this.state.started} onClick={this.startLoop}></button>
-                <button className={"stop-button " + (!this.state.started ? 'active' : '')} disabled={!this.state.started} onClick={this.stopLoop}></button>
-                <button className="process-button" onClick={this.forceProcess}></button>
-                <button className="update-button" onClick={this.forceUpdate}></button>
-                <p className={"status " + (this.state.started ? 'start' : '')}>{(this.state.started ? 'wonkin' : 'nothin')}</p>
+                <button title="start loop" className={"start-button " + (this.state.started ? 'active' : '')} disabled={this.state.started} onClick={this.startLoop}></button>
+                <button title="stop loop" className={"stop-button " + (!this.state.started ? 'active' : '')} disabled={!this.state.started} onClick={this.stopLoop}></button>
+                <button title="process now" className="process-button" onClick={this.forceProcess}></button>
+                <button title="update data" className="update-button" onClick={this.forceUpdate}></button>
+                <p className={"status " + (this.state.started ? 'start' : '')}>{(this.state.started ? 'workin' : 'nothin')}</p>
             </div>
         )
     }

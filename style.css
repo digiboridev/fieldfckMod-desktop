@@ -82,11 +82,17 @@ header {
     height: 4vh;
     width: 6vh;
     position: relative;
-    transition: 0.1s background ease-in-out;
+}
+@keyframes lighning {
+    0% {box-shadow: 0 0 80px #128fb4;}
+    100% {box-shadow: 0 0 160px #e0e0e1;}
 }
 .buttons button:hover {
-    filter: contrast(1.5);
-    box-shadow: 0 0 5px #13161a;
+    filter: contrast(1.2);
+    box-shadow: 0 0 160px #e0e0e1;
+    animation-name: lighning;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
  
 }
 /* .buttons button:disabled{
@@ -103,19 +109,19 @@ header {
     border-radius: 0px 4px 4px 0px;
 } */
 .buttons .update-button {
-    background: url(svg/repeat.svg) center no-repeat,#566068;
+    background: url(svg/repeat.svg) center no-repeat,rgb(39, 44, 47);
     background-size: 40%;
 }
 .buttons .process-button {
-    background: url(svg/skip.svg) center no-repeat,#566068;
+    background: url(svg/skip.svg) center no-repeat,rgb(39, 44, 47);
     background-size: 40%;
 }
 .buttons .start-button {
-    background: url(svg/play-button.svg) center no-repeat,#566068;
+    background: url(svg/play-button.svg) center no-repeat,rgb(39, 44, 47);
     background-size: 40%;
 }
 .buttons .stop-button {
-    background: url(svg/stop.svg) center no-repeat,#566068;
+    background: url(svg/stop.svg) center no-repeat,rgb(39, 44, 47);
     background-size: 40%;
 }
 .buttons .update-button:active {
@@ -135,29 +141,44 @@ header {
     background-size: 40%;
 }
 
-
 .buttons .update-button.active {
-    background: url(svg/repeat.svg) center no-repeat,#128fb4;
+    background: url(svg/repeat.svg) center no-repeat,#13161a;
     background-size: 40%;
+    animation-name: lighning;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    box-shadow: 0 0 160px #e0e0e1;
 }
 .buttons .process-button.active {
-    background: url(svg/skip.svg) center no-repeat,#128fb4;
+    background: url(svg/skip.svg) center no-repeat,#13161a;
     background-size: 40%;
+    animation-name: lighning;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    box-shadow: 0 0 160px #e0e0e1;
 }
 .buttons .start-button.active {
-    background: url(svg/play-button.svg) center no-repeat,#128fb4;
+    background: url(svg/play-button.svg) center no-repeat,#13161a;
     background-size: 40%;
+    animation-name: lighning;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 .buttons .stop-button.active {
-    background: url(svg/stop.svg) center no-repeat,#128fb4;
+    background: url(svg/stop.svg) center no-repeat,#13161a;
     background-size: 40%;
+    animation-name: lighning;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    box-shadow: 0 0 160px #e0e0e1;
 }
 
 .status {
     position: absolute;
     bottom: 2px;
     left: 0;
-    font-size: 0.6em;
+    font-size: 0.5em;
     letter-spacing: 1px;
     margin: 0;
     padding: 0;
@@ -697,10 +718,17 @@ aside ul li::before {
 .form-sett label{
     margin-top: 12px;
     transition: max-height 0.2s ease-in-out;
+    box-sizing: border-box;
 }
 .form-sett input {
     width: 190px;
 }
+/* .form-sett .coords {
+    width: 190px;
+    height: 21px;
+    background: #ebebeb;
+    color: #13161a;
+} */
 .form-sett button {
     background: #ebebeb;
     margin: 0px;
@@ -721,10 +749,12 @@ aside ul li::before {
 }
 .form-sett .sett_time_collapse {
     width: 195px;
-    background: #128fb4;
-    color: #ebebeb;
-    border-bottom: 5px solid #13161a;
+    background: #ebebeb;
     
+}
+.form-sett .sett_gps_collapse {
+    width: 195px;
+    background: #ebebeb;
 }
 .form-sett input {
     border-radius: 3px;
@@ -733,6 +763,29 @@ aside ul li::before {
     padding: 3px;
     margin: 3px 0;
 }
+
+.form-sett .range {
+    -webkit-appearance: none;
+    height: 10px;
+    background: #ebebeb;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .form-sett .range:hover {
+    opacity: 1;
+  }
+  
+  .form-sett .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #128fb4;
+    cursor: pointer;
+  }
 .form-sett .form-status {
     margin: 0;
     margin-top: 12px;
