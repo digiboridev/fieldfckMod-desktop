@@ -55,14 +55,14 @@ class PopupSettings extends React.Component {
     }
     timeCollapseBtn = () => {
         if (this.state.timeContentHeight == 0) {
-            this.setState({timeContentHeight:200})
+            this.setState({timeContentHeight:200,gpsContentHeight:0})
         } else {
             this.setState({timeContentHeight:0})
         }
     }
     gpsCollapseBtn = () => {
         if (this.state.gpsContentHeight == 0) {
-            this.setState({gpsContentHeight:200})
+            this.setState({gpsContentHeight:200,timeContentHeight:0})
         } else {
             this.setState({gpsContentHeight:0})
         }
@@ -91,15 +91,15 @@ class PopupSettings extends React.Component {
                         <input className="range" type="range" min="1" max="100" value={this.state.cTod} onChange={this.handleChangecTod} />
                     </label>
                     <button className="sett_gps_collapse" type="button" onClick={this.gpsCollapseBtn}>Местоположение</button>
-                    <label style={{maxHeight:this.state.gpsContentHeight, display: "block", overflow: "hidden"}}>
+                    <label className="gpsContent" style={{maxHeight:this.state.gpsContentHeight, display: "block", overflow: "hidden"}}>
                         
-                        <input type="text" value="48.4646372" step="0.000001" style={{width:"80px",borderRadius:"0",opacity:"0.7"}} />
-                        <input type="text" value="48.4646372" step="0.000001" style={{width:"80px",borderRadius:"0",borderLeft:"1px solid #222",opacity:"0.7"}} />
-                        <button type="button" style={{height:"21px",borderRadius:"0",marginTop:"0",background:"#ebebeb",width: "16px"}}>-</button>
+                        <input type="text" value="48.4646372" step="0.000001" />
+                        <input type="text" value="48.4646372" step="0.000001" style={{borderLeft:"1px solid #222",marginBottom:"20px"}} />
+                        <button type="button" className="delcBtn">*</button>
                         Координаты (широта долгота)
-                        <input type="number" step="0.000001" style={{width:"80px",borderRadius:"0"}} />
-                        <input type="number" step="0.000001" style={{width:"80px",borderRadius:"0",borderLeft:"1px solid #222"}} />
-                        <button type="button" style={{height:"21px",borderRadius:"0",marginTop:"0",background:"#ebebeb"}}>+</button>
+                        <input type="number" step="0.000001" style={{width:"80px",borderRadius:"0",opacity:"1"}} />
+                        <input type="number" step="0.000001" style={{borderLeft:"1px solid #222",opacity:"1"}} />
+                        <button type="button" className="addcBtn">+</button>
                     </label>
                     <button className="popup_update" type="button" onClick={this.submitBtn}>Сохранить</button>
                     <button className="popup_close" type="button" onClick={this.closeBtn}>Закрыть</button>
