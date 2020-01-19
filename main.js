@@ -40,7 +40,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-//   mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   mainWindow.setMenu(null);
 
@@ -130,9 +130,11 @@ class Controller{
 	}
 	addUser(data){
 		model.additem(data);
+		l(`User ${data.login} addded to the system`)
 	}
 	deleteUser(key){
 		model.removeitem(key)
+		l(`User ${dta.login} deleted from the system`)
 	}
 	updateUser(key,index){
 		windowReady == false ? {} : mainWindow.webContents.send('status' , {msg:'обновление данных',status:true})
@@ -338,9 +340,36 @@ class Controller{
 	getLoopStatus(){
 		return this.data;
 	}
+	saveUsers(){
+		let arr = model.getarr();
+		let newArr = []
+		arr.forEach(element => {
+			newArr.push({
+				'login':element.login,
+				'password':element.password,
+				'intervals':element.intervals,
+				'gpsPattern':element.gpsPattern,
+				'gpsSettings':element.gpsSettings
+			})
+		});
+		console.log(newArr)
+		fs.writeFile(path.join(__dirname, 'savedUsers.json'), JSON.stringify(newArr) , function (err) {
+			if (err) throw err;
+			console.log('Saved!');
+		});
+	}
+	readUsers(){
+		let arr = JSON.parse(fs.readFileSync(path.join(__dirname, 'savedUsers.json')));
+		arr.forEach(el => {
+			if(controller.checkUser(el.login)){
+				l(`User ${el.login} already loaded`)
+			} else {
+				l(`User ${el.login} loaded from file`)
+				controller.addUser(el)
+			}
+		})
+	}
 }
-
-
 
 
 
@@ -348,75 +377,75 @@ const model = new Model();
 const controller = new Controller();
 
 
-controller.addUser({
-	login:'vkomelkov',
-	password:"Qwer4444",
-	intervals:{
-		aTob:5,
-		bToc:10,
-		cTod:60
-	},
-	gpsPattern:[
-		{lat:48.4646372,long:37.0812746}
-	],
-    gpsSettings:{
-        randomSorting:true,
-        randomizePosition:true,
-        currentPosition:0
-    }
-})
+// controller.addUser({
+// 	login:'vkomelkov',
+// 	password:"Qwer4444",
+// 	intervals:{
+// 		aTob:5,
+// 		bToc:10,
+// 		cTod:60
+// 	},
+// 	gpsPattern:[
+// 		{lat:48.4646372,long:37.0812746}
+// 	],
+//     gpsSettings:{
+//         randomSorting:true,
+//         randomizePosition:true,
+//         currentPosition:0
+//     }
+// })
 
-controller.addUser({
-	login:'vvitriv',
-	password:"Qwer3333",
-	intervals:{
-		aTob:5,
-		bToc:10,
-		cTod:60
-	},
-	gpsPattern:[
-		{lat:48.4646372,long:37.0812746}
-	],
-    gpsSettings:{
-        randomSorting:true,
-        randomizePosition:true,
-        currentPosition:0
-    }
-})
-controller.addUser({
-	login:'smyhydiuk',
-	password:"Qwer3333",
-	intervals:{
-		aTob:5,
-		bToc:10,
-		cTod:60
-	},
-	gpsPattern:[
-		{lat:48.4646372,long:37.0812746}
-	],
-    gpsSettings:{
-        randomSorting:true,
-        randomizePosition:true,
-        currentPosition:0
-    }
-})
-controller.addUser({
-	login:'AVSemenyuk',
-	password:"Qwer4949",
-	intervals:{
-		aTob:5,
-		bToc:10,
-		cTod:60
-	},
-	gpsPattern:[
-		{lat:48.4646372,long:37.0812746}
-	],
-    gpsSettings:{
-        randomSorting:true,
-        randomizePosition:true,
-        currentPosition:0
-    }
-})
+// controller.addUser({
+// 	login:'vvitriv',
+// 	password:"Qwer3333",
+// 	intervals:{
+// 		aTob:5,
+// 		bToc:10,
+// 		cTod:60
+// 	},
+// 	gpsPattern:[
+// 		{lat:48.4646372,long:37.0812746}
+// 	],
+//     gpsSettings:{
+//         randomSorting:true,
+//         randomizePosition:true,
+//         currentPosition:0
+//     }
+// })
+// controller.addUser({
+// 	login:'smyhydiuk',
+// 	password:"Qwer3333",
+// 	intervals:{
+// 		aTob:5,
+// 		bToc:10,
+// 		cTod:60
+// 	},
+// 	gpsPattern:[
+// 		{lat:48.4646372,long:37.0812746}
+// 	],
+//     gpsSettings:{
+//         randomSorting:true,
+//         randomizePosition:true,
+//         currentPosition:0
+//     }
+// })
+// controller.addUser({
+// 	login:'AVSemenyuk',
+// 	password:"Qwer4949",
+// 	intervals:{
+// 		aTob:5,
+// 		bToc:10,
+// 		cTod:60
+// 	},
+// 	gpsPattern:[
+// 		{lat:48.4646372,long:37.0812746}
+// 	],
+//     gpsSettings:{
+//         randomSorting:true,
+//         randomizePosition:true,
+//         currentPosition:0
+//     }
+// })
 
 // controller.processUser('vnikolin').then(a=>{l(a)}).catch(a => {l('error ' + a)})
 // controller.updateAll()
@@ -427,6 +456,7 @@ controller.addUser({
 // }, 4000);
 
 // controller.findUser({login:'vkomelkov',password:'Qwer2222'})
+
 global.sharedObject = {
 	modelArray: model.getarr(),
 	checkUser:controller.checkUser,
@@ -471,4 +501,12 @@ ipcMain.on('leave-window',() => {
 	l('haha')
 	mainWindow.close()
 	
+})
+ipcMain.on('loadUsers',() => {
+	l('Read users from local file')
+	controller.readUsers()
+})
+ipcMain.on('saveUsers',() => {
+	l('Read users from local file')
+	controller.saveUsers()
 })

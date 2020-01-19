@@ -415,22 +415,6 @@ function renderSettingsPopup(key){
 renderApp()
 
 
-function saveData(){
-    let arr = el.remote.getGlobal('sharedObject').modelArray;
-    console.log(arr)
-    fs.writeFile(path.join(__dirname, 'arr.txt'), JSON.stringify(arr) , function (err) {
-        if (err) throw err;
-        console.log('Saved!');
-    });
-}
-function readData(){
-    let arr = fs.readFileSync(path.join(__dirname, 'arr.txt'));
-    el.remote.getGlobal('sharedObject').modelArray = JSON.parse(arr);
-    renderApp()
-    console.log(JSON.parse(arr))
-    
-}
-
 ipcRenderer.send('started' , {msg:'hello from renderer'});
 
 ipcRenderer.on('log-add' , function(event , data){

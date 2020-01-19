@@ -101,8 +101,16 @@ header {
 .buttons button:last-child {
     border-radius: 0px 4px 4px 0px;
 } */
-.buttons .update-button {
+.buttons .loadUsers-button {
     background: url(svg/repeat.svg) center no-repeat,rgb(39, 44, 47);
+    background-size: 40%;
+}
+.buttons .saveUsers-button {
+    background: url(svg/save.svg) center no-repeat,rgb(39, 44, 47);
+    background-size: 40%;
+}
+.buttons .update-button {
+    background: url(svg/refresh.svg) center no-repeat,rgb(39, 44, 47);
     background-size: 40%;
 }
 .buttons .process-button {
@@ -117,8 +125,17 @@ header {
     background: url(svg/stop.svg) center no-repeat,rgb(39, 44, 47);
     background-size: 40%;
 }
-.buttons .update-button:active {
+
+.buttons .loadUsers-button:active {
     background: url(svg/repeat.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+.buttons .saveUsers-button:active {
+    background: url(svg/save.svg) center no-repeat,#128fb4;
+    background-size: 40%;
+}
+.buttons .update-button:active {
+    background: url(svg/refresh.svg) center no-repeat,#128fb4;
     background-size: 40%;
 }
 .buttons .process-button:active {

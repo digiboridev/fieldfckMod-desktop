@@ -24,6 +24,13 @@ class Control_buttons extends React.Component {
     forceUpdate() {
         ipcRenderer.send('updateNow', { msg: 'hello from renderer' })
     }
+    loadUsers(){
+        ipcRenderer.send('loadUsers', { msg: 'hello from renderer' })
+    }
+    saveUsers(){
+        ipcRenderer.send('saveUsers', { msg: 'hello from renderer' })
+    }
+
 
     render() {
         return (
@@ -33,6 +40,8 @@ class Control_buttons extends React.Component {
                 <button title="process now" className="process-button" onClick={this.forceProcess}></button>
                 <button title="update data" className="update-button" onClick={this.forceUpdate}></button>
                 <p className={"status " + (this.state.started ? 'start' : '')}>{(this.state.started ? 'workin' : 'nothin')}</p>
+                <button title="Save users to file" className="saveUsers-button" onClick={this.saveUsers}></button>
+                <button title="Load users from file" className="loadUsers-button" onClick={this.loadUsers}></button>
             </div>
         )
     }
