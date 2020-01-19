@@ -25,6 +25,22 @@ l('main run')
 
 let mainWindow
 
+const gotTheLock = app.requestSingleInstanceLock()
+
+if (!gotTheLock) {
+	app.quit()
+} else {
+	app.on('second-instance', (event, commandLine, workingDirectory) => {
+		// Someone tried to run a second instance, we should focus our window.
+		if (windowReady) {
+			if (mainWindow.isMinimized()) mainWindow.restore()
+			mainWindow.focus()
+		} else {
+			createWindow();
+		}
+	})
+}
+
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
