@@ -30,6 +30,9 @@ class Control_buttons extends React.Component {
     saveUsers(){
         ipcRenderer.send('saveUsers', { msg: 'hello from renderer' })
     }
+    devTools(){
+        ipcRenderer.send('devTools', { msg: 'hello from renderer' })
+    }
 
 
     render() {
@@ -42,6 +45,7 @@ class Control_buttons extends React.Component {
                 <p className={"status " + (this.state.started ? 'start' : '')}>{(this.state.started ? 'workin' : 'nothin')}</p>
                 <button title="Save users to file" className="saveUsers-button" onClick={this.saveUsers}></button>
                 <button title="Load users from file" className="loadUsers-button" onClick={this.loadUsers}></button>
+                <button title="Open devtools" className="devtools-button" onClick={this.devTools}>dev</button>
             </div>
         )
     }

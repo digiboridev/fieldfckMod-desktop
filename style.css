@@ -101,6 +101,10 @@ header {
 .buttons button:last-child {
     border-radius: 0px 4px 4px 0px;
 } */
+.buttons .devtools-button {
+    background:#13161a;
+    background-size: 40%;
+}
 .buttons .loadUsers-button {
     background: url(svg/repeat.svg) center no-repeat,rgb(39, 44, 47);
     background-size: 40%;
@@ -152,22 +156,22 @@ header {
 }
 
 .buttons .update-button.active {
-    background: url(svg/repeat.svg) center no-repeat,#13161a;
+    background: url(svg/repeat.svg) center no-repeat,#128fb4;
     background-size: 40%;
     box-shadow: 0 0 120px #e0e0e1;
 }
 .buttons .process-button.active {
-    background: url(svg/skip.svg) center no-repeat,#13161a;
+    background: url(svg/skip.svg) center no-repeat,#128fb4;
     background-size: 40%;
     box-shadow: 0 0 120px #e0e0e1;
 }
 .buttons .start-button.active {
-    background: url(svg/play-button.svg) center no-repeat,#13161a;
+    background: url(svg/play-button.svg) center no-repeat,#128fb4;
     background-size: 40%;
     box-shadow: 0 0 120px #e0e0e1;
 }
 .buttons .stop-button.active {
-    background: url(svg/stop.svg) center no-repeat,#13161a;
+    background: url(svg/stop.svg) center no-repeat,#128fb4;
     background-size: 40%;
     box-shadow: 0 0 120px #e0e0e1;
 }

@@ -40,7 +40,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+//   mainWindow.webContents.openDevTools()
 
   mainWindow.setMenu(null);
 
@@ -509,4 +509,8 @@ ipcMain.on('loadUsers',() => {
 ipcMain.on('saveUsers',() => {
 	l('Read users from local file')
 	controller.saveUsers()
+})
+ipcMain.on('devTools',() => {
+	l('Hi there dev')
+	mainWindow.webContents.openDevTools()
 })
