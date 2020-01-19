@@ -353,13 +353,13 @@ class Controller{
 			})
 		});
 		console.log(newArr)
-		fs.writeFile(path.join(__dirname, 'savedUsers.json'), JSON.stringify(newArr) , function (err) {
+		fs.writeFile('savedUsers.json', JSON.stringify(newArr) , function (err) {
 			if (err) throw err;
 			console.log('Saved!');
 		});
 	}
 	readUsers(){
-		let arr = JSON.parse(fs.readFileSync(path.join(__dirname, 'savedUsers.json')));
+		let arr = JSON.parse(fs.readFileSync('savedUsers.json'));
 		arr.forEach(el => {
 			if(controller.checkUser(el.login)){
 				l(`User ${el.login} already loaded`)

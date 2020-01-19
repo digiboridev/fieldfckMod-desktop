@@ -1,0 +1,10 @@
+[{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ContactCollection(guid'385ab248-254d-495f-91dc-2120c3403b22')",
+"uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ContactCollection(guid'385ab248-254d-495f-91dc-2120c3403b22')",
+"type":"Terrasoft.Configuration.Contact"},
+"Id":"385ab248-254d-495f-91dc-2120c3403b22",
+"Name":"Комельков Владіслав Олегович",
+"JobTitle":"Електромонтер лінійних споруд електрозв'язку 4 розряду",
+"MobilePhone":"",
+"HomePhone":"",
+"Email":"vkomelkov@ukrtelecom.ua",
+"TsiContactPhone":""}]
