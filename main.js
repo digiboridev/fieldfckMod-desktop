@@ -402,7 +402,7 @@ controller.addUser({
 })
 controller.addUser({
 	login:'AVSemenyuk',
-	password:"Qwer4848",
+	password:"Qwer4949",
 	intervals:{
 		aTob:5,
 		bToc:10,
