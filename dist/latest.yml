@@ -1,8 +1,8 @@
 version: 1.0.0
 files:
   - url: fieldfckmod-desktop-Setup-1.0.0.exe
-    sha512: 6PBg52iCkFG+/8B2EQJl6x1HZt6F/U9s+6G5gvG/Mqw+XLn06mHX/cXD7WyB4Sfq8Z02HxXnWvdyxHBR4F64Qw==
-    size: 42108661
+    sha512: pUoFtF5eYtBbHgOCk2MlWLt+kbxrsCApSimOKStlc+uho7SVkdHC3C0g5OC7MEO4f9FmN6aBvoctwfHHXrpKaA==
+    size: 42114000
 path: fieldfckmod-desktop-Setup-1.0.0.exe
-sha512: 6PBg52iCkFG+/8B2EQJl6x1HZt6F/U9s+6G5gvG/Mqw+XLn06mHX/cXD7WyB4Sfq8Z02HxXnWvdyxHBR4F64Qw==
-releaseDate: '2020-01-19T16:01:44.765Z'
+sha512: pUoFtF5eYtBbHgOCk2MlWLt+kbxrsCApSimOKStlc+uho7SVkdHC3C0g5OC7MEO4f9FmN6aBvoctwfHHXrpKaA==
+releaseDate: '2020-01-19T17:12:21.347Z'

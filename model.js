@@ -488,7 +488,7 @@ class Profile{
         this.gpsPattern = (data.gpsPattern !== undefined ? data.gpsPattern : globalSettings.gpsPattern);
         this.gpsSettings = (data.gpsSettings !== undefined ? data.gpsSettings : globalSettings.gpsSettings);
         this.tsiFfm = (data.tsiFfm !== undefined ? data.tsiFfm : globalSettings.tsiFfm);
-        this.data = {cookie:{},bpmcsrf:{},activity:{}};
+        this.data = (data.data !== undefined ? data.data : {});
         this.nowOn = 'Действие отсутствует';
         this.status = 'No Data';
     }

@@ -360,13 +360,7 @@ class Controller{
 		let arr = model.getarr();
 		let newArr = []
 		arr.forEach(element => {
-			newArr.push({
-				'login':element.login,
-				'password':element.password,
-				'intervals':element.intervals,
-				'gpsPattern':element.gpsPattern,
-				'gpsSettings':element.gpsSettings
-			})
+			newArr.push(element)
 		});
 		console.log(newArr)
 		fs.writeFile('savedUsers.json', JSON.stringify(newArr) , function (err) {
