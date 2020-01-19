@@ -330,13 +330,13 @@
 
 
 // ipcRenderer.on('status' , function(e,data){
-    //     document.querySelector('.status').innerHTML = data.msg;
-    //     if (data.status) {
-        //         document.querySelector('.process-button').disabled = true;
-        //         document.querySelector('.update-button').disabled = true;
-        //         document.querySelector('.status').className += " start"
-        //     } else {
-            //         document.querySelector('.process-button').disabled = false;
+//     document.querySelector('.status').innerHTML = data.msg;
+//     if (data.status) {
+//         document.querySelector('.process-button').disabled = true;
+//         document.querySelector('.update-button').disabled = true;
+//         document.querySelector('.status').className += " start"
+//     } else {
+//         document.querySelector('.process-button').disabled = false;
 //         document.querySelector('.update-button').disabled = false;
 //         document.querySelector('.status').className = document.querySelector('.status').className.replace(" start", "");
 //     }
@@ -354,15 +354,15 @@ const path = require('path')
 class AppRender extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { state: true, selected : ""};
+        this.state = { state: true, selected: "" };
         this.forceUpdate = this.forceUpdate.bind(this);
     }
-    forceUpdate(){
+    forceUpdate() {
         this.setState({ state: true });
         console.log('update')
     }
     selectHandler = (a) => {
-        this.setState({selected: a})
+        this.setState({ selected: a })
     }
     render() {
         console.log('render')
@@ -378,48 +378,48 @@ class AppRender extends React.Component {
                 <main>
                     <div className="child"></div>
                     <section className="asdasd">
-                        <Profiles forceUpdate={this.forceUpdate} selectHandler={this.selectHandler} selected={this.state.selected} users={el.remote.getGlobal('sharedObject').modelArray}/>
+                        <Profiles forceUpdate={this.forceUpdate} selectHandler={this.selectHandler} selected={this.state.selected} users={el.remote.getGlobal('sharedObject').modelArray} />
                         <div className="decor-line"></div>
                         <div className="data">
                             <Activity_data selected={this.state.selected} users={el.remote.getGlobal('sharedObject').modelArray} />
-                        </div> 
+                        </div>
                     </section>
-                        <aside className="noselect">
-                            <ul>
+                    <aside className="noselect">
+                        <ul>
 
                             <li>
-                                    Hi there baby
+                                Hi there baby
                             </li>
 
-                            </ul>
-                        </aside>
+                        </ul>
+                    </aside>
                 </main>
             </layout>
-                )
-        }
+        )
     }
-    
+}
+
 
 
 // ReactDOM.render(<AppRender />, document.querySelector('#app'))
-function renderApp(){
+function renderApp() {
     ReactDOM.render(<AppRender />, document.querySelector('#app'))
 }
-function renderAddUserPopup(){
+function renderAddUserPopup() {
     ReactDOM.render(<PopupAdd />, document.querySelector('#poppup'))
 }
-function renderSettingsPopup(key){
+function renderSettingsPopup(key) {
     ReactDOM.render(<PopupSettings user={el.remote.getGlobal('sharedObject').checkUser(key)} />, document.querySelector('#poppup'))
 }
 
 renderApp()
 
 
-ipcRenderer.send('started' , {msg:'hello from renderer'});
+ipcRenderer.send('started', { msg: 'hello from renderer' });
 
-ipcRenderer.on('log-add' , function(event , data){
+ipcRenderer.on('log-add', function (event, data) {
     let child = document.createElement('li');
-    child.innerHTML = (new Date().toTimeString()).substring(0,8) + ' ' + data.msg;
+    child.innerHTML = (new Date().toTimeString()).substring(0, 8) + ' ' + data.msg;
     document.querySelector('aside > ul').appendChild(child)
     document.querySelector('aside > ul').scrollTop = document.querySelector('aside > ul').scrollHeight;
     renderApp()

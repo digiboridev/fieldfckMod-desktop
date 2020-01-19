@@ -1,1 +1,780 @@
-[{"key":"vkomelkov","login":"vkomelkov","password":"Qwer4444","intervals":{"aTob":5,"bToc":10,"cTod":60},"gpsPattern":[{"lat":48.4646372,"long":37.0812746}],"gpsSettings":{"randomSorting":true,"randomizePosition":true,"currentPosition":0},"tsiFfm":{"work":[{"name_1":"Зона відповідальності оператора","name_2":"Заміна плати/обладнання","id_1":"3f19ea49-b276-469d-826f-9a0b7f3d96e7","id_2":"5ced2699-030a-46e0-e053-710c000ad5f7"}],"res":[{"name_1":"Кабельна мережа доступу","name_2":"Розподільча мережа доступу","id_1":"12a5ec07-9bbd-4054-8d20-1f7605c470f3","id_2":"a5380df5-64ec-4841-9930-8a48defd6572"}]},"data":{"cookie":["BPMLOADER=3gzxr3tccczetp25b2lsx4g3; path=/; HttpOnly","BPMLOADER=3gzxr3tccczetp25b2lsx4g3; path=/; HttpOnly",".ASPXAUTH=2BC37018179EA567C61D46B63FAC1FF4D2CC29BF624A98C454D856E1435CD50432205C56561BAA066A50F7AC985A9B312776266772462E495ACDED217087A8C7ECEBBA54A1F4E7E03464D79535DCCF3D54FA6260766A468BB8DB67E1D4DD565855118A8F9BB16FFC6E64F277889F6D99B2BF2058F7F18F114AC7341EE25E349D335EE09C032CD075E723FD27734F8EF1131A3109CB70FF72E60B3CF38016189F7691DD2CC35C6E172104C4BB81A015CEA182FA06AED247BC43069C5137CF20D250619EC39F1E96222BD21FE1B990DF82CF940E40C63147F66CDF1CD18620D7FBEED230E52A06722E5AA6F18F7BF2E2F2567D8A1043A91AF8313E61C53FF86317E9A0A146393875A629D693AB8C2FFE26699646E2EAAC25C535E3C51554315459DCFD28506A29A714F67FAB4EA09F107A7F076057; path=/; HttpOnly","BPMCSRF=iD7GKfjvlGtGTca9Llubee; path=/","UserName=118|107|111|109|101|108|107|111|118; expires=Tue, 18-Feb-2020 17:10:16 GMT; path=/; HttpOnly","NLB_SESSION_ID=node_227; path=/; HttpOnly; Secure"],"bpmcsrf":"iD7GKfjvlGtGTca9Llubee","activity":[{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'54b37ae6-eceb-4055-b437-81a2b77116f3')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'54b37ae6-eceb-4055-b437-81a2b77116f3')","type":"Terrasoft.Configuration.Activity"},"Id":"54b37ae6-eceb-4055-b437-81a2b77116f3","Title":"№: SR08218411; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579270938351)/","ModifiedOn":"/Date(1579275107718)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"9/38","TsiAddress":"Донецька область; Білозерське; Маяковського 36-5","TsiDescription":"Причина: не працює телефон\nТЗ: 32016","TsiTaskCategoryId":"4598d27c-3fb5-48d7-bce4-b29c58c12c23","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db77-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'829e764c-a3a0-4c0e-8791-69466549b14c')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'829e764c-a3a0-4c0e-8791-69466549b14c')","type":"Terrasoft.Configuration.Activity"},"Id":"829e764c-a3a0-4c0e-8791-69466549b14c","Title":"№: SR08216169; Відключення сервісу; Організація відключення послуги","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579261554072)/","ModifiedOn":"/Date(1579267655208)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"8/43","TsiAddress":"Донецька область; Добропілля; Луганского 21-15","TsiDescription":"Причина: снятие интернета\nТЗ: 02482","TsiTaskCategoryId":"db98b42a-db4c-4321-9c25-16c23decf412","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db1f-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'99085451-cc94-4144-b437-684eb4654fbf')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'99085451-cc94-4144-b437-684eb4654fbf')","type":"Terrasoft.Configuration.Activity"},"Id":"99085451-cc94-4144-b437-684eb4654fbf","Title":"№: ST2020011704673465; DSL доступ; Роботи: Абонентське обладнання","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579261016529)/","ModifiedOn":"/Date(1579339906609)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"","TsiAddress":"Донецька область;Добропілля;м. Добропілля, пров. Тавричеський, буд. 12, кв.1","TsiDescription":"ФИО абонента: Ганна","TsiTaskCategoryId":"5e80e45b-c453-32e9-e053-710c000afcf5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-daf2-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'bb8e7eba-ed05-49fe-84cc-9f072e8b0336')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'bb8e7eba-ed05-49fe-84cc-9f072e8b0336')","type":"Terrasoft.Configuration.Activity"},"Id":"bb8e7eba-ed05-49fe-84cc-9f072e8b0336","Title":"№: SR08213402; Усунення пошкоджень ШСД; Роботи: Кабель та дріт зв'язку","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579255297694)/","ModifiedOn":"/Date(1579260138682)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"14/55","TsiAddress":"Донецька область; Добропілля; Таврический 12-1","TsiDescription":"Причина: не работает интернет\nТЗ: 02274","TsiTaskCategoryId":"292524ea-1122-4f26-8911-db6d9c1a3bea","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db75-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'97ffe37d-42c8-4f90-8b91-c92d52efccba')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'97ffe37d-42c8-4f90-8b91-c92d52efccba')","type":"Terrasoft.Configuration.Activity"},"Id":"97ffe37d-42c8-4f90-8b91-c92d52efccba","Title":"№: SR08207126; Усунення пошкоджень ШСД; Роботи: Кабель та дріт зв'язку","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579250286237)/","ModifiedOn":"/Date(1579255243050)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"3/05","TsiAddress":"Донецька область; Добропілля; Первомайская 125-79","TsiDescription":"Причина: не работает интернет\nТЗ: 02552","TsiTaskCategoryId":"02828787-1587-4c50-a78c-6013d71268fb","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-dbe4-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'fb0e2db0-45e3-47a9-99d1-6867c7cdf0a3')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'fb0e2db0-45e3-47a9-99d1-6867c7cdf0a3')","type":"Terrasoft.Configuration.Activity"},"Id":"fb0e2db0-45e3-47a9-99d1-6867c7cdf0a3","Title":"№: SR08202994; Підключення сервісу; Роботи: Абонентське обладнання","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579187473813)/","ModifiedOn":"/Date(1579193322309)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"21/55","TsiAddress":"Донецька область; Добропілля; Правды 21","TsiDescription":"Причина: подключение ТВ\nТЗ: 02602","TsiTaskCategoryId":"4b2202df-2653-4422-865a-4521346f0e2f","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"93f08cf8-0d52-41c3-844a-71d9d4ed4461"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'94f040f6-327d-45d3-96db-ec1d25648fb5')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'94f040f6-327d-45d3-96db-ec1d25648fb5')","type":"Terrasoft.Configuration.Activity"},"Id":"94f040f6-327d-45d3-96db-ec1d25648fb5","Title":"№: SR08201523; Усунення пошкоджень ОТА; Роботи: Оглядові пристрої","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579181517378)/","ModifiedOn":"/Date(1579186539719)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"9/58","TsiAddress":"Донецька область; Добропілля; Шевченко 11-27","TsiDescription":"Причина: не работает телефон\nТЗ: 26849","TsiTaskCategoryId":"08ef6cea-0706-4814-9a80-b48cee212150","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-dbb3-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'9d514b01-fb60-47ca-bf6a-da507f3bcda3')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'9d514b01-fb60-47ca-bf6a-da507f3bcda3')","type":"Terrasoft.Configuration.Activity"},"Id":"9d514b01-fb60-47ca-bf6a-da507f3bcda3","Title":"№: SR08200314; Усунення пошкоджень ШСД; Роботи: Абонентське обладнання","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579175475356)/","ModifiedOn":"/Date(1579180425055)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"19/12","TsiAddress":"Донецька область; Добропілля; Пархоменко 25-1","TsiDescription":"Причина: настройка модема\nТЗ: 02596","TsiTaskCategoryId":"5e80e45b-c456-32e9-e053-710c000afcf5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db5d-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'536e0d6c-d369-4646-86ae-4629ca04bd3d')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'536e0d6c-d369-4646-86ae-4629ca04bd3d')","type":"Terrasoft.Configuration.Activity"},"Id":"536e0d6c-d369-4646-86ae-4629ca04bd3d","Title":"№: SR08196909; Підключення сервісу; Роботи: Кабель та дріт зв'язку","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579168205510)/","ModifiedOn":"/Date(1579174367376)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"19/02","TsiAddress":"Донецька область; Добропілля; Шевченко 1а","TsiDescription":"Причина: перенос номера\nТЗ: 26667","TsiTaskCategoryId":"559e341d-8ea1-41ab-b5b7-8e1a70865a93","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"1b43e8a9-4b87-4a61-9715-2bb3e80580b1"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'6e1fcc93-fe00-49a5-87f0-cbc74c0e25e3')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'6e1fcc93-fe00-49a5-87f0-cbc74c0e25e3')","type":"Terrasoft.Configuration.Activity"},"Id":"6e1fcc93-fe00-49a5-87f0-cbc74c0e25e3","Title":"№: SR08191929; Усунення пошкоджень ШСД; Роботи: Кабель та дріт зв'язку","OwnerId":"385ab248-254d-495f-91dc-2120c3403b22","CreatedOn":"/Date(1579164682865)/","ModifiedOn":"/Date(1579169505097)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"24/25","TsiAddress":"Донецька область; Добропілля; Западный 32","TsiDescription":"Причина: плохо работает интернет\nТЗ: 27242","TsiTaskCategoryId":"02828787-1587-4c50-a78c-6013d71268fb","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-dba4-9efe-e055-7f66120c13ae"}]},"nowOn":"Нет заданий","status":"Обновлено:  19:10"},{"key":"vvitriv","login":"vvitriv","password":"Qwer3333","intervals":{"aTob":5,"bToc":10,"cTod":60},"gpsPattern":[{"lat":48.4646372,"long":37.0812746}],"gpsSettings":{"randomSorting":true,"randomizePosition":true,"currentPosition":0},"tsiFfm":{"work":[{"name_1":"Зона відповідальності оператора","name_2":"Заміна плати/обладнання","id_1":"3f19ea49-b276-469d-826f-9a0b7f3d96e7","id_2":"5ced2699-030a-46e0-e053-710c000ad5f7"}],"res":[{"name_1":"Кабельна мережа доступу","name_2":"Розподільча мережа доступу","id_1":"12a5ec07-9bbd-4054-8d20-1f7605c470f3","id_2":"a5380df5-64ec-4841-9930-8a48defd6572"}]},"data":{"cookie":["BPMLOADER=l4tqxaacdjmgxiz2mrfbeqlu; path=/; HttpOnly","BPMLOADER=l4tqxaacdjmgxiz2mrfbeqlu; path=/; HttpOnly",".ASPXAUTH=7DC8C32FDF790F4CDC7A5F8CBFC8B149A03F404EB43C1F54254B9F5B8F04AC4D98491FB4E3CAC60EB4040DB7EC88E195DE917F039FC5E01140BDD8336F695B8E010FB06530B3808123BA958043B0B14AFDEA9AEB9369D5F24E8145282249506411C5AC3522FCF370AB22A10431DD505C115189CFF1254B780F6B9F709F442ADC084895AB331D3AF019EE82CCAFF758189A4CCAB7BFC20B46E5B8FEC53D3A5E2D3EE55D82BB575E55D979C689F5B53248DCC311118936AB93377850DE56523F81F6468AF2637FD85379E40146005B022024222631B2B2E6768A1A69F6DD66C87FD887A773966E801B0823F5E8004A25E89265FD8FA9BA594EB1FDB01AFFE3C2D9F0AF22EEE6AA9F3B0A4DC3DC07F1F8899C114EC3A6DD7B5F0C90C3CBF539700D375274CFD5C3A3EBC8ED705C3432B63A08621A46; path=/; HttpOnly","BPMCSRF=EwicKtgBueqfpxXlVUad7O; path=/","UserName=118|118|105|116|114|105|118; expires=Tue, 18-Feb-2020 17:10:33 GMT; path=/; HttpOnly","NLB_SESSION_ID=node_226; path=/; HttpOnly; Secure"],"bpmcsrf":"EwicKtgBueqfpxXlVUad7O","activity":[{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'8cef8a75-4a9a-4571-9a73-3a8a3c4f5659')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'8cef8a75-4a9a-4571-9a73-3a8a3c4f5659')","type":"Terrasoft.Configuration.Activity"},"Id":"8cef8a75-4a9a-4571-9a73-3a8a3c4f5659","Title":"№: SR08218398; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579270873620)/","ModifiedOn":"/Date(1579275139547)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"9/38","TsiAddress":"Донецька область; Білозерське; Маяковського 36-5","TsiDescription":"Причина: не працює телефон","TsiTaskCategoryId":"4598d27c-3fb5-48d7-bce4-b29c58c12c23","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db77-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'7e50d57f-70c8-43e0-a6c3-2fff896c8c9a')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'7e50d57f-70c8-43e0-a6c3-2fff896c8c9a')","type":"Terrasoft.Configuration.Activity"},"Id":"7e50d57f-70c8-43e0-a6c3-2fff896c8c9a","Title":"№: SR08217582; Підключення сервісу; Роботи: Оглядові пристрої","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579267559287)/","ModifiedOn":"/Date(1579272419592)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"6/51","TsiAddress":"Донецька область; Добропілля; Первомайская 119-85","TsiDescription":"Причина: включение телефона\nТЗ: 25460","TsiTaskCategoryId":"826d6e5a-94aa-41ea-8634-638b52d7149e","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db1f-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b9bbccf4-69ec-4227-a0d8-2d84d610b558')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b9bbccf4-69ec-4227-a0d8-2d84d610b558')","type":"Terrasoft.Configuration.Activity"},"Id":"b9bbccf4-69ec-4227-a0d8-2d84d610b558","Title":"№: SR08216206; Відключення сервісу; Організація відключення послуги","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579261700873)/","ModifiedOn":"/Date(1579266596459)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"24/89","TsiAddress":"Донецька область; Добропілля; Санаторный 6а-5","TsiDescription":"Причина: снятие интернета\nТЗ: 26126","TsiTaskCategoryId":"5e80e45b-c453-32e9-e053-710c000afcf5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-daf5-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'8b80f20d-6e2c-4621-a6bc-aa44f7f90857')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'8b80f20d-6e2c-4621-a6bc-aa44f7f90857')","type":"Terrasoft.Configuration.Activity"},"Id":"8b80f20d-6e2c-4621-a6bc-aa44f7f90857","Title":"№: SR08213530; Відключення сервісу; Організація відключення послуги","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579255457917)/","ModifiedOn":"/Date(1579260339320)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"21/53","TsiAddress":"Донецька область; Добропілля; Широкий 4а-8","TsiDescription":"Причина: снятие телефона\nТЗ: 27050","TsiTaskCategoryId":"5e80e45b-c451-32e9-e053-710c000afcf5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-dbd9-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'3c62ef3a-cf8e-4754-b0a8-4c701df7b92e')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'3c62ef3a-cf8e-4754-b0a8-4c701df7b92e')","type":"Terrasoft.Configuration.Activity"},"Id":"3c62ef3a-cf8e-4754-b0a8-4c701df7b92e","Title":"№: SR08207361; Усунення пошкоджень ШСД; Роботи: Кабель та дріт зв'язку","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579250433608)/","ModifiedOn":"/Date(1579255464415)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"27/59","TsiAddress":"Донецька область; Добропілля; Грушевского 20","TsiDescription":"Причина: не работает интернет\nТЗ: 25758","TsiTaskCategoryId":"35fd13e3-cfc7-4301-aba8-45d2178c51a5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db9d-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'ddf980c5-d267-47cd-a4c6-34cfc6114be6')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'ddf980c5-d267-47cd-a4c6-34cfc6114be6')","type":"Terrasoft.Configuration.Activity"},"Id":"ddf980c5-d267-47cd-a4c6-34cfc6114be6","Title":"№: SR08203027; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579187684770)/","ModifiedOn":"/Date(1579192828304)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"20/84","TsiAddress":"Донецька область; Добропілля; Молодежный 6а","TsiDescription":"Причина: не работает телефон\nТЗ: 27303","TsiTaskCategoryId":"12f82702-a1fc-4835-81e9-f5f226a610e1","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db06-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'62b2c4c4-9ebc-48f0-ade1-eeecb4538391')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'62b2c4c4-9ebc-48f0-ade1-eeecb4538391')","type":"Terrasoft.Configuration.Activity"},"Id":"62b2c4c4-9ebc-48f0-ade1-eeecb4538391","Title":"№: SR08201645; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579181755569)/","ModifiedOn":"/Date(1579186575724)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"19/38","TsiAddress":"Донецька область; Добропілля; Перемоги","TsiDescription":"Причина: не работает телефон\nТЗ: 27746","TsiTaskCategoryId":"2c38ba55-d2ee-426e-afb1-9e33be6a0a5a","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-daf0-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'beb533e6-dcba-4139-b50e-33750a3b3c51')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'beb533e6-dcba-4139-b50e-33750a3b3c51')","type":"Terrasoft.Configuration.Activity"},"Id":"beb533e6-dcba-4139-b50e-33750a3b3c51","Title":"№: SR08200255; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579175258810)/","ModifiedOn":"/Date(1579180130759)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"19/51","TsiAddress":"Донецька область; Добропілля; Молодежный 6а","TsiDescription":"Причина: не работает телефон\nТЗ: 27301","TsiTaskCategoryId":"5e80e45b-c44a-32e9-e053-710c000afcf5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"60bddb9a-e8d0-4f3b-b98d-e18130b4c182"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'9bde6cfe-154e-4a79-a284-6e97a96a9a6e')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'9bde6cfe-154e-4a79-a284-6e97a96a9a6e')","type":"Terrasoft.Configuration.Activity"},"Id":"9bde6cfe-154e-4a79-a284-6e97a96a9a6e","Title":"№: SR08196842; Усунення пошкоджень ШСД; Роботи: Абонентське обладнання","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579168075823)/","ModifiedOn":"/Date(1579174687474)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"19/36","TsiAddress":"Донецька область; Добропілля; Молодежный 6а","TsiDescription":"Причина: не работает интернет\nТЗ: 27748","TsiTaskCategoryId":"5e80e45b-c44d-32e9-e053-710c000afcf5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db9e-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'989f74ad-d100-4f48-aecf-7cec9e1f582a')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'989f74ad-d100-4f48-aecf-7cec9e1f582a')","type":"Terrasoft.Configuration.Activity"},"Id":"989f74ad-d100-4f48-aecf-7cec9e1f582a","Title":"№: SR08191128; Відключення сервісу; Організація відключення послуги","OwnerId":"9ce31c4f-d523-4c20-8827-fb3217d8e489","CreatedOn":"/Date(1579164141253)/","ModifiedOn":"/Date(1579169320674)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"19/91","TsiAddress":"Донецька область; Добропілля; Молодежный 3-89","TsiDescription":"Причина: снятие телефона\nТЗ: 26052","TsiTaskCategoryId":"4b2202df-2653-4422-865a-4521346f0e2f","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"3c8468df-8fdd-45f6-90ad-e648196b90a8"}]},"nowOn":"Нет заданий","status":"Обновлено:  19:11"},{"key":"smyhydiuk","login":"smyhydiuk","password":"Qwer3333","intervals":{"aTob":5,"bToc":10,"cTod":60},"gpsPattern":[{"lat":48.4646372,"long":37.0812746}],"gpsSettings":{"randomSorting":true,"randomizePosition":true,"currentPosition":0},"tsiFfm":{"work":[{"name_1":"Зона відповідальності оператора","name_2":"Заміна плати/обладнання","id_1":"3f19ea49-b276-469d-826f-9a0b7f3d96e7","id_2":"5ced2699-030a-46e0-e053-710c000ad5f7"}],"res":[{"name_1":"Кабельна мережа доступу","name_2":"Розподільча мережа доступу","id_1":"12a5ec07-9bbd-4054-8d20-1f7605c470f3","id_2":"a5380df5-64ec-4841-9930-8a48defd6572"}]},"data":{"cookie":{},"bpmcsrf":{},"activity":{}},"nowOn":"Действие отсутствует","status":"Ошибка:  19:11"},{"key":"AVSemenyuk","login":"AVSemenyuk","password":"Qwer4949","intervals":{"aTob":5,"bToc":10,"cTod":60},"gpsPattern":[{"lat":48.4646372,"long":37.0812746}],"gpsSettings":{"randomSorting":true,"randomizePosition":true,"currentPosition":0},"tsiFfm":{"work":[{"name_1":"Зона відповідальності оператора","name_2":"Заміна плати/обладнання","id_1":"3f19ea49-b276-469d-826f-9a0b7f3d96e7","id_2":"5ced2699-030a-46e0-e053-710c000ad5f7"}],"res":[{"name_1":"Кабельна мережа доступу","name_2":"Розподільча мережа доступу","id_1":"12a5ec07-9bbd-4054-8d20-1f7605c470f3","id_2":"a5380df5-64ec-4841-9930-8a48defd6572"}]},"data":{"cookie":["BPMLOADER=rrgwp2goghia4synjvtc2mrk; path=/; HttpOnly","BPMLOADER=rrgwp2goghia4synjvtc2mrk; path=/; HttpOnly",".ASPXAUTH=E230C93389E4950BF87DFAB18AA5AB1C337D8A8D9978B0528643A3CE26EF0B8BAD1B6F7E30F23F16C2222F02668621855DED747315C0DAF402B8FCE9AEBD53B86EC11E218955FB512F0193DDF96AF5BFE55B15A8C3F3001974622707631661BCE33A6E55A7C4DE48A333FC2675E7C5DC46F2405ABC3DDE5D4883C879267088190B202042987FA9D67F14349B6967BB00AB9512E914E97459BC076473585D181A61855BEDE0C16F178394788CC4711BA21C10FCB67AD4D134FD68E0BDE36710D810670BE5F1F263009366E7ED81DE6F6F99B969ED7EAD14CA6957A599EAB4202E6C0B11073FAA28F51CFBCC3D90974FA39FA5923191B3539B0631FA2ABC2F03B8F1D596BBF44527ACCDF1E0CCA2152E8334FAA2F72A043215E7FA95503A7802CD8690C7A528AE97830EC42601D2B072BECFC91EE8574A65D8A022C2D7A381007D25E68A64; path=/; HttpOnly","BPMCSRF=dTOOxUDXz7uMHRhDsQmFVu; path=/","UserName=65|86|83|101|109|101|110|121|117|107; expires=Tue, 18-Feb-2020 17:10:50 GMT; path=/; HttpOnly","NLB_SESSION_ID=node_227; path=/; HttpOnly; Secure"],"bpmcsrf":"dTOOxUDXz7uMHRhDsQmFVu","activity":[{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'38370e18-f059-4301-81e4-76d3de60f48f')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'38370e18-f059-4301-81e4-76d3de60f48f')","type":"Terrasoft.Configuration.Activity"},"Id":"38370e18-f059-4301-81e4-76d3de60f48f","Title":"№: SR08218421; Інше; Доставка бригади до місця робіт","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579271007311)/","ModifiedOn":"/Date(1579275174457)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"доставка бригади до місця робіт","TsiAddress":"Донецька область; Світле; ФАП","TsiDescription":"Причина: доставка бригади до місця робіт","TsiTaskCategoryId":"e75e6dee-55bc-4fd5-a05b-530eb7bd4f73","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"5810c611-c87a-47f6-8eb3-3dc13b965488"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'ea21db21-a1dc-4087-8d0a-c3accb9ada59')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'ea21db21-a1dc-4087-8d0a-c3accb9ada59')","type":"Terrasoft.Configuration.Activity"},"Id":"ea21db21-a1dc-4087-8d0a-c3accb9ada59","Title":"№: SR08217501; Інше; Доставка бригади до місця робіт","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579267277555)/","ModifiedOn":"/Date(1579272224583)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"доставка бригады к месту работ","TsiAddress":"Донецька область; Новий Донбас; ФАП","TsiDescription":"Причина: доставка бригады к месту работ","TsiTaskCategoryId":"2d5d9966-0927-46c8-be84-b481f8c1868b","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db23-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'853c1186-87d9-4d3e-b2db-6bf2a503f047')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'853c1186-87d9-4d3e-b2db-6bf2a503f047')","type":"Terrasoft.Configuration.Activity"},"Id":"853c1186-87d9-4d3e-b2db-6bf2a503f047","Title":"№: SR08216137; Інше; Доставка бригади до місця робіт","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579261437711)/","ModifiedOn":"/Date(1579266459932)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"доставка бригады к месту работ","TsiAddress":"Донецька область; Новофедорівка; ФАП","TsiDescription":"Причина: доставка бригады к месту работ","TsiTaskCategoryId":"5e80e45b-c451-32e9-e053-710c000afcf5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"5de5bbdc-86e5-45fc-bca5-ccaa5ce2220b"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'a06c0761-e84f-431f-a72f-18cc24c21454')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'a06c0761-e84f-431f-a72f-18cc24c21454')","type":"Terrasoft.Configuration.Activity"},"Id":"a06c0761-e84f-431f-a72f-18cc24c21454","Title":"№: SR08213467; Інше; Доставка бригади до місця робіт","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579255372740)/","ModifiedOn":"/Date(1579260250698)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"доставка бригады к месту работ","TsiAddress":"Донецька область; Добропілля; Центральная","TsiDescription":"Причина: доставка бригады к месту работ","TsiTaskCategoryId":"5800b001-67a7-4887-8ffd-5c58aff1215a","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-dbd2-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'3615e819-c86c-42e3-8cb0-304bb64283c1')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'3615e819-c86c-42e3-8cb0-304bb64283c1')","type":"Terrasoft.Configuration.Activity"},"Id":"3615e819-c86c-42e3-8cb0-304bb64283c1","Title":"№: SR08207247; Інше; Доставка бригади до місця робіт","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579250345457)/","ModifiedOn":"/Date(1579255353988)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"доставка бригады к месту работ","TsiAddress":"Донецька область; Добропілля; Грушевского 20","TsiDescription":"Причина: доставка бригады к месту работ","TsiTaskCategoryId":"39373150-59ce-41f0-802a-1188fefef631","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"0a71efd6-e10d-4505-8929-405f495733bd"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b9d7593a-6e8e-43ce-b731-d16ede57117c')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b9d7593a-6e8e-43ce-b731-d16ede57117c')","type":"Terrasoft.Configuration.Activity"},"Id":"b9d7593a-6e8e-43ce-b731-d16ede57117c","Title":"№: SR08202961; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579187324630)/","ModifiedOn":"/Date(1579191460920)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"0/14","TsiAddress":"Донецька область; Шевченко; Чарушникова 1б","TsiDescription":"Причина: не работает телефон","TsiTaskCategoryId":"02828787-1587-4c50-a78c-6013d71268fb","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"24fee7f0-774a-4be4-80e8-c2f5a67d7f79"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'cd66ce7f-5da8-4134-9a0c-b9a05feba053')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'cd66ce7f-5da8-4134-9a0c-b9a05feba053')","type":"Terrasoft.Configuration.Activity"},"Id":"cd66ce7f-5da8-4134-9a0c-b9a05feba053","Title":"№: SR08201688; Інше; Доставка бригади до місця робіт","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579181873051)/","ModifiedOn":"/Date(1579185532049)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"доставка бригады к месту работ","TsiAddress":"Донецька область; Шевченко; Чарушникова","TsiDescription":"Причина: доставка бригады к месту работ","TsiTaskCategoryId":"27b59640-0846-4d5f-9c29-142e9fc9afa6","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-dafe-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'6da88765-f632-4b6e-89f9-a2cec418505d')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'6da88765-f632-4b6e-89f9-a2cec418505d')","type":"Terrasoft.Configuration.Activity"},"Id":"6da88765-f632-4b6e-89f9-a2cec418505d","Title":"№: SR08200221; Усунення пошкоджень ОТА; Роботи: Оглядові пристрої","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579175165741)/","ModifiedOn":"/Date(1579178930493)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"0/95","TsiAddress":"Донецька область; Грузьке; ","TsiDescription":"Причина: не работает телефон\nТЗ: 97231","TsiTaskCategoryId":"5e80e45b-c44a-32e9-e053-710c000afcf5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"6ea067ca-34f4-47e9-b443-9075425fd377"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b16e0c19-94da-4948-9b3d-585a6f1d4610')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b16e0c19-94da-4948-9b3d-585a6f1d4610')","type":"Terrasoft.Configuration.Activity"},"Id":"b16e0c19-94da-4948-9b3d-585a6f1d4610","Title":"№: SR08197037; Інше; Доставка бригади до місця робіт","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579168411111)/","ModifiedOn":"/Date(1579172390343)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"доставка бригады к месту работ","TsiAddress":"Донецька область; Грузьке; ","TsiDescription":"Причина: доставка бригады к месту работ","TsiTaskCategoryId":"5e80e45b-c454-32e9-e053-710c000afcf5","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db18-9efe-e055-7f66120c13ae"},{"__metadata":{"id":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'1caec427-396a-45c3-8350-63d91b675ca2')","uri":"https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'1caec427-396a-45c3-8350-63d91b675ca2')","type":"Terrasoft.Configuration.Activity"},"Id":"1caec427-396a-45c3-8350-63d91b675ca2","Title":"№: SR08191446; Інше; Доставка бригади до місця робіт","OwnerId":"dfe6bb9b-1f5d-4aa0-b78d-259952acd058","CreatedOn":"/Date(1579164326966)/","ModifiedOn":"/Date(1579168232017)/","StatusId":"4bdbb88f-58e6-df11-971b-001d60e938c6","TsiSymptoms":"доставка бригады к месту работ","TsiAddress":"Донецька область; Добропілля; Школьная","TsiDescription":"Причина: доставка бригады к месту работ","TsiTaskCategoryId":"583b8d4a-b630-4d2c-8d0f-de3413c3e657","TsiResponsibilityAreaId":"4af25e7d-c713-4178-8434-9277060b9d9c","TsiResCategoryId":"8e08a5fe-db87-9efe-e055-7f66120c13ae"}]},"nowOn":"Нет заданий","status":"Обновлено:  19:11"}]
+[
+    {
+        "key": "vkomelkov",
+        "login": "vkomelkov",
+        "password": "Qwer4444",
+        "intervals": {
+            "aTob": 5,
+            "bToc": 10,
+            "cTod": 60
+        },
+        "gpsPattern": [
+            {
+                "lat": 48.4646372,
+                "long": 37.0812746
+            }
+        ],
+        "gpsSettings": {
+            "randomSorting": true,
+            "randomizePosition": true,
+            "currentPosition": 0
+        },
+        "tsiFfm": {
+            "work": [
+                {
+                    "name_1": "Зона відповідальності оператора",
+                    "name_2": "Заміна плати/обладнання",
+                    "id_1": "3f19ea49-b276-469d-826f-9a0b7f3d96e7",
+                    "id_2": "5ced2699-030a-46e0-e053-710c000ad5f7"
+                }
+            ],
+            "res": [
+                {
+                    "name_1": "Кабельна мережа доступу",
+                    "name_2": "Розподільча мережа доступу",
+                    "id_1": "12a5ec07-9bbd-4054-8d20-1f7605c470f3",
+                    "id_2": "a5380df5-64ec-4841-9930-8a48defd6572"
+                }
+            ]
+        },
+        "data": {
+            "cookie": [
+                "BPMLOADER=3gzxr3tccczetp25b2lsx4g3; path=/; HttpOnly",
+                "BPMLOADER=3gzxr3tccczetp25b2lsx4g3; path=/; HttpOnly",
+                ".ASPXAUTH=2BC37018179EA567C61D46B63FAC1FF4D2CC29BF624A98C454D856E1435CD50432205C56561BAA066A50F7AC985A9B312776266772462E495ACDED217087A8C7ECEBBA54A1F4E7E03464D79535DCCF3D54FA6260766A468BB8DB67E1D4DD565855118A8F9BB16FFC6E64F277889F6D99B2BF2058F7F18F114AC7341EE25E349D335EE09C032CD075E723FD27734F8EF1131A3109CB70FF72E60B3CF38016189F7691DD2CC35C6E172104C4BB81A015CEA182FA06AED247BC43069C5137CF20D250619EC39F1E96222BD21FE1B990DF82CF940E40C63147F66CDF1CD18620D7FBEED230E52A06722E5AA6F18F7BF2E2F2567D8A1043A91AF8313E61C53FF86317E9A0A146393875A629D693AB8C2FFE26699646E2EAAC25C535E3C51554315459DCFD28506A29A714F67FAB4EA09F107A7F076057; path=/; HttpOnly",
+                "BPMCSRF=iD7GKfjvlGtGTca9Llubee; path=/",
+                "UserName=118|107|111|109|101|108|107|111|118; expires=Tue, 18-Feb-2020 17:10:16 GMT; path=/; HttpOnly",
+                "NLB_SESSION_ID=node_227; path=/; HttpOnly; Secure"
+            ],
+            "bpmcsrf": "iD7GKfjvlGtGTca9Llubee",
+            "activity": [
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'54b37ae6-eceb-4055-b437-81a2b77116f3')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'54b37ae6-eceb-4055-b437-81a2b77116f3')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "54b37ae6-eceb-4055-b437-81a2b77116f3",
+                    "Title": "№: SR08218411; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579270938351)/",
+                    "ModifiedOn": "/Date(1579275107718)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "9/38",
+                    "TsiAddress": "Донецька область; Білозерське; Маяковського 36-5",
+                    "TsiDescription": "Причина: не працює телефон\nТЗ: 32016",
+                    "TsiTaskCategoryId": "4598d27c-3fb5-48d7-bce4-b29c58c12c23",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db77-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'829e764c-a3a0-4c0e-8791-69466549b14c')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'829e764c-a3a0-4c0e-8791-69466549b14c')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "829e764c-a3a0-4c0e-8791-69466549b14c",
+                    "Title": "№: SR08216169; Відключення сервісу; Організація відключення послуги",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579261554072)/",
+                    "ModifiedOn": "/Date(1579267655208)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "8/43",
+                    "TsiAddress": "Донецька область; Добропілля; Луганского 21-15",
+                    "TsiDescription": "Причина: снятие интернета\nТЗ: 02482",
+                    "TsiTaskCategoryId": "db98b42a-db4c-4321-9c25-16c23decf412",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db1f-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'99085451-cc94-4144-b437-684eb4654fbf')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'99085451-cc94-4144-b437-684eb4654fbf')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "99085451-cc94-4144-b437-684eb4654fbf",
+                    "Title": "№: ST2020011704673465; DSL доступ; Роботи: Абонентське обладнання",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579261016529)/",
+                    "ModifiedOn": "/Date(1579339906609)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "",
+                    "TsiAddress": "Донецька область;Добропілля;м. Добропілля, пров. Тавричеський, буд. 12, кв.1",
+                    "TsiDescription": "ФИО абонента: Ганна",
+                    "TsiTaskCategoryId": "5e80e45b-c453-32e9-e053-710c000afcf5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-daf2-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'bb8e7eba-ed05-49fe-84cc-9f072e8b0336')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'bb8e7eba-ed05-49fe-84cc-9f072e8b0336')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "bb8e7eba-ed05-49fe-84cc-9f072e8b0336",
+                    "Title": "№: SR08213402; Усунення пошкоджень ШСД; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579255297694)/",
+                    "ModifiedOn": "/Date(1579260138682)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "14/55",
+                    "TsiAddress": "Донецька область; Добропілля; Таврический 12-1",
+                    "TsiDescription": "Причина: не работает интернет\nТЗ: 02274",
+                    "TsiTaskCategoryId": "292524ea-1122-4f26-8911-db6d9c1a3bea",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db75-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'97ffe37d-42c8-4f90-8b91-c92d52efccba')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'97ffe37d-42c8-4f90-8b91-c92d52efccba')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "97ffe37d-42c8-4f90-8b91-c92d52efccba",
+                    "Title": "№: SR08207126; Усунення пошкоджень ШСД; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579250286237)/",
+                    "ModifiedOn": "/Date(1579255243050)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "3/05",
+                    "TsiAddress": "Донецька область; Добропілля; Первомайская 125-79",
+                    "TsiDescription": "Причина: не работает интернет\nТЗ: 02552",
+                    "TsiTaskCategoryId": "02828787-1587-4c50-a78c-6013d71268fb",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-dbe4-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'fb0e2db0-45e3-47a9-99d1-6867c7cdf0a3')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'fb0e2db0-45e3-47a9-99d1-6867c7cdf0a3')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "fb0e2db0-45e3-47a9-99d1-6867c7cdf0a3",
+                    "Title": "№: SR08202994; Підключення сервісу; Роботи: Абонентське обладнання",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579187473813)/",
+                    "ModifiedOn": "/Date(1579193322309)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "21/55",
+                    "TsiAddress": "Донецька область; Добропілля; Правды 21",
+                    "TsiDescription": "Причина: подключение ТВ\nТЗ: 02602",
+                    "TsiTaskCategoryId": "4b2202df-2653-4422-865a-4521346f0e2f",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "93f08cf8-0d52-41c3-844a-71d9d4ed4461"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'94f040f6-327d-45d3-96db-ec1d25648fb5')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'94f040f6-327d-45d3-96db-ec1d25648fb5')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "94f040f6-327d-45d3-96db-ec1d25648fb5",
+                    "Title": "№: SR08201523; Усунення пошкоджень ОТА; Роботи: Оглядові пристрої",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579181517378)/",
+                    "ModifiedOn": "/Date(1579186539719)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "9/58",
+                    "TsiAddress": "Донецька область; Добропілля; Шевченко 11-27",
+                    "TsiDescription": "Причина: не работает телефон\nТЗ: 26849",
+                    "TsiTaskCategoryId": "08ef6cea-0706-4814-9a80-b48cee212150",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-dbb3-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'9d514b01-fb60-47ca-bf6a-da507f3bcda3')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'9d514b01-fb60-47ca-bf6a-da507f3bcda3')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "9d514b01-fb60-47ca-bf6a-da507f3bcda3",
+                    "Title": "№: SR08200314; Усунення пошкоджень ШСД; Роботи: Абонентське обладнання",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579175475356)/",
+                    "ModifiedOn": "/Date(1579180425055)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "19/12",
+                    "TsiAddress": "Донецька область; Добропілля; Пархоменко 25-1",
+                    "TsiDescription": "Причина: настройка модема\nТЗ: 02596",
+                    "TsiTaskCategoryId": "5e80e45b-c456-32e9-e053-710c000afcf5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db5d-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'536e0d6c-d369-4646-86ae-4629ca04bd3d')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'536e0d6c-d369-4646-86ae-4629ca04bd3d')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "536e0d6c-d369-4646-86ae-4629ca04bd3d",
+                    "Title": "№: SR08196909; Підключення сервісу; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579168205510)/",
+                    "ModifiedOn": "/Date(1579174367376)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "19/02",
+                    "TsiAddress": "Донецька область; Добропілля; Шевченко 1а",
+                    "TsiDescription": "Причина: перенос номера\nТЗ: 26667",
+                    "TsiTaskCategoryId": "559e341d-8ea1-41ab-b5b7-8e1a70865a93",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "1b43e8a9-4b87-4a61-9715-2bb3e80580b1"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'6e1fcc93-fe00-49a5-87f0-cbc74c0e25e3')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'6e1fcc93-fe00-49a5-87f0-cbc74c0e25e3')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "6e1fcc93-fe00-49a5-87f0-cbc74c0e25e3",
+                    "Title": "№: SR08191929; Усунення пошкоджень ШСД; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "385ab248-254d-495f-91dc-2120c3403b22",
+                    "CreatedOn": "/Date(1579164682865)/",
+                    "ModifiedOn": "/Date(1579169505097)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "24/25",
+                    "TsiAddress": "Донецька область; Добропілля; Западный 32",
+                    "TsiDescription": "Причина: плохо работает интернет\nТЗ: 27242",
+                    "TsiTaskCategoryId": "02828787-1587-4c50-a78c-6013d71268fb",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-dba4-9efe-e055-7f66120c13ae"
+                }
+            ]
+        },
+        "nowOn": "Нет заданий",
+        "status": "Обновлено:  19:10"
+    },
+    {
+        "key": "vvitriv",
+        "login": "vvitriv",
+        "password": "Qwer3333",
+        "intervals": {
+            "aTob": 5,
+            "bToc": 10,
+            "cTod": 60
+        },
+        "gpsPattern": [
+            {
+                "lat": 48.4646372,
+                "long": 37.0812746
+            }
+        ],
+        "gpsSettings": {
+            "randomSorting": true,
+            "randomizePosition": true,
+            "currentPosition": 0
+        },
+        "tsiFfm": {
+            "work": [
+                {
+                    "name_1": "Зона відповідальності оператора",
+                    "name_2": "Заміна плати/обладнання",
+                    "id_1": "3f19ea49-b276-469d-826f-9a0b7f3d96e7",
+                    "id_2": "5ced2699-030a-46e0-e053-710c000ad5f7"
+                }
+            ],
+            "res": [
+                {
+                    "name_1": "Кабельна мережа доступу",
+                    "name_2": "Розподільча мережа доступу",
+                    "id_1": "12a5ec07-9bbd-4054-8d20-1f7605c470f3",
+                    "id_2": "a5380df5-64ec-4841-9930-8a48defd6572"
+                }
+            ]
+        },
+        "data": {
+            "cookie": [
+                "BPMLOADER=l4tqxaacdjmgxiz2mrfbeqlu; path=/; HttpOnly",
+                "BPMLOADER=l4tqxaacdjmgxiz2mrfbeqlu; path=/; HttpOnly",
+                ".ASPXAUTH=7DC8C32FDF790F4CDC7A5F8CBFC8B149A03F404EB43C1F54254B9F5B8F04AC4D98491FB4E3CAC60EB4040DB7EC88E195DE917F039FC5E01140BDD8336F695B8E010FB06530B3808123BA958043B0B14AFDEA9AEB9369D5F24E8145282249506411C5AC3522FCF370AB22A10431DD505C115189CFF1254B780F6B9F709F442ADC084895AB331D3AF019EE82CCAFF758189A4CCAB7BFC20B46E5B8FEC53D3A5E2D3EE55D82BB575E55D979C689F5B53248DCC311118936AB93377850DE56523F81F6468AF2637FD85379E40146005B022024222631B2B2E6768A1A69F6DD66C87FD887A773966E801B0823F5E8004A25E89265FD8FA9BA594EB1FDB01AFFE3C2D9F0AF22EEE6AA9F3B0A4DC3DC07F1F8899C114EC3A6DD7B5F0C90C3CBF539700D375274CFD5C3A3EBC8ED705C3432B63A08621A46; path=/; HttpOnly",
+                "BPMCSRF=EwicKtgBueqfpxXlVUad7O; path=/",
+                "UserName=118|118|105|116|114|105|118; expires=Tue, 18-Feb-2020 17:10:33 GMT; path=/; HttpOnly",
+                "NLB_SESSION_ID=node_226; path=/; HttpOnly; Secure"
+            ],
+            "bpmcsrf": "EwicKtgBueqfpxXlVUad7O",
+            "activity": [
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'8cef8a75-4a9a-4571-9a73-3a8a3c4f5659')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'8cef8a75-4a9a-4571-9a73-3a8a3c4f5659')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "8cef8a75-4a9a-4571-9a73-3a8a3c4f5659",
+                    "Title": "№: SR08218398; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579270873620)/",
+                    "ModifiedOn": "/Date(1579275139547)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "9/38",
+                    "TsiAddress": "Донецька область; Білозерське; Маяковського 36-5",
+                    "TsiDescription": "Причина: не працює телефон",
+                    "TsiTaskCategoryId": "4598d27c-3fb5-48d7-bce4-b29c58c12c23",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db77-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'7e50d57f-70c8-43e0-a6c3-2fff896c8c9a')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'7e50d57f-70c8-43e0-a6c3-2fff896c8c9a')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "7e50d57f-70c8-43e0-a6c3-2fff896c8c9a",
+                    "Title": "№: SR08217582; Підключення сервісу; Роботи: Оглядові пристрої",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579267559287)/",
+                    "ModifiedOn": "/Date(1579272419592)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "6/51",
+                    "TsiAddress": "Донецька область; Добропілля; Первомайская 119-85",
+                    "TsiDescription": "Причина: включение телефона\nТЗ: 25460",
+                    "TsiTaskCategoryId": "826d6e5a-94aa-41ea-8634-638b52d7149e",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db1f-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b9bbccf4-69ec-4227-a0d8-2d84d610b558')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b9bbccf4-69ec-4227-a0d8-2d84d610b558')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "b9bbccf4-69ec-4227-a0d8-2d84d610b558",
+                    "Title": "№: SR08216206; Відключення сервісу; Організація відключення послуги",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579261700873)/",
+                    "ModifiedOn": "/Date(1579266596459)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "24/89",
+                    "TsiAddress": "Донецька область; Добропілля; Санаторный 6а-5",
+                    "TsiDescription": "Причина: снятие интернета\nТЗ: 26126",
+                    "TsiTaskCategoryId": "5e80e45b-c453-32e9-e053-710c000afcf5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-daf5-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'8b80f20d-6e2c-4621-a6bc-aa44f7f90857')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'8b80f20d-6e2c-4621-a6bc-aa44f7f90857')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "8b80f20d-6e2c-4621-a6bc-aa44f7f90857",
+                    "Title": "№: SR08213530; Відключення сервісу; Організація відключення послуги",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579255457917)/",
+                    "ModifiedOn": "/Date(1579260339320)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "21/53",
+                    "TsiAddress": "Донецька область; Добропілля; Широкий 4а-8",
+                    "TsiDescription": "Причина: снятие телефона\nТЗ: 27050",
+                    "TsiTaskCategoryId": "5e80e45b-c451-32e9-e053-710c000afcf5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-dbd9-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'3c62ef3a-cf8e-4754-b0a8-4c701df7b92e')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'3c62ef3a-cf8e-4754-b0a8-4c701df7b92e')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "3c62ef3a-cf8e-4754-b0a8-4c701df7b92e",
+                    "Title": "№: SR08207361; Усунення пошкоджень ШСД; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579250433608)/",
+                    "ModifiedOn": "/Date(1579255464415)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "27/59",
+                    "TsiAddress": "Донецька область; Добропілля; Грушевского 20",
+                    "TsiDescription": "Причина: не работает интернет\nТЗ: 25758",
+                    "TsiTaskCategoryId": "35fd13e3-cfc7-4301-aba8-45d2178c51a5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db9d-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'ddf980c5-d267-47cd-a4c6-34cfc6114be6')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'ddf980c5-d267-47cd-a4c6-34cfc6114be6')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "ddf980c5-d267-47cd-a4c6-34cfc6114be6",
+                    "Title": "№: SR08203027; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579187684770)/",
+                    "ModifiedOn": "/Date(1579192828304)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "20/84",
+                    "TsiAddress": "Донецька область; Добропілля; Молодежный 6а",
+                    "TsiDescription": "Причина: не работает телефон\nТЗ: 27303",
+                    "TsiTaskCategoryId": "12f82702-a1fc-4835-81e9-f5f226a610e1",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db06-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'62b2c4c4-9ebc-48f0-ade1-eeecb4538391')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'62b2c4c4-9ebc-48f0-ade1-eeecb4538391')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "62b2c4c4-9ebc-48f0-ade1-eeecb4538391",
+                    "Title": "№: SR08201645; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579181755569)/",
+                    "ModifiedOn": "/Date(1579186575724)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "19/38",
+                    "TsiAddress": "Донецька область; Добропілля; Перемоги",
+                    "TsiDescription": "Причина: не работает телефон\nТЗ: 27746",
+                    "TsiTaskCategoryId": "2c38ba55-d2ee-426e-afb1-9e33be6a0a5a",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-daf0-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'beb533e6-dcba-4139-b50e-33750a3b3c51')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'beb533e6-dcba-4139-b50e-33750a3b3c51')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "beb533e6-dcba-4139-b50e-33750a3b3c51",
+                    "Title": "№: SR08200255; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579175258810)/",
+                    "ModifiedOn": "/Date(1579180130759)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "19/51",
+                    "TsiAddress": "Донецька область; Добропілля; Молодежный 6а",
+                    "TsiDescription": "Причина: не работает телефон\nТЗ: 27301",
+                    "TsiTaskCategoryId": "5e80e45b-c44a-32e9-e053-710c000afcf5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "60bddb9a-e8d0-4f3b-b98d-e18130b4c182"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'9bde6cfe-154e-4a79-a284-6e97a96a9a6e')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'9bde6cfe-154e-4a79-a284-6e97a96a9a6e')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "9bde6cfe-154e-4a79-a284-6e97a96a9a6e",
+                    "Title": "№: SR08196842; Усунення пошкоджень ШСД; Роботи: Абонентське обладнання",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579168075823)/",
+                    "ModifiedOn": "/Date(1579174687474)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "19/36",
+                    "TsiAddress": "Донецька область; Добропілля; Молодежный 6а",
+                    "TsiDescription": "Причина: не работает интернет\nТЗ: 27748",
+                    "TsiTaskCategoryId": "5e80e45b-c44d-32e9-e053-710c000afcf5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db9e-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'989f74ad-d100-4f48-aecf-7cec9e1f582a')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'989f74ad-d100-4f48-aecf-7cec9e1f582a')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "989f74ad-d100-4f48-aecf-7cec9e1f582a",
+                    "Title": "№: SR08191128; Відключення сервісу; Організація відключення послуги",
+                    "OwnerId": "9ce31c4f-d523-4c20-8827-fb3217d8e489",
+                    "CreatedOn": "/Date(1579164141253)/",
+                    "ModifiedOn": "/Date(1579169320674)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "19/91",
+                    "TsiAddress": "Донецька область; Добропілля; Молодежный 3-89",
+                    "TsiDescription": "Причина: снятие телефона\nТЗ: 26052",
+                    "TsiTaskCategoryId": "4b2202df-2653-4422-865a-4521346f0e2f",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "3c8468df-8fdd-45f6-90ad-e648196b90a8"
+                }
+            ]
+        },
+        "nowOn": "Нет заданий",
+        "status": "Обновлено:  19:11"
+    },
+    {
+        "key": "smyhydiuk",
+        "login": "smyhydiuk",
+        "password": "Qwer3333",
+        "intervals": {
+            "aTob": 5,
+            "bToc": 10,
+            "cTod": 60
+        },
+        "gpsPattern": [
+            {
+                "lat": 48.4646372,
+                "long": 37.0812746
+            }
+        ],
+        "gpsSettings": {
+            "randomSorting": true,
+            "randomizePosition": true,
+            "currentPosition": 0
+        },
+        "tsiFfm": {
+            "work": [
+                {
+                    "name_1": "Зона відповідальності оператора",
+                    "name_2": "Заміна плати/обладнання",
+                    "id_1": "3f19ea49-b276-469d-826f-9a0b7f3d96e7",
+                    "id_2": "5ced2699-030a-46e0-e053-710c000ad5f7"
+                }
+            ],
+            "res": [
+                {
+                    "name_1": "Кабельна мережа доступу",
+                    "name_2": "Розподільча мережа доступу",
+                    "id_1": "12a5ec07-9bbd-4054-8d20-1f7605c470f3",
+                    "id_2": "a5380df5-64ec-4841-9930-8a48defd6572"
+                }
+            ]
+        },
+        "data": {
+            "cookie": {},
+            "bpmcsrf": {},
+            "activity": {}
+        },
+        "nowOn": "Действие отсутствует",
+        "status": "Ошибка:  19:11"
+    },
+    {
+        "key": "AVSemenyuk",
+        "login": "AVSemenyuk",
+        "password": "Qwer4949",
+        "intervals": {
+            "aTob": 5,
+            "bToc": 10,
+            "cTod": 60
+        },
+        "gpsPattern": [
+            {
+                "lat": 48.4646372,
+                "long": 37.0812746
+            }
+        ],
+        "gpsSettings": {
+            "randomSorting": true,
+            "randomizePosition": true,
+            "currentPosition": 0
+        },
+        "tsiFfm": {
+            "work": [
+                {
+                    "name_1": "Зона відповідальності оператора",
+                    "name_2": "Заміна плати/обладнання",
+                    "id_1": "3f19ea49-b276-469d-826f-9a0b7f3d96e7",
+                    "id_2": "5ced2699-030a-46e0-e053-710c000ad5f7"
+                }
+            ],
+            "res": [
+                {
+                    "name_1": "Кабельна мережа доступу",
+                    "name_2": "Розподільча мережа доступу",
+                    "id_1": "12a5ec07-9bbd-4054-8d20-1f7605c470f3",
+                    "id_2": "a5380df5-64ec-4841-9930-8a48defd6572"
+                }
+            ]
+        },
+        "data": {
+            "cookie": [
+                "BPMLOADER=rrgwp2goghia4synjvtc2mrk; path=/; HttpOnly",
+                "BPMLOADER=rrgwp2goghia4synjvtc2mrk; path=/; HttpOnly",
+                ".ASPXAUTH=E230C93389E4950BF87DFAB18AA5AB1C337D8A8D9978B0528643A3CE26EF0B8BAD1B6F7E30F23F16C2222F02668621855DED747315C0DAF402B8FCE9AEBD53B86EC11E218955FB512F0193DDF96AF5BFE55B15A8C3F3001974622707631661BCE33A6E55A7C4DE48A333FC2675E7C5DC46F2405ABC3DDE5D4883C879267088190B202042987FA9D67F14349B6967BB00AB9512E914E97459BC076473585D181A61855BEDE0C16F178394788CC4711BA21C10FCB67AD4D134FD68E0BDE36710D810670BE5F1F263009366E7ED81DE6F6F99B969ED7EAD14CA6957A599EAB4202E6C0B11073FAA28F51CFBCC3D90974FA39FA5923191B3539B0631FA2ABC2F03B8F1D596BBF44527ACCDF1E0CCA2152E8334FAA2F72A043215E7FA95503A7802CD8690C7A528AE97830EC42601D2B072BECFC91EE8574A65D8A022C2D7A381007D25E68A64; path=/; HttpOnly",
+                "BPMCSRF=dTOOxUDXz7uMHRhDsQmFVu; path=/",
+                "UserName=65|86|83|101|109|101|110|121|117|107; expires=Tue, 18-Feb-2020 17:10:50 GMT; path=/; HttpOnly",
+                "NLB_SESSION_ID=node_227; path=/; HttpOnly; Secure"
+            ],
+            "bpmcsrf": "dTOOxUDXz7uMHRhDsQmFVu",
+            "activity": [
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'38370e18-f059-4301-81e4-76d3de60f48f')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'38370e18-f059-4301-81e4-76d3de60f48f')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "38370e18-f059-4301-81e4-76d3de60f48f",
+                    "Title": "№: SR08218421; Інше; Доставка бригади до місця робіт",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579271007311)/",
+                    "ModifiedOn": "/Date(1579275174457)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "доставка бригади до місця робіт",
+                    "TsiAddress": "Донецька область; Світле; ФАП",
+                    "TsiDescription": "Причина: доставка бригади до місця робіт",
+                    "TsiTaskCategoryId": "e75e6dee-55bc-4fd5-a05b-530eb7bd4f73",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "5810c611-c87a-47f6-8eb3-3dc13b965488"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'ea21db21-a1dc-4087-8d0a-c3accb9ada59')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'ea21db21-a1dc-4087-8d0a-c3accb9ada59')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "ea21db21-a1dc-4087-8d0a-c3accb9ada59",
+                    "Title": "№: SR08217501; Інше; Доставка бригади до місця робіт",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579267277555)/",
+                    "ModifiedOn": "/Date(1579272224583)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "доставка бригады к месту работ",
+                    "TsiAddress": "Донецька область; Новий Донбас; ФАП",
+                    "TsiDescription": "Причина: доставка бригады к месту работ",
+                    "TsiTaskCategoryId": "2d5d9966-0927-46c8-be84-b481f8c1868b",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db23-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'853c1186-87d9-4d3e-b2db-6bf2a503f047')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'853c1186-87d9-4d3e-b2db-6bf2a503f047')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "853c1186-87d9-4d3e-b2db-6bf2a503f047",
+                    "Title": "№: SR08216137; Інше; Доставка бригади до місця робіт",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579261437711)/",
+                    "ModifiedOn": "/Date(1579266459932)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "доставка бригады к месту работ",
+                    "TsiAddress": "Донецька область; Новофедорівка; ФАП",
+                    "TsiDescription": "Причина: доставка бригады к месту работ",
+                    "TsiTaskCategoryId": "5e80e45b-c451-32e9-e053-710c000afcf5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "5de5bbdc-86e5-45fc-bca5-ccaa5ce2220b"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'a06c0761-e84f-431f-a72f-18cc24c21454')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'a06c0761-e84f-431f-a72f-18cc24c21454')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "a06c0761-e84f-431f-a72f-18cc24c21454",
+                    "Title": "№: SR08213467; Інше; Доставка бригади до місця робіт",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579255372740)/",
+                    "ModifiedOn": "/Date(1579260250698)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "доставка бригады к месту работ",
+                    "TsiAddress": "Донецька область; Добропілля; Центральная",
+                    "TsiDescription": "Причина: доставка бригады к месту работ",
+                    "TsiTaskCategoryId": "5800b001-67a7-4887-8ffd-5c58aff1215a",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-dbd2-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'3615e819-c86c-42e3-8cb0-304bb64283c1')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'3615e819-c86c-42e3-8cb0-304bb64283c1')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "3615e819-c86c-42e3-8cb0-304bb64283c1",
+                    "Title": "№: SR08207247; Інше; Доставка бригади до місця робіт",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579250345457)/",
+                    "ModifiedOn": "/Date(1579255353988)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "доставка бригады к месту работ",
+                    "TsiAddress": "Донецька область; Добропілля; Грушевского 20",
+                    "TsiDescription": "Причина: доставка бригады к месту работ",
+                    "TsiTaskCategoryId": "39373150-59ce-41f0-802a-1188fefef631",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "0a71efd6-e10d-4505-8929-405f495733bd"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b9d7593a-6e8e-43ce-b731-d16ede57117c')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b9d7593a-6e8e-43ce-b731-d16ede57117c')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "b9d7593a-6e8e-43ce-b731-d16ede57117c",
+                    "Title": "№: SR08202961; Усунення пошкоджень ОТА; Роботи: Кабель та дріт зв'язку",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579187324630)/",
+                    "ModifiedOn": "/Date(1579191460920)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "0/14",
+                    "TsiAddress": "Донецька область; Шевченко; Чарушникова 1б",
+                    "TsiDescription": "Причина: не работает телефон",
+                    "TsiTaskCategoryId": "02828787-1587-4c50-a78c-6013d71268fb",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "24fee7f0-774a-4be4-80e8-c2f5a67d7f79"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'cd66ce7f-5da8-4134-9a0c-b9a05feba053')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'cd66ce7f-5da8-4134-9a0c-b9a05feba053')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "cd66ce7f-5da8-4134-9a0c-b9a05feba053",
+                    "Title": "№: SR08201688; Інше; Доставка бригади до місця робіт",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579181873051)/",
+                    "ModifiedOn": "/Date(1579185532049)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "доставка бригады к месту работ",
+                    "TsiAddress": "Донецька область; Шевченко; Чарушникова",
+                    "TsiDescription": "Причина: доставка бригады к месту работ",
+                    "TsiTaskCategoryId": "27b59640-0846-4d5f-9c29-142e9fc9afa6",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-dafe-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'6da88765-f632-4b6e-89f9-a2cec418505d')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'6da88765-f632-4b6e-89f9-a2cec418505d')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "6da88765-f632-4b6e-89f9-a2cec418505d",
+                    "Title": "№: SR08200221; Усунення пошкоджень ОТА; Роботи: Оглядові пристрої",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579175165741)/",
+                    "ModifiedOn": "/Date(1579178930493)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "0/95",
+                    "TsiAddress": "Донецька область; Грузьке; ",
+                    "TsiDescription": "Причина: не работает телефон\nТЗ: 97231",
+                    "TsiTaskCategoryId": "5e80e45b-c44a-32e9-e053-710c000afcf5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "6ea067ca-34f4-47e9-b443-9075425fd377"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b16e0c19-94da-4948-9b3d-585a6f1d4610')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'b16e0c19-94da-4948-9b3d-585a6f1d4610')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "b16e0c19-94da-4948-9b3d-585a6f1d4610",
+                    "Title": "№: SR08197037; Інше; Доставка бригади до місця робіт",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579168411111)/",
+                    "ModifiedOn": "/Date(1579172390343)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "доставка бригады к месту работ",
+                    "TsiAddress": "Донецька область; Грузьке; ",
+                    "TsiDescription": "Причина: доставка бригады к месту работ",
+                    "TsiTaskCategoryId": "5e80e45b-c454-32e9-e053-710c000afcf5",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db18-9efe-e055-7f66120c13ae"
+                },
+                {
+                    "__metadata": {
+                        "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'1caec427-396a-45c3-8350-63d91b675ca2')",
+                        "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityCollection(guid'1caec427-396a-45c3-8350-63d91b675ca2')",
+                        "type": "Terrasoft.Configuration.Activity"
+                    },
+                    "Id": "1caec427-396a-45c3-8350-63d91b675ca2",
+                    "Title": "№: SR08191446; Інше; Доставка бригади до місця робіт",
+                    "OwnerId": "dfe6bb9b-1f5d-4aa0-b78d-259952acd058",
+                    "CreatedOn": "/Date(1579164326966)/",
+                    "ModifiedOn": "/Date(1579168232017)/",
+                    "StatusId": "4bdbb88f-58e6-df11-971b-001d60e938c6",
+                    "TsiSymptoms": "доставка бригады к месту работ",
+                    "TsiAddress": "Донецька область; Добропілля; Школьная",
+                    "TsiDescription": "Причина: доставка бригады к месту работ",
+                    "TsiTaskCategoryId": "583b8d4a-b630-4d2c-8d0f-de3413c3e657",
+                    "TsiResponsibilityAreaId": "4af25e7d-c713-4178-8434-9277060b9d9c",
+                    "TsiResCategoryId": "8e08a5fe-db87-9efe-e055-7f66120c13ae"
+                }
+            ]
+        },
+        "nowOn": "Нет заданий",
+        "status": "Обновлено:  19:11"
+    }
+]
