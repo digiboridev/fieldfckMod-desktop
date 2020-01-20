@@ -24,6 +24,7 @@ var loginData = {
 
 client.post("https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login", loginData, function (data, response) {
     cookie = response.headers['set-cookie'];
+    l(cookie[3])
     var csrftoken =  cookie[3].slice(8,-8);
     var reqArgs = {
         headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken }
