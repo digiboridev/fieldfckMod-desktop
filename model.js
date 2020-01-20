@@ -91,15 +91,7 @@ class Model {
                 {
                     data: JSON.stringify({ UserName: login, UserPassword: password }),
                     headers: { "Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
-                    requestConfig: {
-                        timeout: 30000, //request timeout in milliseconds
-                        noDelay: true, //Enable/disable the Nagle algorithm
-                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
-                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
-                    },
-                    responseConfig: {
-                        timeout: 30000 //response timeout
-                    }
+
                 })
                 .then(a => {
                     if (a.data.Code !== 0) {
@@ -147,15 +139,7 @@ class Model {
                 {
                     data: JSON.stringify({ UserName: profile.login, UserPassword: profile.password }),
                     headers: { "Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
-                    requestConfig: {
-                        timeout: 30000, //request timeout in milliseconds
-                        noDelay: true, //Enable/disable the Nagle algorithm
-                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
-                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
-                    },
-                    responseConfig: {
-                        timeout: 30000 //response timeout
-                    }
+
                 }
             )
                 .then(a => {
@@ -184,15 +168,7 @@ class Model {
             client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=10" + "&$select=Title,StatusId,OwnerId,CreatedOn,Id,ModifiedOn,TsiSymptoms,TsiAddress,TsiDescription,TsiTaskCategoryId,TsiResponsibilityAreaId,TsiResCategoryId",
                 {
                     headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": profile.data.cookie, "BPMCSRF": profile.data.bpmcsrf, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
-                    requestConfig: {
-                        timeout: 30000, //request timeout in milliseconds
-                        noDelay: true, //Enable/disable the Nagle algorithm
-                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
-                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
-                    },
-                    responseConfig: {
-                        timeout: 30000 //response timeout
-                    }
+
                 })
                 .then(a => {
                     let answer = JSON.parse(a.data)
@@ -378,15 +354,7 @@ class Model {
                 {
                     data: JSON.stringify(data.tsiVisit),
                     headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": data.metadata.cookie, "BPMCSRF": data.metadata.csrftoken, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
-                    requestConfig: {
-                        timeout: 30000, //request timeout in milliseconds
-                        noDelay: true, //Enable/disable the Nagle algorithm
-                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
-                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
-                    },
-                    responseConfig: {
-                        timeout: 30000 //response timeout
-                    }
+
                 })
                 .then(a => {
                     l(JSON.parse(a.data))
@@ -409,15 +377,7 @@ class Model {
                 {
                     data: JSON.stringify(data.activity),
                     headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": data.metadata.cookie, "BPMCSRF": data.metadata.csrftoken, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
-                    requestConfig: {
-                        timeout: 30000, //request timeout in milliseconds
-                        noDelay: true, //Enable/disable the Nagle algorithm
-                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
-                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
-                    },
-                    responseConfig: {
-                        timeout: 30000 //response timeout
-                    }
+
                 })
                 .then(a => {
                     l(a.response.statusCode);
@@ -446,15 +406,7 @@ class Model {
                         Latitude: getRandomLocation.lat
                     }),
                     headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": profile.data.cookie, "BPMCSRF": profile.data.bpmcsrf, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
-                    requestConfig: {
-                        timeout: 30000, //request timeout in milliseconds
-                        noDelay: true, //Enable/disable the Nagle algorithm
-                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
-                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
-                    },
-                    responseConfig: {
-                        timeout: 30000 //response timeout
-                    }
+
                 })
                 .then(a => {
                     l(JSON.parse(a.data))
