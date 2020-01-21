@@ -140,8 +140,7 @@ class Model {
                     data: JSON.stringify({ UserName: profile.login, UserPassword: profile.password }),
                     headers: { "Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
 
-                }
-            )
+                })
                 .then(a => {
                     if (a.data.Code !== 0) {
                         reject(a.data.Message)
@@ -154,7 +153,6 @@ class Model {
                     profile.data.cookie = cookie;
                     profile.data.bpmcsrf = csrftoken;
                     resolve(profile.login + ' authentifycado');
-
                 })
                 .catch(a => {
                     reject(a);
