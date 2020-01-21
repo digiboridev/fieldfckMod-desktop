@@ -5,10 +5,10 @@ l('run')
 
 var fs = require('fs');
 
-fs.readFile('TsiResourceTypeTTCollection.json',function(err,data){
-    let arr = JSON.parse(data);
-    console.log(arr[2])     
-})
+// fs.readFile('TsiResourceTypeTTCollection.json',function(err,data){
+//     let arr = JSON.parse(data);
+//     console.log(arr[2])     
+// })
 
 var Client = require('node-rest-client').Client;
 

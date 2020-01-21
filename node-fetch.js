@@ -1,26 +1,44 @@
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
-const body = {UserName:'vkomelkov',UserPassword:'Qwer5555'};
- 
-let gres,gresheaders;
+const nodeFetch = require('node-fetch')
+const tough = require('tough-cookie')
+const fetchCookie = require('fetch-cookie')
+const fetch = fetchCookie(nodeFetch, new tough.CookieJar())
 
-fetch('https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login', {
-        method: 'post',
-        body:    JSON.stringify(body),
-        headers: { 'Content-Type': 'application/json' },
+const body = { UserName: 'vkomelkov', UserPassword: 'Qwer5555' };
+
+login = () => {
+    return new Promise((resolve, reject) => {
+        fetch('https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login', {
+            method: 'post',
+            body: JSON.stringify(body),
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(res => res.json())
+            .then(json => {
+                if (json.Code) {
+                    reject(json.Message)
+                    throw '0'
+                }
+                resolve('authentifycado');
+            })
+            .catch(err => reject(err))
     })
-    .then(res => {
-        // let csrftoken = res.headers.raw()['set-cookie'][3].slice(8, -8)
-        gres = res.headers.get('set-cookie');
-        gresheaders = res.headers.raw()['set-cookie'];
-        let cookie = res.headers.get('set-cookie');
-        // console.log(csrftoken)
-        console.log(cookie)
-        return res
+}
+
+load = () => {
+    return new Promise((resolve, reject) => {
+
+        fetch("https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityStatusCollection", {
+            method: 'get',
+            headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose"},
+        })
+            .then(res => res.json())
+            .then(json => console.log(json));
     })
-    .then(res => res.json())
-    .then(json => {
-        console.log(json)
-        console.log(gresheaders[0])
-    })
-    .catch(err => {console.log(err)})
+}
+
+login()
+    .then(a => console.log(a))
+    .then(a => load())
+    .catch(err => console.log(err))
