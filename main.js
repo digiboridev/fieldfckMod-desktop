@@ -1,3 +1,4 @@
+require('v8-compile-cache');
 const { app, BrowserWindow, Menu, ipcMain, Tray } = require('electron')
 const path = require('path')
 var fs = require('fs')
