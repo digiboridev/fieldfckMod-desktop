@@ -14,12 +14,13 @@ var Client = require('node-rest-client').Client;
 
 var client = new Client();
 
-var secureData = {UserName:'vkomelkov',UserPassword:'Qwer5555'};
+var secureData = {UserName:'vkomelkov',UserPassword:'Qwer5151'};
 
 var loginData = {
     data: JSON.stringify(secureData),
     headers: { "Content-Type": "application/json" },
 }
+
 
 
 client.post("https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login", loginData, function (data, response) {
@@ -30,7 +31,7 @@ client.post("https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login", log
         headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken }
     }
 
-    var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/ActivityStatusCollection";
+    var lnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionHistoryCollection";
     
 
 
@@ -46,6 +47,26 @@ client.post("https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login", log
         });
 
         var sendJson;
+
+        //update ethernet
+        
+        fs.readFile('datasend.json',function(err,data){
+            sendJson = data;
+            console.log(JSON.parse(sendJson))
+
+            var putLnk = "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionHistoryCollection";
+
+            var reqArgs2 = {
+                data:sendJson,
+                headers: { "Content-Type": "application/json;odata=verbose" , "Accept": "application/json;odata=verbose" , "Cookie": cookie ,  "BPMCSRF": csrftoken }
+            }
+
+            client.post(putLnk,reqArgs2,function(a,b){
+                process.stdout.write(a)
+            })
+
+            
+        })
 
         // update activity data 
         
@@ -104,3 +125,4 @@ client.post("https://ffm.ukrtelecom.net/ServiceModel/AuthService.svc/Login", log
     //     })
 });
 
+console.log(new Date(1586948699298)  )

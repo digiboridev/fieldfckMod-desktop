@@ -245,6 +245,12 @@ class Controller {
 					this.viewUpdateUsersData();
 					return model.sendTsiVisit(data)
 				})
+				.then(a => {
+					l(a);
+					profile.status = 'Добавление типа соединения';
+					this.viewUpdateUsersData();
+					return model.sendConnectionType(data)
+				})
 				.then((a) => {
 					l(a)
 					profile.status = 'Загрузка данных';

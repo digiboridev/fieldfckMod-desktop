@@ -219,6 +219,19 @@ class Model {
                         password: profile.password,
                         cookie: profile.data.cookie,
                         csrftoken: profile.data.bpmcsrf
+                    },
+                    connectionType: {
+                        Id: Math.random().toString(12).substring(2, 10)
+                            + "-2ab0-476d-8cf1-"
+                            + Math.random().toString(12).substring(2, 14),
+                        CreatedOn: new Date(),
+                        CreatedById: activityarr[i].OwnerId,
+                        ModifiedOn: new Date(),
+                        ModifiedById: activityarr[i].OwnerId,
+                        ProcessListeners: 0,
+                        TsiContactId: activityarr[i].OwnerId,
+                        TsiConnectionTypeId: "70a2c006-6be4-399d-e053-710c000aaba1",
+                        TsiDate: new Date()
                     }
 
                 }
@@ -250,6 +263,19 @@ class Model {
                             password: profile.password,
                             cookie: profile.data.cookie,
                             csrftoken: profile.data.bpmcsrf
+                        },
+                        connectionType: {
+                            Id: Math.random().toString(12).substring(2, 10)
+                                + "-2ab0-476d-8cf1-"
+                                + Math.random().toString(12).substring(2, 14),
+                            CreatedOn: new Date(),
+                            CreatedById: activityarr[i].OwnerId,
+                            ModifiedOn: new Date(),
+                            ModifiedById: activityarr[i].OwnerId,
+                            ProcessListeners: 0,
+                            TsiContactId: activityarr[i].OwnerId,
+                            TsiConnectionTypeId: "70a2c006-6be4-399d-e053-710c000aaba1",
+                            TsiDate: new Date()
                         }
                     }
                 }
@@ -285,6 +311,19 @@ class Model {
                             password: profile.password,
                             cookie: profile.data.cookie,
                             csrftoken: profile.data.bpmcsrf
+                        },
+                        connectionType: {
+                            Id: Math.random().toString(12).substring(2, 10)
+                                + "-2ab0-476d-8cf1-"
+                                + Math.random().toString(12).substring(2, 14),
+                            CreatedOn: new Date(),
+                            CreatedById: activityarr[i].OwnerId,
+                            ModifiedOn: new Date(),
+                            ModifiedById: activityarr[i].OwnerId,
+                            ProcessListeners: 0,
+                            TsiContactId: activityarr[i].OwnerId,
+                            TsiConnectionTypeId: "70a2c006-6be4-399d-e053-710c000aaba1",
+                            TsiDate: new Date()
                         }
                     }
                 }
@@ -333,6 +372,19 @@ class Model {
                             password: profile.password,
                             cookie: profile.data.cookie,
                             csrftoken: profile.data.bpmcsrf
+                        },
+                        connectionType: {
+                            Id: Math.random().toString(12).substring(2, 10)
+                                + "-2ab0-476d-8cf1-"
+                                + Math.random().toString(12).substring(2, 14),
+                            CreatedOn: new Date(),
+                            CreatedById: activityarr[i].OwnerId,
+                            ModifiedOn: new Date(),
+                            ModifiedById: activityarr[i].OwnerId,
+                            ProcessListeners: 0,
+                            TsiContactId: activityarr[i].OwnerId,
+                            TsiConnectionTypeId: "70a2c006-6be4-399d-e053-710c000aaba1",
+                            TsiDate: new Date()
                         }
                     }
                 }
@@ -362,6 +414,26 @@ class Model {
                         throw '0'
                     }
                     resolve('TsivisitAdded');
+                })
+                .catch(a => reject(a));
+        })
+    }
+    sendConnectionType(data) {
+        return new Promise(function (resolve, reject) {
+            client.postPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionHistoryCollection",
+                {
+                    data: JSON.stringify(data.connectionType),
+                    headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": data.metadata.cookie, "BPMCSRF": data.metadata.csrftoken, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
+
+                })
+                .then(a => {
+                    l(JSON.parse(a.data))
+                    let answer = JSON.parse(a.data);
+                    if (answer.d == undefined) {
+                        reject(JSON.parse(a.data).error.message.value)
+                        throw '0'
+                    }
+                    resolve('TsiConnectionTypeAdded');
                 })
                 .catch(a => reject(a));
         })

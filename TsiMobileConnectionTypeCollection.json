@@ -1,0 +1,244 @@
+{
+    "results": [
+        {
+            "__metadata": {
+                "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be4-399d-e053-710c000aaba1')",
+                "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be4-399d-e053-710c000aaba1')",
+                "type": "Terrasoft.Configuration.TsiMobileConnectionType"
+            },
+            "CreatedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be4-399d-e053-710c000aaba1')/CreatedBy"
+                }
+            },
+            "ModifiedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be4-399d-e053-710c000aaba1')/ModifiedBy"
+                }
+            },
+            "TsiMobileConnectionHistoryCollectionByTsiConnectionType": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be4-399d-e053-710c000aaba1')/TsiMobileConnectionHistoryCollectionByTsiConnectionType"
+                }
+            },
+            "Id": "70a2c006-6be4-399d-e053-710c000aaba1",
+            "TsiName": "none",
+            "CreatedOn": "/Date(1539745473176)/",
+            "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ModifiedOn": "/Date(1539745473176)/",
+            "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ProcessListeners": 0,
+            "TsiCode": 0
+        },
+        {
+            "__metadata": {
+                "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be5-399d-e053-710c000aaba1')",
+                "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be5-399d-e053-710c000aaba1')",
+                "type": "Terrasoft.Configuration.TsiMobileConnectionType"
+            },
+            "CreatedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be5-399d-e053-710c000aaba1')/CreatedBy"
+                }
+            },
+            "ModifiedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be5-399d-e053-710c000aaba1')/ModifiedBy"
+                }
+            },
+            "TsiMobileConnectionHistoryCollectionByTsiConnectionType": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be5-399d-e053-710c000aaba1')/TsiMobileConnectionHistoryCollectionByTsiConnectionType"
+                }
+            },
+            "Id": "70a2c006-6be5-399d-e053-710c000aaba1",
+            "TsiName": "2g",
+            "CreatedOn": "/Date(1539745472942)/",
+            "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ModifiedOn": "/Date(1539745472942)/",
+            "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ProcessListeners": 0,
+            "TsiCode": 1
+        },
+        {
+            "__metadata": {
+                "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be6-399d-e053-710c000aaba1')",
+                "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be6-399d-e053-710c000aaba1')",
+                "type": "Terrasoft.Configuration.TsiMobileConnectionType"
+            },
+            "CreatedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be6-399d-e053-710c000aaba1')/CreatedBy"
+                }
+            },
+            "ModifiedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be6-399d-e053-710c000aaba1')/ModifiedBy"
+                }
+            },
+            "TsiMobileConnectionHistoryCollectionByTsiConnectionType": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be6-399d-e053-710c000aaba1')/TsiMobileConnectionHistoryCollectionByTsiConnectionType"
+                }
+            },
+            "Id": "70a2c006-6be6-399d-e053-710c000aaba1",
+            "TsiName": "wifi",
+            "CreatedOn": "/Date(1539745473176)/",
+            "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ModifiedOn": "/Date(1539745473176)/",
+            "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ProcessListeners": 0,
+            "TsiCode": 1
+        },
+        {
+            "__metadata": {
+                "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be7-399d-e053-710c000aaba1')",
+                "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be7-399d-e053-710c000aaba1')",
+                "type": "Terrasoft.Configuration.TsiMobileConnectionType"
+            },
+            "CreatedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be7-399d-e053-710c000aaba1')/CreatedBy"
+                }
+            },
+            "ModifiedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be7-399d-e053-710c000aaba1')/ModifiedBy"
+                }
+            },
+            "TsiMobileConnectionHistoryCollectionByTsiConnectionType": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be7-399d-e053-710c000aaba1')/TsiMobileConnectionHistoryCollectionByTsiConnectionType"
+                }
+            },
+            "Id": "70a2c006-6be7-399d-e053-710c000aaba1",
+            "TsiName": "3g",
+            "CreatedOn": "/Date(1539745473145)/",
+            "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ModifiedOn": "/Date(1539745473145)/",
+            "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ProcessListeners": 0,
+            "TsiCode": 2
+        },
+        {
+            "__metadata": {
+                "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be8-399d-e053-710c000aaba1')",
+                "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be8-399d-e053-710c000aaba1')",
+                "type": "Terrasoft.Configuration.TsiMobileConnectionType"
+            },
+            "CreatedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be8-399d-e053-710c000aaba1')/CreatedBy"
+                }
+            },
+            "ModifiedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be8-399d-e053-710c000aaba1')/ModifiedBy"
+                }
+            },
+            "TsiMobileConnectionHistoryCollectionByTsiConnectionType": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be8-399d-e053-710c000aaba1')/TsiMobileConnectionHistoryCollectionByTsiConnectionType"
+                }
+            },
+            "Id": "70a2c006-6be8-399d-e053-710c000aaba1",
+            "TsiName": "4g",
+            "CreatedOn": "/Date(1539745473145)/",
+            "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ModifiedOn": "/Date(1539745473145)/",
+            "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ProcessListeners": 0,
+            "TsiCode": 2
+        },
+        {
+            "__metadata": {
+                "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be9-399d-e053-710c000aaba1')",
+                "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be9-399d-e053-710c000aaba1')",
+                "type": "Terrasoft.Configuration.TsiMobileConnectionType"
+            },
+            "CreatedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be9-399d-e053-710c000aaba1')/CreatedBy"
+                }
+            },
+            "ModifiedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be9-399d-e053-710c000aaba1')/ModifiedBy"
+                }
+            },
+            "TsiMobileConnectionHistoryCollectionByTsiConnectionType": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6be9-399d-e053-710c000aaba1')/TsiMobileConnectionHistoryCollectionByTsiConnectionType"
+                }
+            },
+            "Id": "70a2c006-6be9-399d-e053-710c000aaba1",
+            "TsiName": "unknown",
+            "CreatedOn": "/Date(1539745473176)/",
+            "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ModifiedOn": "/Date(1539745473176)/",
+            "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ProcessListeners": 0,
+            "TsiCode": 3
+        },
+        {
+            "__metadata": {
+                "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6bea-399d-e053-710c000aaba1')",
+                "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6bea-399d-e053-710c000aaba1')",
+                "type": "Terrasoft.Configuration.TsiMobileConnectionType"
+            },
+            "CreatedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6bea-399d-e053-710c000aaba1')/CreatedBy"
+                }
+            },
+            "ModifiedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6bea-399d-e053-710c000aaba1')/ModifiedBy"
+                }
+            },
+            "TsiMobileConnectionHistoryCollectionByTsiConnectionType": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6bea-399d-e053-710c000aaba1')/TsiMobileConnectionHistoryCollectionByTsiConnectionType"
+                }
+            },
+            "Id": "70a2c006-6bea-399d-e053-710c000aaba1",
+            "TsiName": "cellular",
+            "CreatedOn": "/Date(1539745473160)/",
+            "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ModifiedOn": "/Date(1539745473160)/",
+            "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ProcessListeners": 0,
+            "TsiCode": 3
+        },
+        {
+            "__metadata": {
+                "id": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6beb-399d-e053-710c000aaba1')",
+                "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6beb-399d-e053-710c000aaba1')",
+                "type": "Terrasoft.Configuration.TsiMobileConnectionType"
+            },
+            "CreatedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6beb-399d-e053-710c000aaba1')/CreatedBy"
+                }
+            },
+            "ModifiedBy": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6beb-399d-e053-710c000aaba1')/ModifiedBy"
+                }
+            },
+            "TsiMobileConnectionHistoryCollectionByTsiConnectionType": {
+                "__deferred": {
+                    "uri": "https://ffm.ukrtelecom.net/0/ServiceModel/EntityDataService.svc/TsiMobileConnectionTypeCollection(guid'70a2c006-6beb-399d-e053-710c000aaba1')/TsiMobileConnectionHistoryCollectionByTsiConnectionType"
+                }
+            },
+            "Id": "70a2c006-6beb-399d-e053-710c000aaba1",
+            "TsiName": "ethernet",
+            "CreatedOn": "/Date(1539745473160)/",
+            "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ModifiedOn": "/Date(1539745473160)/",
+            "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+            "ProcessListeners": 0,
+            "TsiCode": 3
+        }
+    ]
+}
