@@ -208,12 +208,7 @@ class Controller {
 					this.viewUpdateUsersData();
 					return model.loadActivityData(key)
 				})
-				.then(a => {
-					l(a)
-					profile.status = 'Обновление местоположения';
-					this.viewUpdateUsersData();
-					return model.updateLocation(key)
-				})
+				
 				.then(a => {
 					l(a)
 					profile.status = 'Обработка данных';
@@ -250,6 +245,12 @@ class Controller {
 					profile.status = 'Добавление типа соединения';
 					this.viewUpdateUsersData();
 					return model.sendConnectionType(data)
+				})
+				.then(a => {
+					l(a)
+					profile.status = 'Обновление местоположения';
+					this.viewUpdateUsersData();
+					return model.updateLocation(key)
 				})
 				.then((a) => {
 					l(a)
