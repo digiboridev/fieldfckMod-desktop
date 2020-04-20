@@ -854,7 +854,7 @@ footer  {
     width: 100%;
     bottom: 0;
     height: 11px;
-    background: #000;
+    background: #323b43;
     color: #fff;
     /* text-transform: lowercase; */
     font-variant: small-caps;
@@ -863,8 +863,7 @@ footer  {
     font-weight: 300;
     font-size: 0.6em;
     text-align: right;
-    filter:invert(1);
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 

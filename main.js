@@ -197,6 +197,12 @@ class Controller {
 		windowReady == false ? {} : mainWindow.webContents.send('status', { msg: 'обработка', status: true })
 		let data = {};
 		let profile = model.getitem(key);
+
+		let isActivityChanged = false;
+		let isTsiVisitAdded = false;
+		let isConnectionTypeAdded = false;
+		let isLocationAdded = false;
+
 		return new Promise(function (resolve, reject) {
 			index == undefined ? index = 1 : {};
 			profile.status = 'Авторизация';
@@ -229,30 +235,54 @@ class Controller {
 						this.viewUpdateUsersData();
 						throw "olgud"
 					} else {
+						l(isActivityChanged)
 						profile.status = 'Изменение активности';
 						this.viewUpdateUsersData();
-						return model.changeActivityState(data)
+						if (isActivityChanged) {
+							return 'fastforward'
+						} else {
+							return model.changeActivityState(data)
+						}
 					}
 				})
 				.then(a => {
+					isActivityChanged = true;
+					l(isTsiVisitAdded)
 					l(a);
 					profile.status = 'Добавление визита';
 					this.viewUpdateUsersData();
-					return model.sendTsiVisit(data)
+					if (isTsiVisitAdded) {
+						return 'fast forward'
+					} else {
+						return model.sendTsiVisit(data)
+					}
 				})
 				.then(a => {
+					isTsiVisitAdded = true;
+					l(isConnectionTypeAdded)
 					l(a);
 					profile.status = 'Добавление типа соединения';
 					this.viewUpdateUsersData();
-					return model.sendConnectionType(data)
+					if (isConnectionTypeAdded) {
+						return 'fast forward'
+					} else {
+						return model.sendConnectionType(data)
+					}
 				})
 				.then(a => {
+					isConnectionTypeAdded = true;
+					l(isLocationAdded)
 					l(a)
 					profile.status = 'Обновление местоположения';
 					this.viewUpdateUsersData();
-					return model.updateLocation(key)
+					if (isLocationAdded) {
+						return 'fast forward'
+					} else {
+						return model.updateLocation(key)
+					}
 				})
 				.then((a) => {
+					isLocationAdded = true;
 					l(a)
 					profile.status = 'Загрузка данных';
 					this.viewUpdateUsersData();

@@ -122,10 +122,10 @@ class Model {
                         mobile: answer.d.results[0].TsiContactPhone
                     }
                     let readableData = JSON.stringify(answer.d.results).replace(/(,")/g, ',\n"');
-                    fs.writeFile('contact.json', readableData, function (err) {
-                        if (err) throw err;
-                        console.log('Saved!');
-                    });
+                    // fs.writeFile('contact.json', readableData, function (err) {
+                    //     if (err) throw err;
+                    //     console.log('Saved!');
+                    // });
                     resolve(newProfile);
                 })
                 .catch(a => reject(a))
@@ -139,6 +139,12 @@ class Model {
                 {
                     data: JSON.stringify({ UserName: profile.login, UserPassword: profile.password }),
                     headers: { "Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
+                    requestConfig: {
+                        timeout: 60000, //request timeout in milliseconds
+                        noDelay: true, //Enable/disable the Nagle algorithm
+                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
+                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
+                    }
 
                 })
                 .then(a => {
@@ -163,9 +169,15 @@ class Model {
         const profile = this.arr.find(item => item.key === key);
 
         return new Promise(function (resolve, reject) {
-            client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=10" + "&$select=Title,StatusId,OwnerId,CreatedOn,Id,ModifiedOn,TsiSymptoms,TsiAddress,TsiDescription,TsiTaskCategoryId,TsiResponsibilityAreaId,TsiResCategoryId",
+            client.getPromise(globalSettings.url + "/0/ServiceModel/EntityDataService.svc/ActivityCollection?$filter=Owner/TsiLogin%20eq%20'" + profile.login + "'&$orderby=CreatedOn%20desc&$top=5" + "&$select=Title,StatusId,OwnerId,CreatedOn,Id,ModifiedOn,TsiSymptoms,TsiAddress,TsiDescription,TsiTaskCategoryId,TsiResponsibilityAreaId,TsiResCategoryId",
                 {
-                    headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": profile.data.cookie, "BPMCSRF": profile.data.bpmcsrf, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
+                    headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": profile.data.cookie, "BPMCSRF": profile.data.bpmcsrf },
+                    requestConfig: {
+                        timeout: 60000, //request timeout in milliseconds
+                        noDelay: true, //Enable/disable the Nagle algorithm
+                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
+                        keepAliveDelay: 360000 //and optionally set the initial delay before the first keepalive probe is sent
+                    }
 
                 })
                 .then(a => {
@@ -176,10 +188,10 @@ class Model {
                     }
                     profile.data.activity = answer.d.results;
                     let readableData = JSON.stringify(answer.d.results).replace(/(,")/g, ',\n"');
-                    fs.writeFile('data.json', readableData, function (err) {
-                        if (err) throw err;
-                        console.log('Saved!');
-                    });
+                    // fs.writeFile('data.json', readableData, function (err) {
+                    //     if (err) throw err;
+                    //     console.log('Saved!');
+                    // });
                     resolve(profile.login + ' Activity data downloaded');
                 })
                 .catch(a => reject(a));
@@ -230,7 +242,7 @@ class Model {
                         ModifiedById: activityarr[i].OwnerId,
                         ProcessListeners: 0,
                         TsiContactId: activityarr[i].OwnerId,
-                        TsiConnectionTypeId: "70a2c006-6be4-399d-e053-710c000aaba1",
+                        TsiConnectionTypeId: "70a2c006-6be8-399d-e053-710c000aaba1",
                         TsiDate: new Date()
                     }
 
@@ -274,7 +286,7 @@ class Model {
                             ModifiedById: activityarr[i].OwnerId,
                             ProcessListeners: 0,
                             TsiContactId: activityarr[i].OwnerId,
-                            TsiConnectionTypeId: "70a2c006-6be4-399d-e053-710c000aaba1",
+                            TsiConnectionTypeId: "70a2c006-6be8-399d-e053-710c000aaba1",
                             TsiDate: new Date()
                         }
                     }
@@ -322,7 +334,7 @@ class Model {
                             ModifiedById: activityarr[i].OwnerId,
                             ProcessListeners: 0,
                             TsiContactId: activityarr[i].OwnerId,
-                            TsiConnectionTypeId: "70a2c006-6be4-399d-e053-710c000aaba1",
+                            TsiConnectionTypeId: "70a2c006-6be8-399d-e053-710c000aaba1",
                             TsiDate: new Date()
                         }
                     }
@@ -383,7 +395,7 @@ class Model {
                             ModifiedById: activityarr[i].OwnerId,
                             ProcessListeners: 0,
                             TsiContactId: activityarr[i].OwnerId,
-                            TsiConnectionTypeId: "70a2c006-6be4-399d-e053-710c000aaba1",
+                            TsiConnectionTypeId: "70a2c006-6be8-399d-e053-710c000aaba1",
                             TsiDate: new Date()
                         }
                     }
@@ -404,6 +416,12 @@ class Model {
                 {
                     data: JSON.stringify(data.tsiVisit),
                     headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": data.metadata.cookie, "BPMCSRF": data.metadata.csrftoken, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
+                    requestConfig: {
+                        timeout: 60000, //request timeout in milliseconds
+                        noDelay: true, //Enable/disable the Nagle algorithm
+                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
+                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
+                    }
 
                 })
                 .then(a => {
@@ -424,6 +442,12 @@ class Model {
                 {
                     data: JSON.stringify(data.connectionType),
                     headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": data.metadata.cookie, "BPMCSRF": data.metadata.csrftoken, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
+                    requestConfig: {
+                        timeout: 60000, //request timeout in milliseconds
+                        noDelay: true, //Enable/disable the Nagle algorithm
+                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
+                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
+                    }
 
                 })
                 .then(a => {
@@ -447,6 +471,12 @@ class Model {
                 {
                     data: JSON.stringify(data.activity),
                     headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": data.metadata.cookie, "BPMCSRF": data.metadata.csrftoken, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
+                    requestConfig: {
+                        timeout: 60000, //request timeout in milliseconds
+                        noDelay: true, //Enable/disable the Nagle algorithm
+                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
+                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
+                    }
 
                 })
                 .then(a => {
@@ -476,6 +506,12 @@ class Model {
                         Latitude: getRandomLocation.lat
                     }),
                     headers: { "Content-Type": "application/json;odata=verbose", "Accept": "application/json;odata=verbose", "Cookie": profile.data.cookie, "BPMCSRF": profile.data.bpmcsrf, "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15" },
+                    requestConfig: {
+                        timeout: 60000, //request timeout in milliseconds
+                        noDelay: true, //Enable/disable the Nagle algorithm
+                        keepAlive: true, //Enable/disable keep-alive functionalityidle socket.
+                        keepAliveDelay: 60000 //and optionally set the initial delay before the first keepalive probe is sent
+                    }
 
                 })
                 .then(a => {
