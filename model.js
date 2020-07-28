@@ -242,7 +242,7 @@ class Model {
                         ModifiedById: activityarr[i].OwnerId,
                         ProcessListeners: 0,
                         TsiContactId: activityarr[i].OwnerId,
-                        TsiConnectionTypeId: "70a2c006-6be8-399d-e053-710c000aaba1",
+                        TsiConnectionTypeId: "70a2c006-6be6-399d-e053-710c000aaba1",
                         TsiDate: new Date()
                     }
 
@@ -286,7 +286,7 @@ class Model {
                             ModifiedById: activityarr[i].OwnerId,
                             ProcessListeners: 0,
                             TsiContactId: activityarr[i].OwnerId,
-                            TsiConnectionTypeId: "70a2c006-6be8-399d-e053-710c000aaba1",
+                            TsiConnectionTypeId: "70a2c006-6be7-399d-e053-710c000aaba1",
                             TsiDate: new Date()
                         }
                     }

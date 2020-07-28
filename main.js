@@ -555,11 +555,11 @@ ipcMain.on('leave-window', () => {
 
 })
 ipcMain.on('loadUsers', () => {
-	l('Read users from local file')
+	l('Read from local file')
 	controller.readUsers()
 })
 ipcMain.on('saveUsers', () => {
-	l('Read users from local file')
+	l('Saved to local file')
 	controller.saveUsers()
 })
 ipcMain.on('devTools', () => {
