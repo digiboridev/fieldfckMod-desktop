@@ -4594,3 +4594,9 @@ node_modules/request/node_modules/tough-cookie/lib/pubsuffix-psl.js
 node_modules/request/node_modules/tough-cookie/lib/store.js
 node_modules/tough-cookie/lib/version.js
 package-lock.json
+node_modules/v8-compile-cache/CHANGELOG.md
+node_modules/v8-compile-cache/LICENSE
+node_modules/v8-compile-cache/LICENSE
+node_modules/v8-compile-cache/package.json
+node_modules/v8-compile-cache/README.md
+node_modules/v8-compile-cache/v8-compile-cache.js
