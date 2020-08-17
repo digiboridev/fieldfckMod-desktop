@@ -10,7 +10,7 @@
 
 ![alt text](https://github.com/digiborimusik/fieldfckMod-desktop/blob/master/md/userSettingsTime.jpg)
 
-###### Эмуляция роботы мобильного телефона
+###### Эмуляция роботы мобильного телефона (даже звонки из будущего)
 
 ![alt text](https://github.com/digiborimusik/fieldfckMod-desktop/blob/master/md/resultCellular.jpg)
 
