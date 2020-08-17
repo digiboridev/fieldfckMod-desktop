@@ -130,7 +130,7 @@ app.on('activate', function () {
 
 class Controller {
 	constructor(data) {
-		this.data = { started: false };
+		this.data = { started: false, date:null };
 	}
 	checkUser(login) {
 		return model.getitem(login)
@@ -387,6 +387,7 @@ class Controller {
 			return
 		}
 		this.data.started = true;
+		this.data.date = new Date().toTimeString().substr(0,8);
 		this.data.timer = setInterval(() => { controller.processAll() }, minutes * 60 * 1000)
 		windowReady == false ? {} : mainWindow.webContents.send('status', { msg: 'Запущен' })
 	}

@@ -188,10 +188,10 @@ header {
     font-weight: 100;
     color: #ebebeb;
 }
-.status.start{
+/*.status.start{
     left: 16px;
-}
-.status.start::before{
+}*/
+/*.status.start::before{
     content: '';
     width: 12px;
     height: 12px;
@@ -201,7 +201,7 @@ header {
     margin-right: 10px;
     background: url(svg/spinner.svg) center no-repeat;
     background-size: cover;
-}
+}*/
 
 main {
     height: 90%;
