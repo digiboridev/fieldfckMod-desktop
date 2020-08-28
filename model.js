@@ -10,11 +10,6 @@ function l(a) {
 }
 l('model run')
 
-//test2
-
-//  Variables
-
-
 const globalSettings = {
     url: "https://ffm.ukrtelecom.net",
     intervals: {
