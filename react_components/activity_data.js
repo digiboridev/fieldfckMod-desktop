@@ -1,5 +1,6 @@
 class Activity_data extends React.Component {
     constructor (props) {
+        console.log(props);
         super(props);
         this.state = {};
         this.data = {
@@ -61,7 +62,8 @@ class Activity_data extends React.Component {
             <div className="data-container">
                 {this.props.users.map(x =>
                     (<div className={"event-cards " + (x.login == this.props.selected ? "active" : "")} login={x.login} key={x.login}>
-                        {(x.data.activity[0] == null) ? this.rendUndef() : (
+                    
+                        {x.data.activity == undefined ? this.rendUndef : (x.data.activity[0] == null) ? this.rendUndef() : (
                             x.data.activity.map(a => 
                                 (<div className={"event-card " + (this.findStatusName(a.StatusId) !== 'Завершена' ? 'updating' : {})} key={a.Id}>
                                     <p className="event-name">{a.Title}</p>
